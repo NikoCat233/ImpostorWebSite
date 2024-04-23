@@ -1,0 +1,90 @@
+{
+    "CurrentRegionIdx": 3,
+    "Regions": [
+        {
+            "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+            "Name": "Modded EU (MEU)",
+            "PingServer": "https://au-eu.duikbo.at",
+            "Servers": [
+                {
+                    "Name": "Http-1",
+                    "Ip": "https://au-eu.duikbo.at",
+                    "Port": 443,
+                    "UseDtls": false,
+                    "Players": 0,
+                    "ConnectionFailures": 0
+                }
+            ],
+            "TargetServer": null,
+            "TranslateName": 1003
+        },
+        {
+            "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+            "Name": "Modded NA (MNA)",
+            "PingServer": "https://www.aumods.us",
+            "Servers": [
+                {
+                    "Name": "Http-1",
+                    "Ip": "https://www.aumods.us",
+                    "Port": 443,
+                    "UseDtls": false,
+                    "Players": 0,
+                    "ConnectionFailures": 0
+                }
+            ],
+            "TargetServer": null,
+            "TranslateName": 1003
+        },
+        {
+            "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+            "Name": "Modded Asia (MAS)",
+            "PingServer": "https://au-as.duikbo.at",
+            "Servers": [
+                {
+                    "Name": "Http-1",
+                    "Ip": "https://au-as.duikbo.at",
+                    "Port": 443,
+                    "UseDtls": false,
+                    "Players": 0,
+                    "ConnectionFailures": 0
+                }
+            ],
+            "TargetServer": null,
+            "TranslateName": 1003
+        },
+        {
+            "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+            "Name": "NikoCat233 (Asia CN)",
+            "PingServer": "103.40.13.76",
+            "Servers": [
+                {
+                    "Name": "http-1",
+                    "Ip": "https://aucn.233466.xyz",
+                    "Port": 443,
+                    "UseDtls": false,
+                    "Players": 0,
+                    "ConnectionFailures": 0
+                }
+            ],
+            "TargetServer": null,
+            "TranslateName": 1003
+        },
+        {
+            "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+            "Name": "NikoCat233 (NA US)",
+            "PingServer": "52.12.128.0",
+            "Servers": [
+                {
+                    "Name": "http-1",
+                    "Ip": "https://au-us.233466.xyz",
+                    "Port": 443,
+                    "UseDtls": false,
+                    "Players": 0,
+                    "ConnectionFailures": 0
+                }
+            ],
+            "TargetServer": null,
+            "TranslateName": 1003
+        }
+    ]
+}
