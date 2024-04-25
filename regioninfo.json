@@ -54,7 +54,7 @@
         },
         {
             "$type": "StaticHttpRegionInfo, Assembly-CSharp",
-            "Name": "NikoCat233 (Asia CN)",
+            "Name": "Niko233(AS_CN)",
             "PingServer": "103.40.13.76",
             "Servers": [
                 {
@@ -71,12 +71,46 @@
         },
         {
             "$type": "StaticHttpRegionInfo, Assembly-CSharp",
-            "Name": "NikoCat233 (NA US)",
+            "Name": "Niko233(AS_CN2)",
+            "PingServer": "103.40.13.76",
+            "Servers": [
+                {
+                    "Name": "http-1",
+                    "Ip": "https://aucn2.233466.xyz",
+                    "Port": 443,
+                    "UseDtls": false,
+                    "Players": 0,
+                    "ConnectionFailures": 0
+                }
+            ],
+            "TargetServer": null,
+            "TranslateName": 1003
+        },
+        {
+            "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+            "Name": "Niko233(NA_US)",
             "PingServer": "52.12.128.0",
             "Servers": [
                 {
                     "Name": "http-1",
                     "Ip": "https://au-us.233466.xyz",
+                    "Port": 443,
+                    "UseDtls": false,
+                    "Players": 0,
+                    "ConnectionFailures": 0
+                }
+            ],
+            "TargetServer": null,
+            "TranslateName": 1003
+        },
+        {
+            "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+            "Name": "Niko233(NA_US2)",
+            "PingServer": "52.12.128.0",
+            "Servers": [
+                {
+                    "Name": "http-1",
+                    "Ip": "https://au-us2.233466.xyz",
                     "Port": 443,
                     "UseDtls": false,
                     "Players": 0,
