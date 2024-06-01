@@ -20,6 +20,27 @@
   <body>
     <h1>FAQ / TroubleShooting</h1>
 
+    <h2>
+      [Imposter Anticheat+] Server cannot auth you. Try disable your http proxy!
+    </h2>
+    <p>
+      For friendcode and puid stuffs to work, we force-require players to join
+      our server with a same ip from the one it used in http requests. <br />
+	    You need to either disable your proxy, or make sure your proxy full-route your
+      traffic to our server. <br />
+	    For some phone players, it may be useful for 
+      you to toggle on "Flight mode" and off and retry join the server.
+    </p>
+
+    <h2>Vanilla DuplicateConnectionDetected</h2>
+    <p>
+      If you (or your friend) use different accounts to join our server from a same network, 
+      you will get this.<br />
+      We assign friendcodes and auth details based on your ip. We are unable to
+      deal with the cases where "2 alts join from a single IP"<br />
+      Sorry for any inconvenience caused.
+    </p>
+
     <h2>[Impostor AntiCheat+] Host didn't spawn you in time</h2>
     <p>
       This is because the host failed to spawn your role in 3 seconds.
@@ -44,16 +65,6 @@
     <p>
       You are banned by TOHE EAC.
       Appeal at discord.gg/tohe
-    </p>
-
-    <h2>
-      [Imposter Anticheat+] Server cannot auth you. Try disable your http proxy!
-    </h2>
-    <p>
-      For friendcode and puid stuffs to work, we force-require players to join
-      our server with a same ip from the one it used in http requests. <br />You
-      need to either disable your proxy, or make sure your proxy full-route your
-      traffic to our server.
     </p>
 
     <h2>[Imposter AntiCheat+] You are kicked because of cheating.</h2>
@@ -92,14 +103,6 @@
     <p>
       This is because you are using a guest account to join our server.<br />Sorry,
       we don't allow that currently.
-    </p>
-
-    <h2>Vanilla DuplicateConnectionDetected</h2>
-    <p>
-      If you use different accounts to join our server, you will get this.<br />We
-      assign friendcodes and auth details based on your ip. We are unable to
-      deal with the cases where "2 alts join from a single IP"<br />Sorry for
-      any inconvenience caused.
     </p>
 
     <h2>Vanilla The AmongUs server cannot Auth you. / Sabotage!</h2>
