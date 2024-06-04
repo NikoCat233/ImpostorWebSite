@@ -1,1 +1,153 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><title>Among Us自定义服务器 - TOWN OF HOST MODS</title><style>body{font-family:Arial,sans-serif;background-color:#f4f4f4;background-image:url(https://www.233466.xyz/wp-content/uploads/2024/02/cg_red.png);background-size:cover;background-position:50%;margin:0;padding:0;display:flex;justify-content:center;align-items:center;height:100vh}.container{position:relative;padding:20px;background-color:rgba(255,255,255,.199);border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.2);width:35%;text-align:center;margin:10% auto;height:calc(80vh - 40px);overflow-y:auto}h3{color:#f70000;font-size:2em;background-color:rgba(255,255,255,.205);padding:5px;border-radius:5px;text-shadow:2px 2px 2px rgba(0,0,0,.5)}b{color:#00ffc8;font-size:1.4em;background-color:rgba(255,255,255,.137);padding:5px;border-radius:5px;text-shadow:2px 2px 2px rgba(0,0,0,.126)}p{color:#df0;font-size:1.4em;background-color:rgba(255,255,255,.116);padding:5px;word-wrap:break-word;border-radius:5px;text-shadow:2px 2px 2px rgba(0,0,0,.144);font-weight:700}.overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);z-index:-1}a{color:#fff;background-color:#007bff;text-decoration:none;padding:10px 15px;border-radius:5px;display:inline-block;margin-top:10px;transition:background-color .3s ease;font-size:1em;text-shadow:2px 2px 2px rgba(0,0,0,.5)}a:hover{background-color:#0056b3}</style><body><div class=container><h3>如果您想要玩TOWN OF HOST MODS，请按照以下说明进行操作</h3><p><b><u>Windows</u></b></p><p>下载此文件 <a href=https://aug.233466.xyz/Setup_Custom_Server.bat>这里</a>，然后只需双击它，自定义服务器就会添加到您的游戏中，您将永远不必再重复此步骤！</p><p>如果您有RegionInstall，您可以下载配置文件 <a href=https://aug.233466.xyz/at.duikbo.regioninstall.cfg>这里</a>，然后用新的配置文件替换Among Us\BepInEx\config中的配置文件</p><p><b>* - 如果您有其他MOD，如TOUR、TOR或Las Monjas，则已经拥有这些服务器，无需执行任何操作，因为这些服务器已经在您的游戏中</b></p><p><u><b>对于iOS/Android玩家</b></u></p><p>步骤1：打开您设备上的Among Us</p><p>步骤2：在您的设备上保持游戏打开状态，转到您的网络浏览器</p><p>步骤3：</p><p>要添加Modded NA，请点击 <a href="amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false">这里</a></p><p>要添加Modded EU，请点击 <a href="amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false">这里</a></p><p>要添加Modded Asia，请点击 <a href="amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false">这里</a></p><p>要添加NikoCat233中国服务器，请点击 <a href="amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Fau-cn.233466.xyz&usedtls=false">这里</a></p><p>要添加NikoCat233中国无反作弊服务器，请点击 <a href="amongus://init?servername=Niko233(AS_CN2)&serverport=443&serverip=https%3A%2F%2Fau-cn2.233466.xyz&usedtls=false">这里</a></p><p>要添加NikoCat233美国服务器，请点击 <a href="amongus://init?servername=Niko233(NA_US)&serverport=443&serverip=https%3A%2F%2Fau-us.233466.xyz&usedtls=false">这里</a></p><p>要添加NikoCat233美国无反作弊服务器，请点击 <a href="amongus://init?servername=Niko233(NA_US2)&serverport=443&serverip=https%3A%2F%2Fau-us2.233466.xyz&usedtls=false">这里</a></p><p>完成上述步骤后，您将无需再次执行该操作以添加该服务器</p><p>由NikoCat233提供支持</p><div class=overlay></div></div>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <title>Among Us自定义服务器 - TOWN OF HOST MODS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url(https://www.233466.xyz/wp-content/uploads/2024/02/cg_red.png);
+            background-size: cover;
+            background-position: 50%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh
+        }
+
+        .container {
+            position: relative;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, .199);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            width: 35%;
+            text-align: center;
+            margin: 10% auto;
+            height: calc(80vh - 40px);
+            overflow-y: auto
+        }
+
+        h3 {
+            color: #f70000;
+            font-size: 2em;
+            background-color: rgba(255, 255, 255, .205);
+            padding: 5px;
+            border-radius: 5px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, .5)
+        }
+
+        b {
+            color: #00ffc8;
+            font-size: 1.4em;
+            background-color: rgba(255, 255, 255, .137);
+            padding: 5px;
+            border-radius: 5px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, .126)
+        }
+
+        p {
+            color: #df0;
+            font-size: 1.4em;
+            background-color: rgba(255, 255, 255, .116);
+            padding: 5px;
+            word-wrap: break-word;
+            border-radius: 5px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, .144);
+            font-weight: 700
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: -1
+        }
+
+        a {
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color .3s ease;
+            font-size: 1em;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, .5)
+        }
+
+        a:hover {
+            background-color: #0056b3
+        }
+
+        pre {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+<body>
+    <div class=container>
+        <h3>如果您想要玩TOWN OF HOST MODS，请按照以下说明进行操作</h3>
+        <p><b><u>Windows</u></b></p>
+        <p>下载此文件 <a href=https://aug.233466.xyz/Setup_Custom_Server.bat>这里</a>，然后只需双击它，自定义服务器就会添加到您的游戏中，您将永远不必再重复此步骤！
+        </p>
+        <p>如果上面的办法对你无效，请尝试从此页面直接下载regioninfo.json <a href="https://au.niko233.me/regioninfo.json"
+                download="regioninfo.json">点这里</a>,
+            你可能需要手动右键然后选择另存为来保存json文件.
+            然后按Win + R运行，输入以下指令并运行，弹出Among Us文件夹</p>
+
+        <pre>
+%userprofile%\AppData\LocalLow\Innersloth\Among Us
+    </pre>
+
+        <p>替换掉里面的regioninfo.json然后重启你的游戏即可.</p>
+        
+        <p>如果您有RegionInstall，您可以下载配置文件 <a
+                href=https://aug.233466.xyz/at.duikbo.regioninstall.cfg>这里</a>，然后用新的配置文件替换Among Us\BepInEx\config中的配置文件
+        </p>
+        <p><b>* - 如果您有其他MOD，如TOUR、TOR或Las Monjas，则已经拥有这些服务器，无需执行任何操作，因为这些服务器已经在您的游戏中</b></p>
+        <p><u><b>对于iOS/Android玩家</b></u></p>
+        <p>步骤1：打开您设备上的Among Us</p>
+        <p>步骤2：在您的设备上保持游戏打开状态，转到您的网络浏览器</p>
+        <p>步骤3：</p>
+        <p>要添加Modded NA，请点击 <a
+                href="amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false">这里</a>
+        </p>
+        <p>要添加Modded EU，请点击 <a
+                href="amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false">这里</a>
+        </p>
+        <p>要添加Modded Asia，请点击 <a
+                href="amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false">这里</a>
+        </p>
+        <p>要添加NikoCat233中国服务器，请点击 <a
+                href="amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Fau-cn.233466.xyz&usedtls=false">这里</a>
+        </p>
+        <p>要添加NikoCat233中国无反作弊服务器，请点击 <a
+                href="amongus://init?servername=Niko233(AS_CN2)&serverport=443&serverip=https%3A%2F%2Fau-cn2.233466.xyz&usedtls=false">这里</a>
+        </p>
+        <p>要添加NikoCat233美国服务器，请点击 <a
+                href="amongus://init?servername=Niko233(NA_US)&serverport=443&serverip=https%3A%2F%2Fau-us.233466.xyz&usedtls=false">这里</a>
+        </p>
+        <p>要添加NikoCat233美国无反作弊服务器，请点击 <a
+                href="amongus://init?servername=Niko233(NA_US2)&serverport=443&serverip=https%3A%2F%2Fau-us2.233466.xyz&usedtls=false">这里</a>
+        </p>
+        <p>完成上述步骤后，您将无需再次执行该操作以添加该服务器</p>
+        <p>由NikoCat233提供支持</p>
+        <div class=overlay></div>
+    </div>
