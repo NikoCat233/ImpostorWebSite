@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://www.niko233.me/wp-content/uploads/2024/02/cg_red.png') repeat;
+    /* 背景图像 URL */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    /* 半透明背景 */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* 半透明背景 */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.card {
+    background-color: rgba(211, 233, 198, 0.9);
+    /* 半透明背景 */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.instruction,
+.community-link {
+    margin-bottom: 10px;
+}
+
+.instruction p,
+.community-link p {
+    color: #333;
+    font-weight: bold;
+}
+
+.instruction p a,
+.community-link p a {
+    color: #333;
+    text-decoration: none;
+}
+
+.instruction p a:hover,
+.community-link p a:hover {
+    text-decoration: underline;
+}
+
+.copy-text {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.copy-text:hover {
+    color: darkblue;
+}
+
+#donations ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#donations ul li {
+    background-color: rgba(249, 240, 58, 0.434);
+    /* 半透明背景 */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(51, 51, 51, 0.8);
+    /* 半透明背景 */
+    color: white;
+}
