@@ -1,158 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Among Us Custom Server - TOWN OF HOST MODS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            background-image: url(https://raw.githubusercontent.com/0xDrMoe/TownofHost-Enhanced/main/Resources/Background/PrevArtWinner/TOH-RE-Background-New.png);
-            background-size: cover;
-            background-position: 50%;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            position: relative;
-            padding: 20px;
-            background-color: rgba(25, 24, 24, 0.416);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-            width: 35%;
-            text-align: center;
-            margin: 10% auto;
-            height: calc(80vh - 40px);
-            overflow-y: auto
-        }
-
-        h3 {
-            color: #f70000;
-            font-size: 2em;
-            background-color: rgba(21, 3, 3, 0.21);
-            padding: 5px;
-            border-radius: 5px;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, .5)
-        }
-
-        b {
-            color: #00ffc8;
-            font-size: 1.4em;
-            background-color: rgba(255, 255, 255, .137);
-            padding: 5px;
-            border-radius: 5px;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, .126)
-        }
-
-        p {
-            color: #df0;
-            font-size: 1.4em;
-            background-color: rgba(255, 255, 255, .116);
-            padding: 5px;
-            word-wrap: break-word;
-            border-radius: 5px;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, .144);
-            font-weight: 700
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.604);
-            z-index: -1
-        }
-
-        a {
-            color: #fff;
-            background-color: #007bff;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-            transition: background-color .3s ease;
-            font-size: 1em;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, .5)
-        }
-
-        a:hover {
-            background-color: #0056b3
-        }
-
-        pre {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: left;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NikoCat233's Impostor Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
-        <h3>If you would like Custom servers to play TOWN OF HOSTS MODS On, Follow these instructions. <br>This page can be scrolled down!</h3>
-        <p><b><u>Windows</u></b></p>
-        <p>Download This File <a href="https://au.niko233.me/Setup_Custom_Server.bat">Here</a>, <br>Then Just double click
-            on it
-            and the custom servers will be added to your game and you will never have to repeat this step again!</p>
-        <p>If the above method does not work for you, Download the regioninfo.json <a
-                href="https://au.niko233.me/regioninfo.json" download="regioninfo.json">Here</a>,
-                <br>You may need to right click on the page and choose "Save as other" to mannually download the json file.
-                <br>Then press Win + R and enter & run the following command:</p>
+    <header>
+        <h1>NikoCat233's Impostor Server</h1>
+        <p>Thank you for using my Impostor server! | 感谢您使用我的 Impostor 私服！</p>
+    </header>
 
-        <pre>
-%userprofile%\AppData\LocalLow\Innersloth\Among Us
-        </pre>
+    <section id="install-instructions">
+        <h2>Install Instructions - 安装指南</h2>
+        <div class="instruction">
+            <p>This page helps you to Install NikoCat233 's Custom Region to your Among Us game.</p>
+            <p>中国玩家请访问这个链接查看安装教程: <a href="https://au.niko233.me/cn.html"
+                    target="_blank">https://au.niko233.me/cn.html</a></p>
+        </div>
+    </section>
 
-        <p>Replace regioninfo.json with the one you just downloaded and restart your game.</p>
+    <section id="announcements">
+        <h2><strong>Windows Desktop Users</strong></h2>
+        <div class="instruction">
+            <p>Town of Host Enhanced has already built in Niko233 's Custom Region</p>
+        </div>
+        <div class="card">
+            <h3>Method 1 : Download the install script and run it</h3>
+            <p>Very Simple! Just download the bat file below and click it, then reboot your game. You should be able to
+                see the custom regions</p>
+            <a href="https://au.niko233.me/Setup_Custom_Server.bat"
+                target="_blank">https://au.niko233.me/Setup_Custom_Server.bat</a>
+            <p>Not working? Try Method 2</p>
+        </div>
+        <div class="card">
+            <h3>Method 2 : Manually install regioninfo.json</h3>
+            <p>First, download regioninfo.json from the following link</p>
+            <a href="https://au.niko233.me/regioninfo.json"
+                download="regioninfo.json">https://au.niko233.me/regioninfo.json</a>
+            <p>Some browser will try to open the above file as new page. Just right click the page and choose "Save As",
+                save it to regioninfo.json</p>
+            <p>Then, press Win + R or open "Run" in your start menu. Input the following link (click on it to copy to
+                clipboard!)</p>
+            <span class="copy-text"
+                data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us">%userprofile%\AppData\LocalLow\Innersloth\Among
+                Us</span>
+            <p>Input it and click "Run". It will open your AmongUs Data folder, copy the regioninfo.json you just
+                downloaded to replace the existing old one.</p>
+            <p>Finally, reboot your game and you should see the custom regions.</p>
+        </div>
+        <div class="card">
+            <h3>Older version of Among Us</h3>
+            <p>If you are playing a Older Version of Among Us that supports DnsRegionInfo, you can just click and copy
+                the following link to your game ip input window.</p>
+            <p><strong>Direct version for older version of Among Us (2021.11.9 - 2022.10.25)</strong></p>
+            <p>NA_US : <span class="copy-text" data-copy="354na.niko233.me">354na.niko233.me</span>:<span
+                    class="copy-text" data-copy="22031">22031</span> or
+                <span class="copy-text" data-copy="354us.niko233.me">354us.niko233.me</span>:<span class="copy-text"
+                    data-copy="22031">22031</span>
+            </p>
+            <p>AS_CN : <span class="copy-text" data-copy="354as.niko233.me">354as.niko233.me</span>:<span
+                    class="copy-text" data-copy="22031">22031</span> or <span class="copy-text"
+                    data-copy="354cn.niko233.me">354cn.niko233.me</span>:<span class="copy-text"
+                    data-copy="22031">22031</span></p>
+        </div>
+        <div class="card">
+            <h3>Extra method: Mini.RegionInstall法</h3>
+            <p>You can download config file here if you have Mini.RegionInstall plugin installed.</p>
+            <a href="https://au.niko233.me/at.duikbo.regioninstall.cfg"
+                target="_blank">https://au.niko233.me/at.duikbo.regioninstall.cfg</a>
+            <p>Copy it to your BL config folder (<span class="copy-text" data-copy="Among Us\BepInEx\config">Among
+                    Us\BepInEx\config</span>) and replace the old config there.
+            </p>
+        </div>
+    </section>
 
-        <p>If you have RegionInstall, You can download the config file <a
-                href="https://au.niko233.me/at.duikbo.regioninstall.cfg">Here</a>, <br>Then replace the config in Among
-            Us\BepInEx\config with the new one</p>
-        <p><b>* - If you have other mods Like TOUR, TOR or Las Monjas, You Already have modded servers.<br>
-        Still you need to follow the above steps and install NikoCat233's custom region.</b></p>
-        <p><u><b>iOS/Android Players</b></u></p>
-        <p>Step 1: Open Among Us on Your Device</p>
-        <p>Step 2: With the Game still open, go to your web browser on your device</p>
-        <p>Step 3:</p>
-        <p>To add Modded NA, Click <a
-                href="amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false">Here</a>
-        </p>
-        <p>To add Modded EU, Click <a
-                href="amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false">Here</a>
-        </p>
-        <p>To add Modded Asia, Click <a
-                href="amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false">Here</a>
-        </p>
-        <p>To add NikoCat233 Asia CN Server, Click <a
-                href="amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Faucn.niko233.me&usedtls=false">Here</a>
-        </p>
-        <p>To add NikoCat233 Asia CN No Anticheat Server, Click <a
-                href="amongus://init?servername=Niko233(AS_CN2)&serverport=443&serverip=https%3A%2F%2Faucn2.niko233.me&usedtls=false">Here</a>
-        </p>
-        <p>To add NikoCat233 NA US Server, Click <a
-                href="amongus://init?servername=NikoCat233(NA_US)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false">Here</a>
-        </p>
-        <p>To add NikoCat233 NA US No Anticheat Server, Click <a
-                href="amongus://init?servername=NikoCat233(NA_US2)&serverport=443&serverip=https%3A%2F%2Fau-us2.niko233.me&usedtls=false">Here</a>
-        </p>
-        <p>Once that step is completed you will not have to do it again for that server</p>
-        <p>Hosted By NikoCat233
-        <div class="overlay"></div>
+    <section id="announcements">
+        <h2><strong>Android | Iphone players</strong></h2>
+        <div class="instruction">
+            <p>If you can normally login to your among us account, just do step one.</p>
+            <p>If you are using Gspace or OurPlay, please follow step 2 first.</p>
+        </div>
+        <div class="card">
+            <h3>Step 1 : Click the buttons</h3>
+            <p>Open your Among Us and keep it running background. Then open your browser and click the following
+                buttons.</p>
+            <p>On every click it should switch to your Among Us and install a single region. Keep clicking and you can
+                install all regions.</p>
+            <div class="button-container">
+                <button
+                    onclick="window.location.href='amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Faucn.niko233.me&usedtls=false'">Click
+                    for Niko AS_CN 1</button>
+                <button
+                    onclick="window.location.href='amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Faucn2.niko233.me&usedtls=false'">Click
+                    for Niko AS_CN 2</button>
+                <button
+                    onclick="window.location.href='amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false'">Click
+                    for Niko NA_US 1</button>
+                <button
+                    onclick="window.location.href='amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Fau-us2.niko233.me&usedtls=false'">Click
+                    for Niko NA_US 2</button>
+                <button
+                    onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false'">Click
+                    for Modded NA</button>
+                <button
+                    onclick="window.location.href='amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false'">Click
+                    for Modded EU</button>
+                <button
+                    onclick="window.location.href='amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false'">Click
+                    for Modded AS</button>
+            </div>
+            <p>Keep in mind that you have to keep among us running while you click these buttons</p>
+            <p>Running Among Us in vitural environment like OurPlay or Gspace? Check step 2</p>
+        </div>
+        <div class="card">
+            <h3>Step 2 : for Vitural Environment like OurPlay and Gspace</h3>
+            <p>Your browser can't forward requests to Among Us in vitural environment directly</p>
+            <p>You need to import your browser into your vitural environment.</p>
+            <p>Via Browser is easy to use and small in size. Import it into your Gspace / OurPlay</p>
+            <p>First launch AmongUs in Gspace / OurPlay, then run your browser and open this website page.</p>
+            <p>Click the buttons and then it should jump to Among Us game and install the region.</p>
+        </div>
+    </section>
+
+    <section id="announcements">
+        <h2><strong>PS | XBOX | SWITCH ... players</strong></h2>
+        <div class="instruction">
+            <p>Sorry, we dont have easy steps for you to install custom regions on your devices.</p>
+            <p>You can try manually modify regioninfo.json in your Among Us Data</p>
+        </div>
+    </section>
+
+    <section id="community">
+        <h2>Contact & Support</h2>
+        <div class="community-link">
+            <p>TOHE Discord Server: <a href="https://discord.gg/tohe" target="_blank">https://discord.gg/tohe</a></p>
+        </div>
+        <div class="community-link">
+            <p>FAQ / TroubleShooting: <a href="https://au.niko233.me/trouble_en.html"
+                    target="_blank">https://au.niko233.me/trouble_en.html</a></p>
+        </div>
+        <div class="community-link">
+            <p>Support me on Ko-fi: <a href="https://ko-fi.com/nikocat233"
+                    target="_blank">https://ko-fi.com/nikocat233</a></p>
+        </div>
+        <div class="community-link">
+            <p>Support Pietro on Ko-fi: <a href="https://ko-fi.com/pietro420"
+                    target="_blank">https://ko-fi.com/pietro420</a></p>
+        </div>
+    </section>
+
+    <section id="donations">
+        <h2>Sponsors | 捐助者</h2>
+        <p>Thank you for your donation! I'm bond to make my custom region more stable and useful!</p>
+        <p>感谢你们的捐赠！ 你们的支持能让这个私服走的更远！</p>
+        <ul><strong>
+                <li>SpicyPoops - 50 USD</li>
+                <li>瑞 - 5 USD</li>
+                <li>Sarhadactyl - 10 USD - Join MAUL now! <a href="https://discord.gg/maul"
+                        target="_blank">https://discord.gg/maul</a></li>
+                <li>kk - 14 CNY</li>
+                <li>月饼 - 1 CNY</li>
+                <li>风叧 - 1 CNY - 跟我念：fenggua</li>
+                <li>全员天选之子 - 10 CNY - 每日首刀+50xp</li>
+                <li>Yourfather - 0.01 CNY - 好活当赏</li>
+                <li>Slok7565 - 50 CNY - 都去玩TONEX !!!</li>
+                <li>川 - 10 CNY</li>
+            </strong></ul>
+    </section>
+
+    <div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99">
+        <a href="https://myssl.com/au.niko233.me?from=mysslid"><img
+                src="https://static.myssl.com/res/images/myssl-id.png" alt="" style="width:100%;height:100%"></a>
     </div>
+
+    <footer>
+        <p>Hosted by NikoCat233</p>
+    </footer>
 </body>
 
 </html>
