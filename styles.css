@@ -3,14 +3,12 @@ body {
     margin: 0;
     padding: 0;
     background: url('https://www.niko233.me/wp-content/uploads/2024/02/cg_red.png') repeat;
-    /* 背景图像 URL */
     background-size: cover;
     background-attachment: fixed;
 }
 
 header {
     background-color: rgba(51, 51, 51, 0.8);
-    /* 半透明背景 */
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -29,7 +27,6 @@ section {
     margin: 20px auto;
     max-width: 800px;
     background-color: rgba(255, 255, 255, 0.9);
-    /* 半透明背景 */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -41,10 +38,35 @@ h2 {
 
 .card {
     background-color: rgba(211, 233, 198, 0.9);
-    /* 半透明背景 */
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1 1 calc(33% - 10px);
+    max-width: calc(33% - 10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #45a049;
 }
 
 .instruction,
@@ -86,7 +108,6 @@ h2 {
 
 #donations ul li {
     background-color: rgba(249, 240, 58, 0.434);
-    /* 半透明背景 */
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -96,6 +117,5 @@ footer {
     text-align: center;
     padding: 10px 0;
     background-color: rgba(51, 51, 51, 0.8);
-    /* 半透明背景 */
     color: white;
 }

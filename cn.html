@@ -1,153 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset=utf-8>
-    <title>Among Us自定义服务器 - TOWN OF HOST MODS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            background-image: url(https://raw.githubusercontent.com/0xDrMoe/TownofHost-Enhanced/main/Resources/Background/PrevArtWinner/TOH-RE-Background-New.png);
-            background-size: cover;
-            background-position: 50%;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh
-        }
-
-        .container {
-            position: relative;
-            padding: 20px;
-            background-color: rgba(25, 24, 24, 0.416);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-            width: 35%;
-            text-align: center;
-            margin: 10% auto;
-            height: calc(80vh - 40px);
-            overflow-y: auto
-        }
-
-        h3 {
-            color: #f70000;
-            font-size: 2em;
-            background-color: rgba(21, 3, 3, 0.21);
-            padding: 5px;
-            border-radius: 5px;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, .5)
-        }
-
-        b {
-            color: #00ffc8;
-            font-size: 1.4em;
-            background-color: rgba(255, 255, 255, .137);
-            padding: 5px;
-            border-radius: 5px;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, .126)
-        }
-
-        p {
-            color: #df0;
-            font-size: 1.4em;
-            background-color: rgba(255, 255, 255, .116);
-            padding: 5px;
-            word-wrap: break-word;
-            border-radius: 5px;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, .144);
-            font-weight: 700
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.604);
-            z-index: -1
-        }
-
-        a {
-            color: #fff;
-            background-color: #007bff;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-            transition: background-color .3s ease;
-            font-size: 1em;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, .5)
-        }
-
-        a:hover {
-            background-color: #0056b3
-        }
-
-        pre {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: left;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NikoCat233's Impostor Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
 
 <body>
-    <div class=container>
-        <h3>如果您想要玩TOWN OF HOST MODS，请按照以下说明进行操作<br>这个页面是能下滑的！</h3>
-        <p><b><u>Windows</u></b></p>
-        <p>下载此文件 <a href=https://aug.233466.xyz/Setup_Custom_Server.bat>点这里</a>，<br>然后只需双击它，自定义服务器就会添加到您的游戏中，您将永远不必再重复此步骤！
-        </p>
-        <p>如果上面的办法对你无效，请尝试从此页面直接下载regioninfo.json <a href="https://au.niko233.me/regioninfo.json"
-                download="regioninfo.json">点这里</a>,
-                <br>你可能需要手动右键然后选择另存为来保存json文件.
-                <br>然后按Win + R运行，输入以下指令并运行，弹出Among Us文件夹</p>
+    <header>
+        <h1>NikoCat233's Impostor Server</h1>
+        <p>Thank you for using my Impostor server! | 感谢您使用我的 Impostor 私服！</p>
+    </header>
 
-    <pre>
-%userprofile%\AppData\LocalLow\Innersloth\Among Us
-    </pre>
+    <section id="install-instructions">
+        <h2>Install Instructions - 安装指南</h2>
+        <div class="instruction">
+            <p>此页面协助你安装NikoCat233的Impostor私服</p>
+            <p>Global players please visit this link for install instructions: <a href="https://au.niko233.me/en.html"
+                    target="_blank">https://au.niko233.me/en.html</a></p>
+        </div>
+    </section>
 
-        <p>替换掉里面的regioninfo.json然后重启你的游戏即可.</p>
-        
-        <p>如果您有RegionInstall，您可以下载配置文件 <a
-                href=https://aug.233466.xyz/at.duikbo.regioninstall.cfg>这里</a>，<br>然后用新的配置文件替换Among Us\BepInEx\config中的配置文件
-        </p>
-        <p><b>* - 如果您有其他MOD，如TOUR、TOR或Las Monjas，则已经拥有Modded服务器，<br>你仍需要遵循以上步骤手动安装NikoCat233的私服</b></p>
-        <p><u><b>对于iOS/Android玩家</b></u></p>
-        <p>步骤1：打开您设备上的Among Us</p>
-        <p>步骤2：在您的设备上保持游戏打开状态，转到您的网络浏览器</p>
-        <p>步骤3：</p>
-        <p>要添加Modded NA，请点击 <a
-                href="amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false">这里</a>
-        </p>
-        <p>要添加Modded EU，请点击 <a
-                href="amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false">这里</a>
-        </p>
-        <p>要添加Modded Asia，请点击 <a
-                href="amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false">这里</a>
-        </p>
-        <p>要添加NikoCat233中国服务器，请点击 <a
-                href="amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Faucn.niko233.me&usedtls=false">这里</a>
-        </p>
-        <p>要添加NikoCat233中国无反作弊服务器，请点击 <a
-                href="amongus://init?servername=Niko233(AS_CN2)&serverport=443&serverip=https%3A%2F%2Faucn2.niko233.me&usedtls=false">这里</a>
-        </p>
-        <p>要添加NikoCat233美国服务器，请点击 <a
-                href="amongus://init?servername=Niko233(NA_US)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false">这里</a>
-        </p>
-        <p>要添加NikoCat233美国无反作弊服务器，请点击 <a
-                href="amongus://init?servername=Niko233(NA_US2)&serverport=443&serverip=https%3A%2F%2Fau-us2.niko233.me&usedtls=false">这里</a>
-        </p>
-        <p>完成上述步骤后，您将无需再次执行该操作以添加该服务器</p>
-        <p>由NikoCat233提供支持</p>
-        <div class=overlay></div>
-    </div>
+    <section id="announcements">
+        <h2><strong>Windows桌面用户</strong></h2>
+        <div class="instruction">
+            <p>如果你游玩的是TOHE等Niko支持的H系模组，通常其已经内置了Niko的私服。</p>
+        </div>
+        <div class="card">
+            <h3>方式一：下载一键安装脚本并运行</h3>
+            <p>非常容易！只需要点击下面的链接，下载这个一键脚本并运行，然后重启你的游戏即可！</p>
+            <a href="https://au.niko233.me/Setup_Custom_Server.bat"
+                    target="_blank">https://au.niko233.me/Setup_Custom_Server.bat</a>
+            <p>此方式报错？尝试方式二</p>
+        </div>
+        <div class="card">
+            <h3>方式二：手动复制regioninfo.json</h3>
+            <p>首先，你需要点击下面的链接下载私服信息文件regioninfo.json</p>
+            <a href="https://au.niko233.me/regioninfo.json"
+                    download="regioninfo.json">https://au.niko233.me/regioninfo.json</a>
+            <p>部分不长眼的浏览器会直接打开上述页面，右键另存为regioninfo.json即可</p>
+            <p>然后，按下Win + R 或者手动打开运行，在其中输入 | 粘贴以下地址（单击可复制到剪贴板）</p>
+            <span class="copy-text"
+                    data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us">%userprofile%\AppData\LocalLow\Innersloth\Among Us</span>
+            <p>点击确定，会跳转到Among Us的数据文件夹，将你下载的regioninfo.json复制进去并替换</p>
+            <p>最后重启游戏即可</p>
+        </div>
+        <div class="card">
+            <h3>354私服</h3>
+            <p>如果你是354牢玩家，直接复制下述链接即可</p>
+            <p><strong>对于354等老版本的直连地址</strong></p>
+            <p>北美 : <span class="copy-text" data-copy="354na.niko233.me">354na.niko233.me</span>:<span class="copy-text"
+                    data-copy="22031">22031</span> 或者
+                <span class="copy-text" data-copy="354us.niko233.me">354us.niko233.me</span>:<span class="copy-text"
+                    data-copy="22031">22031</span>
+            </p>
+            <p>亚洲中国 : <span class="copy-text" data-copy="354as.niko233.me">354as.niko233.me</span>:<span class="copy-text"
+                    data-copy="22031">22031</span> 或者 <span class="copy-text"
+                    data-copy="354cn.niko233.me">354cn.niko233.me</span>:<span class="copy-text" data-copy="22031">22031</span></p>
+        </div>
+        <div class="card">
+            <h3>扩展方式：Mini.RegionInstall法</h3>
+            <p>如果你所玩的模组包括了Mini.RegionInstall这个插件模组，可以从以下链接下载配置文件</p>
+            <a href="https://aug.233466.xyz/at.duikbo.regioninstall.cfg"
+                target="_blank">https://aug.233466.xyz/at.duikbo.regioninstall.cfg</a>
+            <p>将之复制到你的 <span class="copy-text" data-copy="Among Us\BepInEx\config">Among Us\BepInEx\config</span>，替换掉对应的文件并重启游戏即可
+            </p>
+        </div>
+    </section>
+
+    <section id="announcements">
+        <h2><strong>Android | 苹果手机玩家</strong></h2>
+        <div class="instruction">
+            <p>非虚拟环境玩家只需完成第一步即可，使用了大蛇OurPlay的玩家通常需要先进行第二步</p>
+        </div>
+        <div class="card">
+            <h3>实机环境玩家 : 点击下面的按钮</h3>
+            <p>先打开你的Among Us挂在后台，然后切到你的浏览器，依次点击下面按钮添加你所需的服务器，每次点击都会切换到AU就是成功加了个服务器，最后在小地球里面就能看到私服了</p>
+            <div class="button-container">
+                <button onclick="window.location.href='amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Faucn.niko233.me&usedtls=false'">点我安装Niko AS_CN 1</button>
+                <button onclick="window.location.href='amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Faucn2.niko233.me&usedtls=false'">点我安装Niko AS_CN 2</button>
+                <button onclick="window.location.href='amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false'">点我安装Niko NA_US 1</button>
+                <button onclick="window.location.href='amongus://init?servername=Niko233(AS_CN)&serverport=443&serverip=https%3A%2F%2Fau-us2.niko233.me&usedtls=false'">点我安装Niko NA_US 2</button>
+                <button onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false'">点我安装Modded NA</button>
+                <button onclick="window.location.href='amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false'">点我安装Modded EU</button>
+                <button onclick="window.location.href='amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false'">点我安装Modded AS</button>
+            </div>
+            <p>此方式报错？尝试方式二</p>
+        </div>
+        <div class="card">
+            <h3>虚拟环境玩家（尤其是大蛇OurPlay）</h3>
+            <p>由于OurPlay等虚拟环境，你手机里面的浏览器是跳转不到在虚拟环境里面的Among Us的</p>
+            <p>以OurPlay为例，这个时候就需要你把浏览器手动导入到Ourplay里面</p>
+            <p>亲测Via浏览器可以导入Ourplay，安装包只有几mb。先在实体机上安装，导入进去启动即可</p>
+            <p>在OurPlay里面先启动Among Us切到后台，然后拿OurPlay启动浏览器（通常会闪退几次，多试试）</p>
+            <p>打开私服安装网页，上面的按钮一个个点，点一次跳转到Among Us就是成功了</p>
+        </div>
+        <div class="card">
+            <h3>尤其强调大蛇OurPlay的问题</h3>
+            <p>大蛇Ourplay不管你加速模式选的什么都会强制挂个加速节点，严重破坏连接到私服的体验</p>
+            <p>上国内AS_CN私服优先试试台湾和香港节点，通常会100ms++，运气好过千</p>
+            <p>NA_US直接挂美国节点即可，通常是220ms左右</p>
+            <p>尤其不要选择“不加速”，不加速会导致给你分配一个特别垃圾的新西兰IP，包恶心死你</p>
+        </div>
+    </section>
+
+    <section id="announcements">
+        <h2><strong>主机玩家</strong></h2>
+        <div class="instruction">
+            <p>非常遗憾，业界目前没有为主机玩家安装私服的成熟方案。</p>
+            <p>如果你愿意钻研，可以试试用文件修改器手动修改Among Us的regioninfo.json文件</p>
+        </div>
+    </section>
+
+    <section id="community">
+        <h2>联系方式与支持我们</h2>
+        <div class="community-link">
+            <p>TOHE Discord Server: <a href="https://discord.gg/tohe" target="_blank">https://discord.gg/tohe</a></p>
+        </div>
+        <div class="community-link">
+            <p>常见问题: <a href="https://au.niko233.me/trouble_cn.html"
+                    target="_blank">https://au.niko233.me/trouble_cn.html</a></p>
+        </div>
+        <div class="community-link">
+            <p>到Ko-fi捐助Niko: <a href="https://ko-fi.com/nikocat233" target="_blank">https://ko-fi.com/nikocat233</a></p>
+        </div>
+        <div class="community-link">
+            <p>到Ko-fi捐助Pietro: <a href="https://ko-fi.com/pietro420" target="_blank">https://ko-fi.com/pietro420</a></p>
+        </div>
+        <div class="community-link">
+            <p>我们的QQ群聊: <span class="copy-text" data-copy="975714136">975714136</span> <a
+                    href="https://aucn.niko233.me/qq" target="_blank">https://aucn.niko233.me/qq</a></p>
+        </div>
+    </section>
+
+    <section id="donations">
+        <h2>Sponsors | 捐助者</h2>
+        <p>Thank you for your donation! I'm bond to make my custom region more stable and useful!</p>
+        <p>感谢你们的捐赠！ 你们的支持能让这个私服走的更远！</p>
+        <ul><strong>
+                <li>SpicyPoops - 50 USD</li>
+                <li>瑞 - 5 USD</li>
+                <li>Sarhadactyl - 10 USD - Join MAUL now! <a href="https://discord.gg/maul"
+                        target="_blank">https://discord.gg/maul</a></li>
+                <li>kk - 14 CNY</li>
+                <li>月饼 - 1 CNY</li>
+                <li>风另 - 1 CNY</li>
+                <li>全员天选之子 - 10 CNY - 每日首刀+50xp</li>
+                <li>Yourfather - 0.01 CNY - 好活当赏</li>
+                <li>Slok7565 - 50 CNY - 都去玩TONX !!!</li>
+                <li>川 - 10 CNY</li>
+            </strong></ul>
+    </section>
+
+    <footer>
+        <p>Hosted by NikoCat233</p>
+    </footer>
+</body>
+
+</html>
