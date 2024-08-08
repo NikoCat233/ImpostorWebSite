@@ -5,6 +5,7 @@ body {
     background: url('https://www.niko233.me/wp-content/uploads/2024/02/cg_red.png') repeat;
     background-size: cover;
     background-attachment: fixed;
+    padding-bottom: 75px;
 }
 
 header {
@@ -114,8 +115,28 @@ button:hover {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     padding: 10px 0;
     background-color: rgba(51, 51, 51, 0.8);
     color: white;
+}
+
+footer p {
+    display: inline-block;
+    margin: 0;
+}
+
+footer a img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.5em;
+    /* Adjusts the image height to match the text height */
+}
+
+.break {
+    display: block;
+    margin-top: 5px;
 }
