@@ -162,3 +162,43 @@ footer a img {
 .full-width-button:hover {
     background-color: #45a049;
 }
+
+.donate-button {
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.qr-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-content {
+    background: #ffffffa5;
+    padding: 20px;
+    text-align: center;
+    max-width: 35%;
+    width: 100%;
+}
+
+.qr-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.qr-content p {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #000000;
+    font-weight: bold;
+}

@@ -15,3 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document
+  .getElementById("wechat-donate-btn")
+  .addEventListener("click", function () {
+    document.getElementById("wechat-qr-overlay").style.display = "flex";
+  });
+
+document
+  .getElementById("wechat-donate-btn-2")
+  .addEventListener("click", function () {
+    document.getElementById("wechat-qr-overlay").style.display = "flex";
+  });
+
+document
+  .getElementById("wechat-qr-overlay")
+  .addEventListener("click", function () {
+    document.getElementById("wechat-qr-overlay").style.display = "none";
+  });
