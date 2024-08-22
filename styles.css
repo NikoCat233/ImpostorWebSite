@@ -46,10 +46,14 @@ h2 {
 
 .card a p span {
     word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
     white-space: normal;
     display: inline-block;
     width: 100%;
+    overflow: hidden;
 }
+
 
 .button-container {
     display: flex;
