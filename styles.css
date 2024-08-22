@@ -44,7 +44,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-.card a p {
+.card a p span {
     word-wrap: break-word;
     white-space: normal;
     display: inline-block;
