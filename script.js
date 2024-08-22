@@ -14,22 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
   });
+
+  const wechatDonateButtons = document.querySelectorAll(
+    "#wechat-donate-btn, #wechat-donate-btn-2"
+  );
+
+  wechatDonateButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      document.getElementById("wechat-qr-overlay").style.display = "flex";
+    });
+  });
+
+  document
+    .getElementById("wechat-qr-overlay")
+    .addEventListener("click", function () {
+      document.getElementById("wechat-qr-overlay").style.display = "none";
+    });
 });
-
-document
-  .getElementById("wechat-donate-btn")
-  .addEventListener("click", function () {
-    document.getElementById("wechat-qr-overlay").style.display = "flex";
-  });
-
-document
-  .getElementById("wechat-donate-btn-2")
-  .addEventListener("click", function () {
-    document.getElementById("wechat-qr-overlay").style.display = "flex";
-  });
-
-document
-  .getElementById("wechat-qr-overlay")
-  .addEventListener("click", function () {
-    document.getElementById("wechat-qr-overlay").style.display = "none";
-  });
