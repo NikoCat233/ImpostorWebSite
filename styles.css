@@ -44,13 +44,12 @@ h2 {
     margin-bottom: 10px;
 }
 
-.card a {
+.card a p {
     word-wrap: break-word;
     white-space: normal;
     display: inline-block;
     width: 100%;
 }
-
 
 .button-container {
     display: flex;
