@@ -32,20 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const regions = [
-      { name: "na", url: "https://au-us.niko233.me/api/counts" },
-      { name: "eu", url: "https://au-eu.niko233.me/api/counts" },
-      { name: "as", url: "https://au-as.niko233.me/api/counts" }
+    { name: "na", url: "https://au-us.niko233.me/api/counts" },
+    { name: "eu", url: "https://au-eu.niko233.me/api/counts" },
+    { name: "as", url: "https://au-as.niko233.me/api/counts" }
   ];
 
   regions.forEach(region => {
-      fetch(region.url)
-          .then(response => response.json())
-          .then(data => {
-              document.getElementById(`${region.name}-games`).textContent = data.games;
-              document.getElementById(`${region.name}-players`).textContent = data.players;
-          })
-          .catch(error => console.error('Error fetching data:', error));
+    fetch(region.url, { mode: 'no-cors' })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById(`${region.name}-games`).textContent = data.games;
+        document.getElementById(`${region.name}-players`).textContent = data.players;
+      })
+      .catch(error => console.error('Error fetching data:', error));
   });
 });
