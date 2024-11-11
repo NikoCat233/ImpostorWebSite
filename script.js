@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   regions.forEach(region => {
-    fetch(region.url, { mode: 'no-cors' })
+    fetch(region.url)
       .then(response => response.json())
       .then(data => {
         document.getElementById(`${region.name}-games`).textContent = data.games;
