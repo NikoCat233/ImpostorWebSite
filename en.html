@@ -10,6 +10,9 @@
     <script src="script.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4862413860751917"
         crossorigin="anonymous"></script>
+    <meta name="description"
+        content="This page helps english players install Niko's and other Modded regions on their devices, supporting PC, Android and IOS.">
+    <meta name="description" content="此页面帮助英语玩家安装Niko私服和其他私服，支持电脑、手机操作" lang="zh">
 </head>
 
 <body>
@@ -20,6 +23,7 @@
 
     <section id="install-instructions">
         <h2>Install Instructions - 安装指南</h2>
+        <button class="full-width-button" onclick="location.href='./index.html'">Home Page | 首页</button>
         <div class="instruction">
             <p>This page helps you to Install NikoCat233 's Custom Region to your Among Us game.</p>
             <p>中国玩家请访问这个链接查看安装教程: <a href="./cn.html" target="_blank">https://au.niko233.me/cn.html</a></p>
@@ -36,6 +40,10 @@
             <h3>Method 1 : Download the install script and run it</h3>
             <p>Very Simple! Just download the bat file below and click it, then reboot your game. You should be able to
                 see the custom regions</p>
+            <b>
+                <p>If you are Microsoft PC players, please refer to Extra - Microsoft install. This script won't work
+                    for Microsoft PC versions.</p>
+            </b>
             <p> <a href="https://au.niko233.me/Setup_Custom_Server.bat"
                     target="_blank">https://au.niko233.me/Setup_Custom_Server.bat</a></p>
             <strong>
@@ -54,8 +62,10 @@
             <p><span class="copy-text"
                     data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us">%userprofile%\AppData\LocalLow\Innersloth\Among
                     Us</span></p>
+            <img src="./win-run.png" alt="What to do in Win-Run">
             <p>Input it and click "Run". It will open your AmongUs Data folder, copy the regioninfo.json you just
                 downloaded to replace the existing old one.</p>
+            <img src="./replace.png" alt="Replace regionInfo.json">
             <p>Finally, reboot your game and you should see the custom regions.</p>
         </div>
         <div class="card">
@@ -74,6 +84,29 @@
                     data-copy="22423">22423</span></p>
             <p>354EU : <span class="copy-text" data-copy="354eu.niko233.me">354eu.niko233.me</span>:<span
                     class="copy-text" data-copy="22423">22423</span></p>
+        </div>
+        <div class="card">
+            <h3>Extra: Microsoft Version Manual Install</h3>
+            <p>First you need to get regionInfo.json from Method 2.</p>
+            <p>After getting it, copy the link below and enter it in your cmd line. This will open the folder that
+                microsoft version stores data.</p>
+            <p><span class="copy-text"
+                    data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs">%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span>
+            </p>
+            <p>Microsoft version encrypt the game data so the folder storing your gamedata looks very weired. The folder
+                with a very long nubmer name is what you need to open next, like this:</p>
+            <img src="./microsoft-data-folder.png" alt="Microsoft User Data Folder">
+            <p>Open this folder, and there should be some files naming after long numbers. Right click and choose "Open
+                with NotePad" one by one.</p>
+            <img src="./microsoft-data-folder-2.png" alt="Open the files With NotePad">
+            <p>There will be a file that looks like json, that is the regioninfo file we need to edit.</p>
+            <img src="./microsoft-data-folder-3.png" alt="Region Info to modify">
+            <p>Copy the text from regioninfo.json you downloaded previously, and paste into that file. Then save and
+                restart your Among Us</p>
+            <img src="./microsoft-data-folder-4.png" alt="Copy-paste region info">
+            <p>You should now see modded regions in your Microsoft version game.</p>
+            <p>If you have multiple accounts on your PC, there will be multiple long-number named folders, just edit all
+                of them.</p>
         </div>
         <div class="card">
             <h3>Extra method: Mini.RegionInstall Mod</h3>
@@ -101,22 +134,13 @@
             <div class="button-container">
                 <button
                     onclick="window.location.href='amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.me&usedtls=false'">Click
-                    for Niko AS 1</button>
-                <button
-                    onclick="window.location.href='amongus://init?servername=Niko233(AS2)&serverport=443&serverip=https%3A%2F%2Fau-as2.niko233.me&usedtls=false'">Click
-                    for Niko AS 2</button>
+                    for Niko AS</button>
                 <button
                     onclick="window.location.href='amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false'">Click
-                    for Niko NA 1</button>
-                <button
-                    onclick="window.location.href='amongus://init?servername=Niko233(NA2)&serverport=443&serverip=https%3A%2F%2Fau-us2.niko233.me&usedtls=false'">Click
-                    for Niko NA 2</button>
+                    for Niko NA</button>
                 <button
                     onclick="window.location.href='amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.me&usedtls=false'">Click
-                    for Niko EU 1</button>
-                <button
-                    onclick="window.location.href='amongus://init?servername=Niko233(EU2)&serverport=443&serverip=https%3A%2F%2Fau-eu2.niko233.me&usedtls=false'">Click
-                    for Niko EU 2</button>
+                    for Niko EU</button>
                 <button
                     onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false'">Click
                     for Modded NA</button>

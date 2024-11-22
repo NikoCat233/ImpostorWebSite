@@ -10,6 +10,9 @@
     <script src="script.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4862413860751917"
         crossorigin="anonymous"></script>
+    <meta name="description"
+        content="This page helps Chinese players install Niko's and other Modded regions on their devices, supporting PC, Android and IOS.">
+    <meta name="description" content="此页面帮助中国玩家安装Niko私服和其他私服，支持电脑、手机操作" lang="zh">
 </head>
 
 <body>
@@ -22,6 +25,7 @@
         <h2>Install Instructions - 安装指南</h2>
         <div class="instruction">
             <p>此页面协助你安装NikoCat233的Impostor私服</p>
+            <button class="full-width-button" onclick="location.href='./index.html'">Home Page | 首页</button>
             <p>Global players please visit this link for install instructions: <a href="./en.html"
                     target="_blank">https://au.niko233.me/en.html</a></p>
             <button class="full-width-button" onclick="location.href='./en.html'">Click me for
@@ -54,7 +58,9 @@
             <p><span class="copy-text"
                     data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us">%userprofile%\AppData\LocalLow\Innersloth\Among
                     Us</span></p>
+            <img src="./win-run.png" alt="What to do in Win-Run">
             <p>点击确定，会跳转到Among Us的数据文件夹，将你下载的regioninfo.json复制进去并替换</p>
+            <img src="./replace.png" alt="Replace regionInfo.json">
             <p>最后重启游戏即可</p>
         </div>
         <div class="card">
@@ -72,6 +78,24 @@
                     data-copy="22423">22423</span></p>
             <p>欧洲德国 : <span class="copy-text" data-copy="354eu.niko233.me">354eu.niko233.me</span>:<span
                     class="copy-text" data-copy="22423">22423</span></p>
+        </div>
+        <div class="card">
+            <h3>扩展: 微软商店版AU安装私服</h3>
+            <p>首先需要从方法2中下载regionInfo.json</p>
+            <p>下载完成后，点击复制下面的文本，粘贴到运行里面，它会打开微软版本的数据文件夹</p>
+            <p><span class="copy-text"
+                    data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs">%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span>
+            </p>
+            <p>由于微软版本对游戏存档进行了加密，所有的文件和目录都是长串的数字，你需要按图找到以下的目录:</p>
+            <img src="./microsoft-data-folder.png" alt="Microsoft User Data Folder">
+            <p>打开图中所示目录，里面会有几个长数字名的小文件，依次右键-用记事本打开</p>
+            <img src="./microsoft-data-folder-2.png" alt="Open the files With NotePad">
+            <p>直到你找到图中所示的regionInfo文件，这就是你将要修改的</p>
+            <img src="./microsoft-data-folder-3.png" alt="Region Info to modify">
+            <p>将你之前下载到的regionInfo.json中的内容复制到微软的文件中，然后重启你的游戏。</p>
+            <img src="./microsoft-data-folder-4.png" alt="Copy-paste region info">
+            <p>现在你就能在微软商店版本中看到私服了</p>
+            <p>如果你的Windows上有多个用户账户，那么就会有多个这样的长数字文件夹，每个都改一遍就行了。</p>
         </div>
         <div class="card">
             <h3>扩展方式：Mini.RegionInstall法</h3>
@@ -95,22 +119,13 @@
             <div class="button-container">
                 <button
                     onclick="window.location.href='amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.me&usedtls=false'">点我安装Niko
-                    AS 1</button>
-                <button
-                    onclick="window.location.href='amongus://init?servername=Niko233(AS2)&serverport=443&serverip=https%3A%2F%2Fau-as2.niko233.me&usedtls=false'">点我安装Niko
-                    AS 2</button>
+                    AS</button>
                 <button
                     onclick="window.location.href='amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false'">点我安装Niko
-                    NA 1</button>
-                <button
-                    onclick="window.location.href='amongus://init?servername=Niko233(NA2)&serverport=443&serverip=https%3A%2F%2Fau-us2.niko233.me&usedtls=false'">点我安装Niko
-                    NA 2</button>
+                    NA</button>
                 <button
                     onclick="window.location.href='amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.me&usedtls=false'">点我安装Niko
-                    EU 1</button>
-                <button
-                    onclick="window.location.href='amongus://init?servername=Niko233(EU2)&serverport=443&serverip=https%3A%2F%2Fau-eu2.niko233.me&usedtls=false'">点我安装Niko
-                    EU 2</button>
+                    EU</button>
                 <button
                     onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false'">点我安装Modded
                     NA</button>
