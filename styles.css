@@ -226,29 +226,26 @@ footer a img {
 
 #online-players {
     padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: rgba(213, 206, 206, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .player-stats {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     justify-content: space-around;
+    text-align: center;
 }
 
 .region {
-    flex: 1 1 calc(50% - 20px);
-    max-width: calc(50% - 20px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 10px;
     padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-}
-
-@media (min-width: 768px) {
-    .region {
-        flex: 1 1 calc(25% - 20px);
-        max-width: calc(25% - 20px);
-    }
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: rgba(213, 206, 206, 0.9);
 }
 
 .region h3 {
