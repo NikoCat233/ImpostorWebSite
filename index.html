@@ -12,194 +12,310 @@
     <meta name="keywords"
         content="NikoCat233, Custom Region, Among Us, Among Us Custom Server, Among Us server, install instructions, community, donations">
     <meta name="baidu-site-verification" content="codeva-xydPumf8wF" />
-    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap 5 CDN -->
+    <link href="./bootstrap.min.css" rel="stylesheet">
+    <script src="./bootstrap.bundle.min.js"></script>
     <script src="script.js" defer></script>
+    <style>
+        .qr-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-content {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .copy-text {
+            cursor: pointer;
+            color: #0d6efd;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <h1>NikoCat233's Impostor Server | Among Us Custom Regions / Servers</h1>
-        <p>Thank you for using my Impostor server! | 感谢您使用我的 Impostor 私服！</p>
-    </header>
-
-    <section id="online-players">
-        <h2>在线人数 | Online Players</h2>
-        <div class="player-stats">
-            <div class="region">
-                <h3>NA</h3>
-                <p>games: <span id="na-games">0</span></p>
-                <p>players: <span id="na-players">0</span></p>
+<body style="background: url('./background.jpg') repeat; background-size: cover; background-attachment: fixed;">
+    <div class="container py-4">
+        <div class="container py-4">
+            <!-- 顶部标题和语言切换按钮卡片 -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h1 class="text-center mb-3">NikoCat233's Impostor Server <span class="fs-5">| Among Us Custom
+                            Regions / Servers</span></h1>
+                    <p class="text-center" id="header-desc-en">Thank you for using my Impostor server!</p>
+                    <p class="text-center d-none" id="header-desc-zh">感谢您使用我的 Impostor 私服！</p>
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="btn-group" role="group" aria-label="Language Switch">
+                            <button id="lang-en-btn" type="button" class="btn btn-primary btn-sm">English</button>
+                            <button id="lang-zh-btn" type="button" class="btn btn-outline-primary btn-sm">中文</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="region">
-                <h3>AS</h3>
-                <p>games: <span id="as-games">0</span></p>
-                <p>players: <span id="as-players">0</span></p>
+
+            <!-- 在线人数 -->
+            <section class="mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">在线人数 | Online Players</h2>
+                        <div class="row text-center">
+                            <div class="col-6 col-md-3 mb-2">
+                                <div class="border rounded-3 p-2 h-100">
+                                    <h5>NA</h5>
+                                    <p>games: <span id="na-games">0</span></p>
+                                    <p>players: <span id="na-players">0</span></p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-2">
+                                <div class="border rounded-3 p-2 h-100">
+                                    <h5>AS</h5>
+                                    <p>games: <span id="as-games">0</span></p>
+                                    <p>players: <span id="as-players">0</span></p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-2">
+                                <div class="border rounded-3 p-2 h-100">
+                                    <h5>EU</h5>
+                                    <p>games: <span id="eu-games">0</span></p>
+                                    <p>players: <span id="eu-players">0</span></p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-2">
+                                <div class="border rounded-3 p-2 h-100">
+                                    <h5>CN</h5>
+                                    <p>games: <span id="cn-games">0</span></p>
+                                    <p>players: <span id="cn-players">0</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 安装指南卡片 -->
+            <section class="mb-4">
+                <div class="card mb-3 lang-en">
+                    <div class="card-body">
+                        <h3 class="card-title">Install Instructions</h3>
+                        <p>Global players please visit this link for install instructions: <a href="./en.html"
+                                target="_blank">https://au.niko233.me/en.html</a></p>
+                        <button class="btn btn-success w-100 mb-2" onclick="location.href='./en.html'">Click me for EN
+                            Install Guide</button>
+                    </div>
+                </div>
+                <div class="card mb-3 lang-zh d-none">
+                    <div class="card-body">
+                        <h3 class="card-title">安装指南</h3>
+                        <p>中国玩家请访问这个链接获取安装指南: <a href="./cn.html" target="_blank">https://au.niko233.me/cn.html</a></p>
+                        <button class="btn btn-success w-100 mb-2"
+                            onclick="location.href='./cn.html'">点我看中文安装指南</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 分享卡片 -->
+            <section class="mb-4">
+                <div class="card mb-3 lang-en">
+                    <div class="card-body">
+                        <h3 class="card-title">Feel Free to Share</h3>
+                        <p>This region is open for public. We appreciate you playing here and it would be better if you
+                            share our server to others.</p>
+                        <strong>
+                            <p>Use the link below to share the server!</p>
+                        </strong>
+                        <p><span class="copy-text" data-copy="https://au.niko233.me">https://au.niko233.me</span></p>
+                    </div>
+                </div>
+                <div class="card mb-3 lang-zh d-none">
+                    <div class="card-body">
+                        <h3 class="card-title">欢迎分享传播此服务器</h3>
+                        <p>我们的私服是公有服务，感谢您选择我们！我们也希望您能向您的朋友或其他人分享此服务器。</p>
+                        <strong>
+                            <p>用下面的链接来分享我们的私服！</p>
+                        </strong>
+                        <p><span class="copy-text" data-copy="https://au.niko233.me">https://au.niko233.me</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 优势卡片 -->
+            <section class="mb-4">
+                <div class="card mb-3 lang-en">
+                    <div class="card-body">
+                        <h3 class="card-title">Our outstanding features</h3>
+                        <ul>
+                            <li>Our region will auth and assign friendcodes to players</li>
+                            <li>We implemented fixes server side, which probably eases the modded protocol issues after
+                                6.18 release</li>
+                            <li>Our region has server side silent AntiCheat & Anti Guest Account</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-3 lang-zh d-none">
+                    <div class="card-body">
+                        <h3 class="card-title">我们的优势</h3>
+                        <ul>
+                            <li>我们的服务器会对玩家进行验证并分配好友代码</li>
+                            <li>我们在服务端植入了修复，极大缓解了6.18更新之后的模组入房黑屏掉线问题。</li>
+                            <li>我们的服务器有静默的反作弊，反游客账号支持</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 隐私政策 -->
+            <section class="mb-4">
+                <div class="card mb-3 lang-en">
+                    <div class="card-body">
+                        <h3 class="card-title">Privacy Policy</h3>
+                        <p>You can find our privacy policy here: <a href="./policy.html"
+                                target="_blank">https://au.niko233.me/policy.html</a></p>
+                        <p>By playing on this server, you are deemed to have read and fully understood the above policy
+                            and agree to our reasonable collection of your personal data.</p>
+                    </div>
+                </div>
+                <div class="card mb-3 lang-zh d-none">
+                    <div class="card-body">
+                        <h3 class="card-title">隐私政策</h3>
+                        <p>你可以在这里查阅我们的隐私政策: <a href="./policy.html"
+                                target="_blank">https://au.niko233.me/policy.html</a></p>
+                        <p>通过在本私服游玩，默认您已阅读并完全理解上述政策，同意我们在合理范围内收集您的个人数据。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 公告 -->
+            <section class="mb-4">
+                <div class="card mb-3 lang-en">
+                    <div class="card-body">
+                        <h3 class="card-title">Announcements</h3>
+                        <ul>
+                            <li>Servers for older Among Us has been shut down.</li>
+                            <li>Niko233(CN) switched to Aliyun to provide a better gaming experience.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-3 lang-zh d-none">
+                    <div class="card-body">
+                        <h3 class="card-title">公告</h3>
+                        <ul>
+                            <li>我们停止了对354等老版本的支持。</li>
+                            <li>中国私服已切换到阿里云</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系方式与支持 -->
+            <section class="mb-4">
+                <div class="card mb-3 lang-en">
+                    <div class="card-body">
+                        <h3 class="card-title">Contact & Support</h3>
+                        <ul>
+                            <li>TOHE Discord Server: <a href="https://discord.gg/tohe"
+                                    target="_blank">https://discord.gg/tohe</a></li>
+                            <li>You can find <strong>NikoCat233</strong> & DM me there!</li>
+                            <li>FAQ / TroubleShooting: <a href="https://au.niko233.me/trouble_en.html"
+                                    target="_blank">https://au.niko233.me/trouble_en.html</a></li>
+                            <li>Support me on Ko-fi: <a href="https://ko-fi.com/nikocat233"
+                                    target="_blank">https://ko-fi.com/nikocat233</a></li>
+                            <li>Support Pietro on Ko-fi: <a href="https://ko-fi.com/pietro420"
+                                    target="_blank">https://ko-fi.com/pietro420</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-3 lang-zh d-none">
+                    <div class="card-body">
+                        <h3 class="card-title">联系方式与支持我们</h3>
+                        <button id="wechat-donate-btn" class="btn btn-warning w-100 mb-2">微信赞赏码捐助<br>WeChat Pay
+                            Donation</button>
+                        <ul>
+                            <li>TOHE Discord Server: <a href="https://discord.gg/tohe"
+                                    target="_blank">https://discord.gg/tohe</a></li>
+                            <li>你能在那里找到并且DM<strong>NikoCat233</strong>!</li>
+                            <li>常见问题: <a href="https://au.niko233.me/trouble_cn.html"
+                                    target="_blank">https://au.niko233.me/trouble_cn.html</a></li>
+                            <li>到Ko-fi捐助Niko: <a href="https://ko-fi.com/nikocat233"
+                                    target="_blank">https://ko-fi.com/nikocat233</a></li>
+                            <li>到Ko-fi捐助Pietro: <a href="https://ko-fi.com/pietro420"
+                                    target="_blank">https://ko-fi.com/pietro420</a></li>
+                            <li>我们的QQ群聊: <span class="copy-text" data-copy="975714136">975714136</span> <a
+                                    href="https://au-cn.niko233.me/qq" target="_blank">https://au-cn.niko233.me/qq</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 捐助者 -->
+            <section class="mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Sponsors | 捐助者</h3>
+                        <p class="lang-en">Thank you for your donation! I'm bond to make my custom region more stable
+                            and useful!</p>
+                        <p class="lang-zh d-none">感谢你们的捐赠！ 你们的支持能让这个私服走的更远！</p>
+                        <ul>
+                            <li>SpicyPoops - 50 USD</li>
+                            <li>瑞 - 5 USD</li>
+                            <li>Sarhadactyl - 40 USD - Join MAUL now! <a href="https://discord.gg/maul"
+                                    target="_blank">https://discord.gg/maul</a></li>
+                            <li>kk - 14 CNY</li>
+                            <li>月饼 - 1 CNY</li>
+                            <li>风叧 - 1 CNY - 跟我念：fenggua</li>
+                            <li>全员天选之子 - 10 CNY - 每日首刀+50xp</li>
+                            <li>Yourfather - 0.01 CNY - 好活当赏</li>
+                            <li>Slok7565 - 50 CNY - 都去玩TONEX !!!</li>
+                            <li>川 - 10 CNY</li>
+                            <li>黄雾 - 10 CNY</li>
+                            <li>。 - 5 CNY</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 微信二维码弹窗 -->
+        <div id="wechat-qr-overlay" class="qr-overlay">
+            <div class="qr-content">
+                <img src="./wechat.png" alt="WeChat Pay QR Code" style="max-width: 300px;">
+                <p>点击屏幕关闭 | Click to close</p>
             </div>
-            <div class="region">
-                <h3>EU</h3>
-                <p>games: <span id="eu-games">0</span></p>
-                <p>players: <span id="eu-players">0</span></p>
-            </div>
-            <div class="region">
-                <h3>CN</h3>
-                <p>games: <span id="cn-games">0</span></p>
-                <p>players: <span id="cn-players">0</span></p>
-            </div>
-        </div>
-    </section>
-
-    <section id="install-instructions">
-        <h2>Install Instructions - 安装指南</h2>
-        <div class="instruction">
-            <p>Global players please visit this link for install instructions: <a href="./en.html"
-                    target="_blank">https://au.niko233.me/en.html</a></p>
-            <button class="full-width-button" onclick="location.href='./en.html'">Click me for
-                EN Install Guide</button>
-        </div>
-        <div class="instruction">
-            <p>中国玩家请访问这个链接获取安装指南: <a href="./cn.html" target="_blank">https://au.niko233.me/en.html</a></p>
-            <button class="full-width-button" onclick="location.href='./cn.html'">点我看中文安装指南</button>
         </div>
 
-        <div class="card">
-            <h3>Feel Free to Share | 欢迎分享传播此服务器</h3>
-            <p>This region is open for public. We appreciate you playing here and it would be better if you share our
-                server
-                to
-                others.</p>
-            <p>我们的私服是公有服务，感谢您选择我们！我们也希望您能向您的朋友或其他人分享此服务器。</p>
-            <strong>
-                <p>Use the link below to share the server! | 用下面的链接来分享我们的私服！</p>
-            </strong>
-            <p><span class="copy-text" data-copy="https://au.niko233.me">https://au.niko233.me</span></p>
+        <div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99">
+            <a href="https://myssl.com/au.niko233.me?from=mysslid"><img
+                    src="https://static.myssl.com/res/images/myssl-id.png" alt="" style="width:100%;height:100%"></a>
         </div>
-        <div class="card">
-            <h3>Our outstanding features | 我们的优势</h3>
-            <strong>
-                <p>Our region will auth and assign friendcodes to players</p>
-                <p>我们的服务器会对玩家进行验证并分配好友代码</p>
-                <p>We implemented fixes server side, which probably eases the modded protocol issues after 6.18 release
-                </p>
-                <p>我们在服务端植入了修复，极大缓解了6.18更新之后的模组入房黑屏掉线问题。
-                <p>Our region has server side silent AntiCheat & Anti Guest Account</p>
-                <p>我们的服务器有静默的反作弊，反游客账号支持</p>
-            </strong>
-        </div>
-    </section>
-
-    <section id="privacy-policy">
-        <h2>Privacy Policy | 隐私政策</h2>
-        <div class="card">
-            <p>You can find our privacy policy here: <a href="./policy.html"
-                    target="_blank">https://au.niko233.me/policy.html</a></p>
-            <p>By playing on this server, you are deemed to have read and fully understood the above policy and agree to
-                our reasonable collection of your personal data.</p>
-            <p>你可以在这里查阅我们的隐私政策: <a href="./policy.html" target="_blank">https://au.niko233.me/policy.html</a></p>
-            <p>通过在本私服游玩，默认您已阅读并完全理解上述政策，同意我们在合理范围内收集您的个人数据。</p>
-        </div>
-    </section>
-
-    <section id="announcements">
-        <h2>Announcements | 公告</h2>
-        <div class="card">
-            <h3>Notice</h3>
-            <strong>
-                <p>Servers for older Among Us has been shut down.</p>
-                <p>我们停止了对354等老版本的支持。</p>
-            </strong>
-        </div>
-        <div class="card">
-            <h3>Notice</h3>
-            <strong>
-                <p>Niko233(CN) switched to Aliyun to provide a better gaming experience.</p>
-                <p>中国私服已切换到阿里云</p>
-            </strong>
-        </div>
-    </section>
-
-    <section id="community">
-        <h2>Contact & Support</h2>
-        <div class="community-link">
-            <p>TOHE Discord Server: <a href="https://discord.gg/tohe" target="_blank">https://discord.gg/tohe</a></p>
-            <p>You can find <strong>NikoCat233</strong> & DM me there!</p>
-        </div>
-        <div class="community-link">
-            <p>FAQ / TroubleShooting: <a href="https://au.niko233.me/trouble_en.html"
-                    target="_blank">https://au.niko233.me/trouble_en.html</a></p>
-        </div>
-        <div class="community-link">
-            <p>Support me on Ko-fi: <a href="https://ko-fi.com/nikocat233"
-                    target="_blank">https://ko-fi.com/nikocat233</a></p>
-        </div>
-        <div class="community-link">
-            <p>Support Pietro on Ko-fi: <a href="https://ko-fi.com/pietro420"
-                    target="_blank">https://ko-fi.com/pietro420</a></p>
-        </div>
-    </section>
-
-    <section id="community">
-        <h2>联系方式与支持我们</h2>
-        <div class="community-link">
-            <button id="wechat-donate-btn" class="full-width-button">微信赞赏码捐助<br>WeChat Pay Donation</button>
-        </div>
-        <div class="community-link">
-            <p>TOHE Discord Server: <a href="https://discord.gg/tohe" target="_blank">https://discord.gg/tohe</a></p>
-            <p>你能在那里找到并且DM<strong>NikoCat233</strong>!</p>
-        </div>
-        <div class="community-link">
-            <p>常见问题: <a href="https://au.niko233.me/trouble_cn.html"
-                    target="_blank">https://au.niko233.me/trouble_cn.html</a></p>
-        </div>
-        <div class="community-link">
-            <p>到Ko-fi捐助Niko: <a href="https://ko-fi.com/nikocat233" target="_blank">https://ko-fi.com/nikocat233</a></p>
-        </div>
-        <div class="community-link">
-            <p>到Ko-fi捐助Pietro: <a href="https://ko-fi.com/pietro420" target="_blank">https://ko-fi.com/pietro420</a></p>
-        </div>
-        <div class="community-link">
-            <p>我们的QQ群聊: <span class="copy-text" data-copy="975714136">975714136</span> <a
-                    href="https://au-cn.niko233.me/qq" target="_blank">https://au-cn.niko233.me/qq</a></p>
-        </div>
-    </section>
-
-    <section id="donations">
-        <h2>Sponsors | 捐助者</h2>
-        <p>Thank you for your donation! I'm bond to make my custom region more stable and useful!</p>
-        <p>感谢你们的捐赠！ 你们的支持能让这个私服走的更远！</p>
-        <ul><strong>
-                <li>SpicyPoops - 50 USD</li>
-                <li>瑞 - 5 USD</li>
-                <li>Sarhadactyl - 40 USD - Join MAUL now! <a href="https://discord.gg/maul"
-                        target="_blank">https://discord.gg/maul</a></li>
-                <li>kk - 14 CNY</li>
-                <li>月饼 - 1 CNY</li>
-                <li>风叧 - 1 CNY - 跟我念：fenggua</li>
-                <li>全员天选之子 - 10 CNY - 每日首刀+50xp</li>
-                <li>Yourfather - 0.01 CNY - 好活当赏</li>
-                <li>Slok7565 - 50 CNY - 都去玩TONEX !!!</li>
-                <li>川 - 10 CNY</li>
-                <li>黄雾 - 10 CNY</li>
-                <li>。 - 5 CNY</li>
-            </strong></ul>
-    </section>
-
-    <div id="wechat-qr-overlay" class="qr-overlay">
-        <div class="qr-content">
-            <img src="./wechat.png" alt="WeChat Pay QR Code">
-            <p>点击屏幕关闭 | Click to close</p>
-        </div>
-    </div>
-
-    <div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99">
-        <a href="https://myssl.com/au.niko233.me?from=mysslid"><img
-                src="https://static.myssl.com/res/images/myssl-id.png" alt="" style="width:100%;height:100%"></a>
-    </div>
-
-    <!--     <footer>
-        <p>Impostor Server Hosted by NikoCat233 <span class="break">我们的私服由 <a
-                    href="https://www.rainyun.com/niko233_?s=au" target="_blank"><img src="rainyun.png"
-                        alt="RainYun" /></a> 提供计算服务！</span></p>
-    </footer> -->
 </body>
+<script>
+    // 语言切换
+    document.addEventListener("DOMContentLoaded", function () {
+        function setLang(lang) {
+            document.querySelectorAll('.lang-en').forEach(e => e.classList.toggle('d-none', lang !== 'en'));
+            document.querySelectorAll('.lang-zh').forEach(e => e.classList.toggle('d-none', lang !== 'zh'));
+            document.getElementById('header-desc-en').classList.toggle('d-none', lang !== 'en');
+            document.getElementById('header-desc-zh').classList.toggle('d-none', lang !== 'zh');
+            document.getElementById('lang-en-btn').classList.toggle('btn-primary', lang === 'en');
+            document.getElementById('lang-en-btn').classList.toggle('btn-outline-primary', lang !== 'en');
+            document.getElementById('lang-zh-btn').classList.toggle('btn-primary', lang === 'zh');
+            document.getElementById('lang-zh-btn').classList.toggle('btn-outline-primary', lang !== 'zh');
+        }
+        document.getElementById('lang-en-btn').onclick = () => setLang('en');
+        document.getElementById('lang-zh-btn').onclick = () => setLang('zh');
+        setLang('en');
+    });
+</script>
 
 </html>
