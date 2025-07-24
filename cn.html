@@ -28,6 +28,64 @@
             margin: 0.25rem 0.25rem 0.25rem 0;
             min-width: 160px;
         }
+
+        /* 弹窗样式 */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            animation: popupFadeIn 0.3s ease-out;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-close:hover {
+            color: #000;
+        }
+
+        @keyframes popupFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 
@@ -41,6 +99,28 @@
                 <div class="d-flex justify-content-center mt-3">
                     <button class="btn btn-outline-primary btn-sm" onclick="location.href='./index.html'">首页 Home
                         Page</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 弹窗 -->
+        <div id="popup-overlay" class="popup-overlay">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup()">&times;</button>
+                <h4 class="text-center mb-3" style="color: #dc3545;">🎮 Chinese Only 仅限中国人</h4>
+                <div class="text-center">
+                    <p><strong>出售本服务同款Impostor私服服务端</strong></p>
+                    <p>✅ 完整的网页管理后端<br>
+                        ✅ 支持动态端口进服和账户认证<br>
+                        ✅ 协助搭建私服<br>
+                        ✅ 支持到跑路并且用到跑路<br>
+                    </p>
+                    <p class="text-primary"><strong>💰 180元/人/3台服务器授权</strong></p>
+                    <p>加群了解详情：<span class="copy-text" data-copy="975714136" style="font-weight: bold;">975714136</span>
+                    </p>
+                    <button class="btn btn-primary"
+                        onclick="window.open('https://au-cn.niko233.me/qq', '_blank')">加入QQ群</button>
+                    <button class="btn btn-secondary ms-2" onclick="closePopup()">关闭</button>
                 </div>
             </div>
         </div>
@@ -319,6 +399,27 @@
             <p>点击屏幕关闭 | Click to close</p>
         </div>
     </div>
+
+    <script>
+        // 关闭弹窗函数
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        // 点击遮罩层关闭弹窗
+        document.getElementById('popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // ESC键关闭弹窗
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
+    </script>
 
     <div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99">
         <a href="https://myssl.com/au.niko233.me?from=mysslid"><img
