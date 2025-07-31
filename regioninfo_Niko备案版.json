@@ -1,0 +1,39 @@
+{
+  "CurrentRegionIdx": 2,
+  "Regions": [
+    {
+      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+      "Name": "Niko233(AS)备案",
+      "PingServer": "auas.xtelh.cn",
+      "Servers": [
+        {
+          "Name": "http-1",
+          "Ip": "https://auas.xtelh.cn",
+          "Port": 443,
+          "UseDtls": false,
+          "Players": 0,
+          "ConnectionFailures": 0
+        }
+      ],
+      "TargetServer": null,
+      "TranslateName": 1003
+    },
+    {
+      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
+      "Name": "Niko233(CN)",
+      "PingServer": "play.simpfun.cn",
+      "Servers": [
+        {
+          "Name": "http-1",
+          "Ip": "https://xy.aufun.cn",
+          "Port": 443,
+          "UseDtls": false,
+          "Players": 0,
+          "ConnectionFailures": 0
+        }
+      ],
+      "TargetServer": null,
+      "TranslateName": 1003
+    }
+  ]
+}
