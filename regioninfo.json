@@ -59,7 +59,7 @@
             "Servers": [
                 {
                     "Name": "http-1",
-                    "Ip": "https://au-cn.niko233.me",
+                    "Ip": "https://xy.aufun.cn",
                     "Port": 443,
                     "UseDtls": false,
                     "Players": 0,
