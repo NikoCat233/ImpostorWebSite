@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: "na", url: "https://au-us.niko233.me/api/counts" },
     { name: "as", url: "https://au-as.niko233.me/api/counts" },
     { name: "eu", url: "https://au-eu.niko233.me/api/counts" },
-    { name: "cn", url: "https://au-cn.niko233.me/api/counts" },
   ];
 
   regions.forEach((region) => {
