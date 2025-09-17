@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /
+Allow: /$
+Allow: /cn$
+Allow: /cn.html$
+Allow: /en$
+Allow: /en.html$
+Allow: /index.html$
