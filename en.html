@@ -1,336 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NikoCat233's Impostor Server</title>
-    <meta name="title" content="NikoCat233's Among Us Custom Server">
-    <meta name="description"
-        content="This page helps English players install Niko's and other Modded regions on their devices, supporting PC, Android and iOS.">
-    <meta name="keywords"
-        content="NikoCat233, Custom Region, Among Us, Among Us Custom Server, Among Us server, install instructions, community, donations">
+    <meta name="title" content="NikoCat233's Among Us Custom Server" />
+    <meta
+      name="description"
+      content="This page helps English players install Niko's and other Modded regions on their devices, supporting PC, Android and iOS."
+    />
+    <meta
+      name="keywords"
+      content="NikoCat233, Custom Region, Among Us, Among Us Custom Server, Among Us server, install instructions, community, donations"
+    />
     <!-- Bootstrap 5 CDN -->
-    <link href="./bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap.min.css" rel="stylesheet" />
     <script src="./bootstrap.bundle.min.js"></script>
     <script src="script.js" defer></script>
     <style>
-        .copy-text {
-            cursor: pointer;
-            color: #0d6efd;
-            text-decoration: underline;
-        }
+      .copy-text {
+        cursor: pointer;
+        color: #0d6efd;
+        text-decoration: underline;
+      }
 
-        .card img {
-            max-width: 100%;
-            height: auto;
-        }
+      .card img {
+        max-width: 100%;
+        height: auto;
+      }
 
-        .button-container button {
-            margin: 0.25rem 0.25rem 0.25rem 0;
-            min-width: 160px;
-        }
+      .button-container button {
+        margin: 0.25rem 0.25rem 0.25rem 0;
+        min-width: 160px;
+      }
     </style>
-</head>
+  </head>
 
-<body style="background: url('./background.jpg') repeat; background-size: cover; background-attachment: fixed;">
+  <body
+    style="
+      background: url('./background.jpg') repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    "
+  >
     <div class="container py-4">
-        <!-- 顶部标题卡片 -->
-        <div class="card mb-4">
-            <div class="card-body">
-                <h1 class="text-center mb-3">NikoCat233's Impostor Server <span class="fs-5">| Among Us Custom Regions /
-                        Servers</span></h1>
-                <p class="text-center">Thank you for using my Impostor server!</p>
-                <div class="d-flex justify-content-center mt-3">
-                    <button class="btn btn-outline-primary btn-sm" onclick="location.href='./index.html'">Home
-                        Page</button>
-                </div>
-            </div>
+      <!-- 顶部标题卡片 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h1 class="text-center mb-3">
+            NikoCat233's Impostor Server
+            <span class="fs-5">| Among Us Custom Regions / Servers</span>
+          </h1>
+          <p class="text-center">Thank you for using my Impostor server!</p>
+          <div class="d-flex justify-content-center mt-3">
+            <button
+              class="btn btn-outline-primary btn-sm"
+              onclick="location.href='./index.html'"
+            >
+              Home Page
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- 安装指南 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Install Instructions</h3>
-                    <p>This page helps you to install NikoCat233's Custom Region to your Among Us game.</p>
-                    <p>中国玩家请访问中文安装指南: <a href="./cn.html"
-                            target="_blank">https://au.niko233.me/cn.html</a></p>
-                    <button class="btn btn-success w-100 mb-2" onclick="location.href='./cn.html'">中文安装指南</button>
+      <!-- 安装指南 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Install Instructions</h3>
+            <p>
+              This page helps you to install NikoCat233's Custom Region to your
+              Among Us game.
+            </p>
+            <p>
+              中国玩家请访问中文安装指南:
+              <a href="./cn.html" target="_blank"
+                >https://au.niko233.me/cn.html</a
+              >
+            </p>
+            <button
+              class="btn btn-success w-100 mb-2"
+              onclick="location.href='./cn.html'"
+            >
+              中文安装指南
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Windows 安装方法 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Windows Desktop Users</h3>
+            <ul>
+              <li>
+                Town of Host Enhanced has already built in Niko233's Custom
+                Region.
+              </li>
+            </ul>
+            <!-- 折叠内容开始 -->
+            <div class="accordion mt-3" id="windowsAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="win-method1-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#win-method1"
+                    aria-expanded="true"
+                    aria-controls="win-method1"
+                  >
+                    Method 1: Download the install script and run it
+                  </button>
+                </h2>
+                <div
+                  id="win-method1"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="win-method1-header"
+                  data-bs-parent="#windowsAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Very Simple! Just download the bat file below and click
+                      it, then reboot your game. You should be able to see the
+                      custom regions.
+                    </p>
+                    <b>
+                      <p>
+                        If you are Microsoft Store PC player, please refer to
+                        Extra - Microsoft install. This script won't work for
+                        Microsoft Store versions.
+                      </p>
+                    </b>
+                    <p>
+                      <a
+                        href="https://au.niko233.me/Setup_Custom_Server.bat"
+                        target="_blank"
+                        >https://au.niko233.me/Setup_Custom_Server.bat</a
+                      >
+                    </p>
+                    <strong>
+                      <p>Not working? Try Method 2</p>
+                    </strong>
+                  </div>
                 </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="win-method2-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#win-method2"
+                    aria-expanded="false"
+                    aria-controls="win-method2"
+                  >
+                    Method 2: Manually install regioninfo.json
+                  </button>
+                </h2>
+                <div
+                  id="win-method2"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="win-method2-header"
+                  data-bs-parent="#windowsAccordion"
+                >
+                  <div class="accordion-body">
+                    <ol>
+                      <li>
+                        Download
+                        <a
+                          href="https://au.niko233.me/regioninfo.json"
+                          download="regionInfo.json"
+                          >regioninfo.json</a
+                        >. If your browser opens it as a page, right click and
+                        "Save As".
+                      </li>
+                      <li>
+                        Press <kbd>Win + R</kbd> or open "Run" in your start
+                        menu. Input the following and press Enter:
+                      </li>
+                      <p>
+                        <span
+                          class="copy-text"
+                          data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us"
+                          >%userprofile%\AppData\LocalLow\Innersloth\Among
+                          Us</span
+                        >
+                      </p>
+                      <img src="./win-run.png" alt="What to do in Win-Run" />
+                      <li>
+                        Copy the downloaded regioninfo.json to this folder,
+                        replacing the old one.
+                      </li>
+                      <img src="./replace.png" alt="Replace regionInfo.json" />
+                      <li>
+                        Reboot your game and you should see the custom regions.
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="win-extra-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#win-extra"
+                    aria-expanded="false"
+                    aria-controls="win-extra"
+                  >
+                    Extra: Microsoft Store Version Manual Install
+                  </button>
+                </h2>
+                <div
+                  id="win-extra"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="win-extra-header"
+                  data-bs-parent="#windowsAccordion"
+                >
+                  <div class="accordion-body">
+                    <ol>
+                      <li>Get regioninfo.json as above.</li>
+                      <li>
+                        Open this folder (copy and paste in Run or Explorer):
+                      </li>
+                      <p>
+                        <span
+                          class="copy-text"
+                          data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs"
+                          >%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span
+                        >
+                      </p>
+                      <li>Find the folder with a long number name, open it.</li>
+                      <img
+                        src="./microsoft-data-folder.png"
+                        alt="Microsoft User Data Folder"
+                      />
+                      <li>
+                        Open each file inside with Notepad. Find the one that
+                        looks like JSON (region info).
+                      </li>
+                      <img
+                        src="./microsoft-data-folder-2.png"
+                        alt="Open the files With NotePad"
+                      />
+                      <li>
+                        Paste the content of regioninfo.json into that file,
+                        save and restart Among Us.
+                      </li>
+                      <img
+                        src="./microsoft-data-folder-3.png"
+                        alt="Region Info to modify"
+                      />
+                      <img
+                        src="./microsoft-data-folder-4.png"
+                        alt="Copy-paste region info"
+                      />
+                      <li>
+                        If you have multiple accounts, repeat for each folder.
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="win-mini-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#win-mini"
+                    aria-expanded="false"
+                    aria-controls="win-mini"
+                  >
+                    Extra method: Mini.RegionInstall Mod
+                  </button>
+                </h2>
+                <div
+                  id="win-mini"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="win-mini-header"
+                  data-bs-parent="#windowsAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      If you have Mini.RegionInstall plugin installed, download
+                      config file here:
+                    </p>
+                    <a
+                      href="https://au.niko233.me/at.duikbo.regioninstall.cfg"
+                      download="at.duikbo.regioninstall.cfg"
+                      >https://au.niko233.me/at.duikbo.regioninstall.cfg</a
+                    >
+                    <p>
+                      Copy it to your BL config folder (<span
+                        class="copy-text"
+                        data-copy="Among Us\BepInEx\config"
+                        >Among Us\BepInEx\config</span
+                      >) and replace the old config there.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+            <!-- 折叠内容结束 -->
+          </div>
+        </div>
+      </section>
 
-        <!-- Windows 安装方法 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Windows Desktop Users</h3>
-                    <ul>
-                        <li>Town of Host Enhanced has already built in Niko233's Custom Region.</li>
-                    </ul>
-                    <!-- 折叠内容开始 -->
-                    <div class="accordion mt-3" id="windowsAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="win-method1-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#win-method1" aria-expanded="true" aria-controls="win-method1">
-                                    Method 1: Download the install script and run it
-                                </button>
-                            </h2>
-                            <div id="win-method1" class="accordion-collapse collapse show"
-                                aria-labelledby="win-method1-header" data-bs-parent="#windowsAccordion">
-                                <div class="accordion-body">
-                                    <p>Very Simple! Just download the bat file below and click it, then reboot your
-                                        game. You should be able to see the custom regions.</p>
-                                    <b>
-                                        <p>If you are Microsoft Store PC player, please refer to Extra - Microsoft
-                                            install. This script won't work for Microsoft Store versions.</p>
-                                    </b>
-                                    <p><a href="https://au.niko233.me/Setup_Custom_Server.bat"
-                                            target="_blank">https://au.niko233.me/Setup_Custom_Server.bat</a></p>
-                                    <strong>
-                                        <p>Not working? Try Method 2</p>
-                                    </strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="win-method2-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#win-method2" aria-expanded="false" aria-controls="win-method2">
-                                    Method 2: Manually install regioninfo.json
-                                </button>
-                            </h2>
-                            <div id="win-method2" class="accordion-collapse collapse"
-                                aria-labelledby="win-method2-header" data-bs-parent="#windowsAccordion">
-                                <div class="accordion-body">
-                                    <ol>
-                                        <li>Download <a href="https://au.niko233.me/regioninfo.json"
-                                                download="regionInfo.json">regioninfo.json</a>. If your browser opens it
-                                            as a page, right click and "Save As".</li>
-                                        <li>Press <kbd>Win + R</kbd> or open "Run" in your start menu. Input the
-                                            following and press Enter:</li>
-                                        <p><span class="copy-text"
-                                                data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us">%userprofile%\AppData\LocalLow\Innersloth\Among
-                                                Us</span></p>
-                                        <img src="./win-run.png" alt="What to do in Win-Run">
-                                        <li>Copy the downloaded regioninfo.json to this folder, replacing the old one.
-                                        </li>
-                                        <img src="./replace.png" alt="Replace regionInfo.json">
-                                        <li>Reboot your game and you should see the custom regions.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="win-extra-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#win-extra" aria-expanded="false" aria-controls="win-extra">
-                                    Extra: Microsoft Store Version Manual Install
-                                </button>
-                            </h2>
-                            <div id="win-extra" class="accordion-collapse collapse" aria-labelledby="win-extra-header"
-                                data-bs-parent="#windowsAccordion">
-                                <div class="accordion-body">
-                                    <ol>
-                                        <li>Get regioninfo.json as above.</li>
-                                        <li>Open this folder (copy and paste in Run or Explorer):</li>
-                                        <p><span class="copy-text"
-                                                data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs">%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span>
-                                        </p>
-                                        <li>Find the folder with a long number name, open it.</li>
-                                        <img src="./microsoft-data-folder.png" alt="Microsoft User Data Folder">
-                                        <li>Open each file inside with Notepad. Find the one that looks like JSON
-                                            (region info).</li>
-                                        <img src="./microsoft-data-folder-2.png" alt="Open the files With NotePad">
-                                        <li>Paste the content of regioninfo.json into that file, save and restart Among
-                                            Us.</li>
-                                        <img src="./microsoft-data-folder-3.png" alt="Region Info to modify">
-                                        <img src="./microsoft-data-folder-4.png" alt="Copy-paste region info">
-                                        <li>If you have multiple accounts, repeat for each folder.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="win-mini-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#win-mini" aria-expanded="false" aria-controls="win-mini">
-                                    Extra method: Mini.RegionInstall Mod
-                                </button>
-                            </h2>
-                            <div id="win-mini" class="accordion-collapse collapse" aria-labelledby="win-mini-header"
-                                data-bs-parent="#windowsAccordion">
-                                <div class="accordion-body">
-                                    <p>If you have Mini.RegionInstall plugin installed, download config file here:</p>
-                                    <a href="https://au.niko233.me/at.duikbo.regioninstall.cfg"
-                                        download="at.duikbo.regioninstall.cfg">https://au.niko233.me/at.duikbo.regioninstall.cfg</a>
-                                    <p>Copy it to your BL config folder (<span class="copy-text"
-                                            data-copy="Among Us\BepInEx\config">Among Us\BepInEx\config</span>) and
-                                        replace the old config there.</p>
-                                </div>
-                            </div>
-                        </div>
+      <!-- 移动端安装方法 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Android / iPhone Players</h3>
+            <ul>
+              <li>
+                If you can normally login to your Among Us account, just do step
+                one.
+              </li>
+              <li>
+                If you are using Gspace or OurPlay, please follow step 2 first.
+              </li>
+            </ul>
+            <!-- 折叠内容开始 -->
+            <div class="accordion mt-3" id="mobileAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="mobile-step1-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobile-step1"
+                    aria-expanded="true"
+                    aria-controls="mobile-step1"
+                  >
+                    Step 1: Click the buttons
+                  </button>
+                </h2>
+                <div
+                  id="mobile-step1"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="mobile-step1-header"
+                  data-bs-parent="#mobileAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Open Among Us and keep it running in background. Then open
+                      your browser and click the following buttons. Each click
+                      will install a region.
+                    </p>
+                    <div class="button-container mb-2">
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.me&usedtls=false'"
+                      >
+                        Niko AS
+                      </button>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false'"
+                      >
+                        Niko NA
+                      </button>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.me&usedtls=false'"
+                      >
+                        Niko EU
+                      </button>
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false'"
+                      >
+                        Modded NA
+                      </button>
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false'"
+                      >
+                        Modded EU
+                      </button>
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false'"
+                      >
+                        Modded AS
+                      </button>
                     </div>
-                    <!-- 折叠内容结束 -->
+                    <p>Keep Among Us running while you click these buttons.</p>
+                    <strong>
+                      <p>
+                        Running Among Us in virtual environment like OurPlay or
+                        Gspace? Check step 2.
+                      </p>
+                    </strong>
+                  </div>
                 </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="mobile-video-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobile-video"
+                    aria-expanded="false"
+                    aria-controls="mobile-video"
+                  >
+                    Video guidance for Mobile Users
+                  </button>
+                </h2>
+                <div
+                  id="mobile-video"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="mobile-video-header"
+                  data-bs-parent="#mobileAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      1 min Video Guidance:
+                      <a href="./mobile_guide.webm" target="_blank"
+                        >https://au.niko233.me/mobile_guide.webm</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="mobile-step2-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobile-step2"
+                    aria-expanded="false"
+                    aria-controls="mobile-step2"
+                  >
+                    Step 2: For Virtual Environment like OurPlay and Gspace
+                  </button>
+                </h2>
+                <div
+                  id="mobile-step2"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="mobile-step2-header"
+                  data-bs-parent="#mobileAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Your browser can't forward requests to Among Us in virtual
+                      environment directly.
+                    </p>
+                    <p>
+                      You need to import your browser into your virtual
+                      environment. "Via Browser" is easy to use and small in
+                      size. Import it into your Gspace / OurPlay.
+                    </p>
+                    <p>
+                      First launch Among Us in Gspace / OurPlay, then run your
+                      browser and open this website page. Click the buttons
+                      above and it should jump to Among Us and install the
+                      region.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+            <!-- 折叠内容结束 -->
+          </div>
+        </div>
+      </section>
 
-        <!-- 移动端安装方法 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Android / iPhone Players</h3>
-                    <ul>
-                        <li>If you can normally login to your Among Us account, just do step one.</li>
-                        <li>If you are using Gspace or OurPlay, please follow step 2 first.</li>
-                    </ul>
-                    <!-- 折叠内容开始 -->
-                    <div class="accordion mt-3" id="mobileAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="mobile-step1-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#mobile-step1" aria-expanded="true" aria-controls="mobile-step1">
-                                    Step 1: Click the buttons
-                                </button>
-                            </h2>
-                            <div id="mobile-step1" class="accordion-collapse collapse show"
-                                aria-labelledby="mobile-step1-header" data-bs-parent="#mobileAccordion">
-                                <div class="accordion-body">
-                                    <p>Open Among Us and keep it running in background. Then open your browser and click
-                                        the following buttons. Each click will install a region.</p>
-                                    <div class="button-container mb-2">
-                                        <button class="btn btn-outline-success btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.me&usedtls=false'">Niko
-                                            AS</button>
-                                        <button class="btn btn-outline-success btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false'">Niko
-                                            NA</button>
-                                        <button class="btn btn-outline-success btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.me&usedtls=false'">Niko
-                                            EU</button>
-                                        <button class="btn btn-outline-secondary btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false'">Modded
-                                            NA</button>
-                                        <button class="btn btn-outline-secondary btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false'">Modded
-                                            EU</button>
-                                        <button class="btn btn-outline-secondary btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false'">Modded
-                                            AS</button>
-                                    </div>
-                                    <p>Keep Among Us running while you click these buttons.</p>
-                                    <strong>
-                                        <p>Running Among Us in virtual environment like OurPlay or Gspace? Check step 2.
-                                        </p>
-                                    </strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="mobile-video-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#mobile-video" aria-expanded="false" aria-controls="mobile-video">
-                                    Video guidance for Mobile Users
-                                </button>
-                            </h2>
-                            <div id="mobile-video" class="accordion-collapse collapse"
-                                aria-labelledby="mobile-video-header" data-bs-parent="#mobileAccordion">
-                                <div class="accordion-body">
-                                    <p>1 min Video Guidance: <a href="./mobile_guide.webm"
-                                            target="_blank">https://au.niko233.me/mobile_guide.webm</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="mobile-step2-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#mobile-step2" aria-expanded="false" aria-controls="mobile-step2">
-                                    Step 2: For Virtual Environment like OurPlay and Gspace
-                                </button>
-                            </h2>
-                            <div id="mobile-step2" class="accordion-collapse collapse"
-                                aria-labelledby="mobile-step2-header" data-bs-parent="#mobileAccordion">
-                                <div class="accordion-body">
-                                    <p>Your browser can't forward requests to Among Us in virtual environment directly.
-                                    </p>
-                                    <p>You need to import your browser into your virtual environment. "Via Browser" is
-                                        easy to use and small in size. Import it into your Gspace / OurPlay.</p>
-                                    <p>First launch Among Us in Gspace / OurPlay, then run your browser and open this
-                                        website page. Click the buttons above and it should jump to Among Us and install
-                                        the region.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 折叠内容结束 -->
-                </div>
-            </div>
-        </section>
+      <!-- 主机端说明 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">PS / XBOX / SWITCH ... Players</h3>
+            <p>
+              Sorry, we don't have easy steps for you to install custom regions
+              on your devices.
+            </p>
+            <p>
+              You can try manually modifying regioninfo.json in your Among Us
+              data.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <!-- 主机端说明 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">PS / XBOX / SWITCH ... Players</h3>
-                    <p>Sorry, we don't have easy steps for you to install custom regions on your devices.</p>
-                    <p>You can try manually modifying regioninfo.json in your Among Us data.</p>
-                </div>
-            </div>
-        </section>
+      <!-- 联系方式与支持 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Contact & Support</h3>
+            <ul>
+              <li>
+                TOHE Discord Server:
+                <a href="https://discord.gg/tohe" target="_blank"
+                  >https://discord.gg/tohe</a
+                >
+              </li>
+              <li>You can find <strong>NikoCat233</strong> & DM me there!</li>
+              <li>
+                FAQ / TroubleShooting:
+                <a href="https://au.niko233.me/trouble_en.html" target="_blank"
+                  >https://au.niko233.me/trouble_en.html</a
+                >
+              </li>
+              <li>
+                Support me on Ko-fi:
+                <a href="https://ko-fi.com/nikocat233" target="_blank"
+                  >https://ko-fi.com/nikocat233</a
+                >
+              </li>
+              <li>
+                Support Pietro on Ko-fi:
+                <a href="https://ko-fi.com/pietro420" target="_blank"
+                  >https://ko-fi.com/pietro420</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <!-- 联系方式与支持 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Contact & Support</h3>
-                    <ul>
-                        <li>TOHE Discord Server: <a href="https://discord.gg/tohe"
-                                target="_blank">https://discord.gg/tohe</a></li>
-                        <li>You can find <strong>NikoCat233</strong> & DM me there!</li>
-                        <li>FAQ / TroubleShooting: <a href="https://au.niko233.me/trouble_en.html"
-                                target="_blank">https://au.niko233.me/trouble_en.html</a></li>
-                        <li>Support me on Ko-fi: <a href="https://ko-fi.com/nikocat233"
-                                target="_blank">https://ko-fi.com/nikocat233</a></li>
-                        <li>Support Pietro on Ko-fi: <a href="https://ko-fi.com/pietro420"
-                                target="_blank">https://ko-fi.com/pietro420</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 捐助者 -->
-        <section class="mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Sponsors</h3>
-                    <p>Thank you for your donation! I'm bond to make my custom region more stable and useful!</p>
-                    <ul>
-                        <li>SpicyPoops - 50 USD</li>
-                        <li>瑞 - 5 USD</li>
-                        <li>Sarhadactyl - 40 USD - Join MAUL now! <a href="https://discord.gg/maul"
-                                target="_blank">https://discord.gg/maul</a></li>
-                        <li>kk - 14 CNY</li>
-                        <li>月饼 - 1 CNY</li>
-                        <li>风叧 - 1 CNY - 跟我念：fenggua</li>
-                        <li>全员天选之子 - 10 CNY - 每日首刀+50xp</li>
-                        <li>Yourfather - 0.01 CNY - 好活当赏</li>
-                        <li>Slok7565 - 50 CNY - 都去玩TONEX !!!</li>
-                        <li>川 - 10 CNY</li>
-                        <li>黄雾 - 10 CNY</li>
-                        <li>。 - 5 CNY</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+      <!-- 捐助者 -->
+      <section class="mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Sponsors | 捐助者</h3>
+            <p class="lang-en">
+              Thank you for your donation! I'm bond to make my custom region
+              more stable and useful!
+            </p>
+            <p class="lang-zh d-none">
+              感谢你们的捐赠！ 你们的支持能让这个私服走的更远！
+            </p>
+            <ul>
+              <li>SpicyPoops - 50 USD</li>
+              <li>瑞 - 5 USD</li>
+              <li>
+                Sarhadactyl - 40 USD - Join MAUL now!
+                <a href="https://discord.gg/maul" target="_blank"
+                  >https://discord.gg/maul</a
+                >
+              </li>
+              <li>kk - 14 CNY</li>
+              <li>月饼 - 1 CNY</li>
+              <li>风叧 - 1 CNY - 跟我念：fenggua</li>
+              <li>全员天选之子 - 10 CNY - 每日首刀+50xp</li>
+              <li>Yourfather - 0.01 CNY - 好活当赏</li>
+              <li>Slok7565 - 50 CNY - 都去玩TONEX !!!</li>
+              <li>川 - 10 CNY</li>
+              <li>黄雾 - 10 CNY</li>
+              <li>。 - 5 CNY</li>
+              <li>Mr.LKQ - 70 CNY</li>
+              <li>小赖哟 - 5 CNY</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99">
-        <a href="https://myssl.com/au.niko233.me?from=mysslid"><img
-                src="https://static.myssl.com/res/images/myssl-id.png" alt="" style="width:100%;height:100%"></a>
+    <div
+      id="cc-myssl-id"
+      style="
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 65px;
+        height: 65px;
+        z-index: 99;
+      "
+    >
+      <a href="https://myssl.com/au.niko233.me?from=mysslid"
+        ><img
+          src="https://static.myssl.com/res/images/myssl-id.png"
+          alt=""
+          style="width: 100%; height: 100%"
+      /></a>
     </div>
-</body>
-
+  </body>
 </html>

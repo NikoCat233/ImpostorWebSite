@@ -1,439 +1,696 @@
 <!DOCTYPE html>
 <html lang="zh">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NikoCat233的Among Us私服</title>
-    <meta name="title" content="NikoCat233的Among Us私服">
-    <meta name="description" content="此页面帮助中国玩家安装Niko私服和其他私服，支持电脑、手机操作">
-    <meta name="keywords" content="NikoCat233, Among Us, 私服, regioninfo, 安装教程, 社区, 捐助">
+    <meta name="title" content="NikoCat233的Among Us私服" />
+    <meta
+      name="description"
+      content="此页面帮助中国玩家安装Niko私服和其他私服，支持电脑、手机操作"
+    />
+    <meta
+      name="keywords"
+      content="NikoCat233, Among Us, 私服, regioninfo, 安装教程, 社区, 捐助"
+    />
     <!-- Bootstrap 5 CDN -->
-    <link href="./bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap.min.css" rel="stylesheet" />
     <script src="./bootstrap.bundle.min.js"></script>
     <script src="script.js" defer></script>
     <style>
-        .copy-text {
-            cursor: pointer;
-            color: #0d6efd;
-            text-decoration: underline;
+      .copy-text {
+        cursor: pointer;
+        color: #0d6efd;
+        text-decoration: underline;
+      }
+
+      .card img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .button-container button {
+        margin: 0.25rem 0.25rem 0.25rem 0;
+        min-width: 160px;
+      }
+
+      /* 弹窗样式 */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 500px;
+        width: 90%;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        animation: popupFadeIn 0.3s ease-out;
+      }
+
+      .popup-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #666;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .popup-close:hover {
+        color: #000;
+      }
+
+      @keyframes popupFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
         }
 
-        .card img {
-            max-width: 100%;
-            height: auto;
+        to {
+          opacity: 1;
+          transform: scale(1);
         }
-
-        .button-container button {
-            margin: 0.25rem 0.25rem 0.25rem 0;
-            min-width: 160px;
-        }
-
-        /* 弹窗样式 */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            animation: popupFadeIn 0.3s ease-out;
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #666;
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .popup-close:hover {
-            color: #000;
-        }
-
-        @keyframes popupFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body style="background: url('./background.jpg') repeat; background-size: cover; background-attachment: fixed;">
+  <body
+    style="
+      background: url('./background.jpg') repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    "
+  >
     <div class="container py-4">
-        <!-- 顶部标题卡片 -->
-        <div class="card mb-4">
-            <div class="card-body">
-                <h1 class="text-center mb-3">NikoCat233的Among Us私服 <span class="fs-5">| Among Us 私服/自定义服务器</span></h1>
-                <p class="text-center">感谢您使用我的 Among Us 私服！</p>
-                <div class="d-flex justify-content-center mt-3">
-                    <button class="btn btn-outline-primary btn-sm" onclick="location.href='./index.html'">首页 Home
-                        Page</button>
-                </div>
-            </div>
+      <!-- 顶部标题卡片 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h1 class="text-center mb-3">
+            NikoCat233的Among Us私服
+            <span class="fs-5">| Among Us 私服/自定义服务器</span>
+          </h1>
+          <p class="text-center">感谢您使用我的 Among Us 私服！</p>
+          <div class="d-flex justify-content-center mt-3">
+            <button
+              class="btn btn-outline-primary btn-sm"
+              onclick="location.href='./index.html'"
+            >
+              首页 Home Page
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- 弹窗 -->
-        <div id="popup-overlay" class="popup-overlay">
-            <div class="popup-content">
-                <button class="popup-close" onclick="closePopup()">&times;</button>
-                <h4 class="text-center mb-3" style="color: #dc3545;">🎮 Chinese Only 仅限中国人</h4>
-                <div class="text-center">
-                    <p><strong>出售本服务同款Impostor私服服务端</strong></p>
-                    <p>✅ 完整的网页管理后端<br>
-                        ✅ 支持动态端口进服和账户认证<br>
-                        ✅ 协助搭建私服<br>
-                        ✅ 支持到跑路并且用到跑路<br>
-                    </p>
-                    <p class="text-primary"><strong>💰 180元/人/3台服务器授权</strong></p>
-                    <p>加群了解详情：<span class="copy-text" data-copy="975714136" style="font-weight: bold;">975714136</span>
-                    </p>
-                    <button class="btn btn-primary"
-                        onclick="window.open('https://au-cn.niko233.me/qq', '_blank')">加入QQ群</button>
-                    <button class="btn btn-secondary ms-2" onclick="closePopup()">关闭</button>
-                </div>
-            </div>
+      <!-- 弹窗 -->
+      <div id="popup-overlay" class="popup-overlay">
+        <div class="popup-content">
+          <button class="popup-close" onclick="closePopup()">&times;</button>
+          <h4 class="text-center mb-3" style="color: #dc3545">
+            🎮 Chinese Only 仅限中国人
+          </h4>
+          <div class="text-center">
+            <p><strong>出售本服务同款Impostor私服服务端</strong></p>
+            <p>
+              ✅ 完整的网页管理后端<br />
+              ✅ 支持动态端口进服和账户认证<br />
+              ✅ 协助搭建私服<br />
+              ✅ 支持到跑路并且用到跑路<br />
+            </p>
+            <p class="text-primary">
+              <strong>💰 180元/人/3台服务器授权</strong>
+            </p>
+            <p>
+              加群了解详情：<span
+                class="copy-text"
+                data-copy="975714136"
+                style="font-weight: bold"
+                >975714136</span
+              >
+            </p>
+            <button
+              class="btn btn-primary"
+              onclick="window.open('https://au-cn.niko233.me/qq', '_blank')"
+            >
+              加入QQ群
+            </button>
+            <button class="btn btn-secondary ms-2" onclick="closePopup()">
+              关闭
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- 安装指南 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">安装指南</h3>
-                    <p>此页面协助你安装NikoCat233的Among Us私服。</p>
-                    <p>Global players please visit: <a href="./en.html"
-                            target="_blank">https://au.niko233.me/en.html</a></p>
-                    <button class="btn btn-success w-100 mb-2" onclick="location.href='./en.html'">EN Install
-                        Guide</button>
-                    <button class="btn btn-warning w-100 mb-2" id="wechat-donate-btn">微信赞赏码捐助<br>WeChat Pay
-                        Donation</button>
+      <!-- 安装指南 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">安装指南</h3>
+            <p>此页面协助你安装NikoCat233的Among Us私服。</p>
+            <p>
+              Global players please visit:
+              <a href="./en.html" target="_blank"
+                >https://au.niko233.me/en.html</a
+              >
+            </p>
+            <button
+              class="btn btn-success w-100 mb-2"
+              onclick="location.href='./en.html'"
+            >
+              EN Install Guide
+            </button>
+            <button class="btn btn-warning w-100 mb-2" id="wechat-donate-btn">
+              微信赞赏码捐助<br />WeChat Pay Donation
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Windows 安装方法 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Windows 桌面用户</h3>
+            <ul>
+              <li>TOHE等Niko支持的H系模组通常已内置Niko的私服。</li>
+              <li>
+                如果你位于江苏、福建等网络环境特殊的地区，可以使用我们的备用regioninfo.json文件。其中仅提供NikoAS和NikoCN的备案域名。
+              </li>
+            </ul>
+            <div class="accordion mt-3" id="windowsAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="win-method1-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#win-method1"
+                    aria-expanded="true"
+                    aria-controls="win-method1"
+                  >
+                    方式一：下载一键安装脚本并运行
+                  </button>
+                </h2>
+                <div
+                  id="win-method1"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="win-method1-header"
+                  data-bs-parent="#windowsAccordion"
+                >
+                  <div class="accordion-body">
+                    <b>
+                      <p>
+                        如果你位于江苏、福建等网络环境特殊的地区，请访问方法二获取备用regioninfo.json文件。
+                      </p>
+                    </b>
+                    <p>
+                      非常容易！只需下载下方bat文件并运行，然后重启游戏即可看到私服。
+                    </p>
+                    <b>
+                      <p>
+                        微软商店版请参考扩展方法，此脚本不适用于微软商店版。
+                      </p>
+                    </b>
+                    <p>
+                      <a
+                        href="https://au.niko233.me/Setup_Custom_Server.bat"
+                        target="_blank"
+                        >https://au.niko233.me/Setup_Custom_Server.bat</a
+                      >
+                    </p>
+                    <strong>
+                      <p>此方式报错？尝试方式二</p>
+                    </strong>
+                  </div>
                 </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="win-method2-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#win-method2"
+                    aria-expanded="false"
+                    aria-controls="win-method2"
+                  >
+                    方式二：手动复制 regioninfo.json
+                  </button>
+                </h2>
+                <div
+                  id="win-method2"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="win-method2-header"
+                  data-bs-parent="#windowsAccordion"
+                >
+                  <div class="accordion-body">
+                    <ol>
+                      <li>
+                        下载
+                        <a
+                          href="https://au.niko233.me/regioninfo.json"
+                          download="regionInfo.json"
+                          >regioninfo.json</a
+                        >。如浏览器直接打开页面，请右键另存为。
+                      </li>
+                      <li>
+                        如果是江苏、福建等网络环境特殊的玩家，请尝试此文件
+                        <a
+                          href="https://au.niko233.me/regioninfo_Niko备案版.json"
+                          download="regionInfo.json"
+                          >regioninfo_Niko备案版.json</a
+                        >。如浏览器直接打开页面，请右键另存为。
+                      </li>
+                      <li>
+                        按 <kbd>Win + R</kbd> 或打开“运行”，输入以下内容并回车：
+                      </li>
+                      <p>
+                        <span
+                          class="copy-text"
+                          data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us"
+                          >%userprofile%\AppData\LocalLow\Innersloth\Among
+                          Us</span
+                        >
+                      </p>
+                      <img src="./win-run.png" alt="Win-Run操作示意" />
+                      <li>
+                        将下载的regioninfo.json复制到该文件夹，替换原有文件。
+                      </li>
+                      <img src="./replace.png" alt="替换regionInfo.json" />
+                      <li>重启游戏即可看到私服。</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="win-extra-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#win-extra"
+                    aria-expanded="false"
+                    aria-controls="win-extra"
+                  >
+                    扩展：微软商店版手动安装
+                  </button>
+                </h2>
+                <div
+                  id="win-extra"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="win-extra-header"
+                  data-bs-parent="#windowsAccordion"
+                >
+                  <div class="accordion-body">
+                    <ol>
+                      <li>同上获取regioninfo.json。</li>
+                      <li>打开此文件夹（复制粘贴到运行或资源管理器）：</li>
+                      <p>
+                        <span
+                          class="copy-text"
+                          data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs"
+                          >%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span
+                        >
+                      </p>
+                      <li>找到长数字命名的文件夹并打开。</li>
+                      <img
+                        src="./microsoft-data-folder.png"
+                        alt="Microsoft User Data Folder"
+                      />
+                      <li>
+                        用记事本依次打开里面的文件，找到内容为JSON格式（region
+                        info）的文件。
+                      </li>
+                      <img
+                        src="./microsoft-data-folder-2.png"
+                        alt="用记事本打开文件"
+                      />
+                      <li>将regioninfo.json内容粘贴进去，保存并重启游戏。</li>
+                      <img
+                        src="./microsoft-data-folder-3.png"
+                        alt="Region Info to modify"
+                      />
+                      <img
+                        src="./microsoft-data-folder-4.png"
+                        alt="Copy-paste region info"
+                      />
+                      <li>如有多个账户，每个都需操作。</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="win-mini-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#win-mini"
+                    aria-expanded="false"
+                    aria-controls="win-mini"
+                  >
+                    扩展方式：Mini.RegionInstall 插件
+                  </button>
+                </h2>
+                <div
+                  id="win-mini"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="win-mini-header"
+                  data-bs-parent="#windowsAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>如已安装Mini.RegionInstall插件，可下载配置文件：</p>
+                    <a
+                      href="https://au.niko233.me/at.duikbo.regioninstall.cfg"
+                      download="at.duikbo.regioninstall.cfg"
+                      >https://au.niko233.me/at.duikbo.regioninstall.cfg</a
+                    >
+                    <p>
+                      复制到
+                      <span
+                        class="copy-text"
+                        data-copy="Among Us\BepInEx\config"
+                        >Among Us\BepInEx\config</span
+                      >
+                      并替换原配置。
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Windows 安装方法 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Windows 桌面用户</h3>
-                    <ul>
-                        <li>TOHE等Niko支持的H系模组通常已内置Niko的私服。</li>
-                        <li>如果你位于江苏、福建等网络环境特殊的地区，可以使用我们的备用regioninfo.json文件。其中仅提供NikoAS和NikoCN的备案域名。</li>
-                    </ul>
-                    <div class="accordion mt-3" id="windowsAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="win-method1-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#win-method1" aria-expanded="true" aria-controls="win-method1">
-                                    方式一：下载一键安装脚本并运行
-                                </button>
-                            </h2>
-                            <div id="win-method1" class="accordion-collapse collapse show"
-                                aria-labelledby="win-method1-header" data-bs-parent="#windowsAccordion">
-                                <div class="accordion-body">
-                                    <b>
-                                        <p>如果你位于江苏、福建等网络环境特殊的地区，请访问方法二获取备用regioninfo.json文件。</p>
-                                    </b>
-                                    <p>非常容易！只需下载下方bat文件并运行，然后重启游戏即可看到私服。</p>
-                                    <b>
-                                        <p>微软商店版请参考扩展方法，此脚本不适用于微软商店版。</p>
-                                    </b>
-                                    <p><a href="https://au.niko233.me/Setup_Custom_Server.bat"
-                                            target="_blank">https://au.niko233.me/Setup_Custom_Server.bat</a></p>
-                                    <strong>
-                                        <p>此方式报错？尝试方式二</p>
-                                    </strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="win-method2-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#win-method2" aria-expanded="false" aria-controls="win-method2">
-                                    方式二：手动复制 regioninfo.json
-                                </button>
-                            </h2>
-                            <div id="win-method2" class="accordion-collapse collapse"
-                                aria-labelledby="win-method2-header" data-bs-parent="#windowsAccordion">
-                                <div class="accordion-body">
-                                    <ol>
-                                        <li>下载 <a href="https://au.niko233.me/regioninfo.json"
-                                                download="regionInfo.json">regioninfo.json</a>。如浏览器直接打开页面，请右键另存为。</li>
-                                        <li>如果是江苏、福建等网络环境特殊的玩家，请尝试此文件 <a
-                                                href="https://au.niko233.me/regioninfo_Niko备案版.json"
-                                                download="regionInfo.json">regioninfo_Niko备案版.json</a>。如浏览器直接打开页面，请右键另存为。
-                                        </li>
-                                        <li>按 <kbd>Win + R</kbd> 或打开“运行”，输入以下内容并回车：</li>
-                                        <p><span class="copy-text"
-                                                data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us">%userprofile%\AppData\LocalLow\Innersloth\Among
-                                                Us</span></p>
-                                        <img src="./win-run.png" alt="Win-Run操作示意">
-                                        <li>将下载的regioninfo.json复制到该文件夹，替换原有文件。</li>
-                                        <img src="./replace.png" alt="替换regionInfo.json">
-                                        <li>重启游戏即可看到私服。</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="win-extra-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#win-extra" aria-expanded="false" aria-controls="win-extra">
-                                    扩展：微软商店版手动安装
-                                </button>
-                            </h2>
-                            <div id="win-extra" class="accordion-collapse collapse" aria-labelledby="win-extra-header"
-                                data-bs-parent="#windowsAccordion">
-                                <div class="accordion-body">
-                                    <ol>
-                                        <li>同上获取regioninfo.json。</li>
-                                        <li>打开此文件夹（复制粘贴到运行或资源管理器）：</li>
-                                        <p><span class="copy-text"
-                                                data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs">%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span>
-                                        </p>
-                                        <li>找到长数字命名的文件夹并打开。</li>
-                                        <img src="./microsoft-data-folder.png" alt="Microsoft User Data Folder">
-                                        <li>用记事本依次打开里面的文件，找到内容为JSON格式（region info）的文件。</li>
-                                        <img src="./microsoft-data-folder-2.png" alt="用记事本打开文件">
-                                        <li>将regioninfo.json内容粘贴进去，保存并重启游戏。</li>
-                                        <img src="./microsoft-data-folder-3.png" alt="Region Info to modify">
-                                        <img src="./microsoft-data-folder-4.png" alt="Copy-paste region info">
-                                        <li>如有多个账户，每个都需操作。</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="win-mini-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#win-mini" aria-expanded="false" aria-controls="win-mini">
-                                    扩展方式：Mini.RegionInstall 插件
-                                </button>
-                            </h2>
-                            <div id="win-mini" class="accordion-collapse collapse" aria-labelledby="win-mini-header"
-                                data-bs-parent="#windowsAccordion">
-                                <div class="accordion-body">
-                                    <p>如已安装Mini.RegionInstall插件，可下载配置文件：</p>
-                                    <a href="https://au.niko233.me/at.duikbo.regioninstall.cfg"
-                                        download="at.duikbo.regioninstall.cfg">https://au.niko233.me/at.duikbo.regioninstall.cfg</a>
-                                    <p>复制到 <span class="copy-text" data-copy="Among Us\BepInEx\config">Among
-                                            Us\BepInEx\config</span> 并替换原配置。</p>
-                                </div>
-                            </div>
-                        </div>
+      <!-- 移动端安装方法 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Android / 苹果手机玩家</h3>
+            <ul>
+              <li>非虚拟环境玩家只需完成第一步。</li>
+              <li>使用Gspace或OurPlay等虚拟环境请先看第二步。</li>
+            </ul>
+            <div class="accordion mt-3" id="mobileAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="mobile-step1-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobile-step1"
+                    aria-expanded="true"
+                    aria-controls="mobile-step1"
+                  >
+                    步骤一：点击下方按钮
+                  </button>
+                </h2>
+                <div
+                  id="mobile-step1"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="mobile-step1-header"
+                  data-bs-parent="#mobileAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      先打开Among
+                      Us挂后台，再用浏览器点击下方按钮，每次点击会添加一个服务器。
+                    </p>
+                    <p>
+                      如果你是江苏、福建等网络环境特殊的玩家，可以使用我们的备案链接加入服务器
+                    </p>
+                    <div class="button-container mb-2">
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.me&usedtls=false'"
+                      >
+                        Niko AS
+                      </button>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Niko233(AS)备案&serverport=443&serverip=https%3A%2F%2Fauas.ndvfp.cn&usedtls=false'"
+                      >
+                        Niko AS 备案
+                      </button>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false'"
+                      >
+                        Niko NA
+                      </button>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.me&usedtls=false'"
+                      >
+                        Niko EU
+                      </button>
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false'"
+                      >
+                        Modded NA
+                      </button>
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false'"
+                      >
+                        Modded EU
+                      </button>
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        onclick="window.location.href='amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false'"
+                      >
+                        Modded AS
+                      </button>
                     </div>
+                    <p>点击按钮时请保持Among Us在后台运行。</p>
+                    <strong>
+                      <p>虚拟环境如OurPlay/Gspace请看第二步。</p>
+                    </strong>
+                  </div>
                 </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="mobile-video-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobile-video"
+                    aria-expanded="false"
+                    aria-controls="mobile-video"
+                  >
+                    手机安装视频教程
+                  </button>
+                </h2>
+                <div
+                  id="mobile-video"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="mobile-video-header"
+                  data-bs-parent="#mobileAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      1分钟视频教程：<a
+                        href="./mobile_guide.webm"
+                        target="_blank"
+                        >https://au.niko233.me/mobile_guide.webm</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="mobile-step2-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobile-step2"
+                    aria-expanded="false"
+                    aria-controls="mobile-step2"
+                  >
+                    步骤二：虚拟环境（OurPlay/Gspace等）
+                  </button>
+                </h2>
+                <div
+                  id="mobile-step2"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="mobile-step2-header"
+                  data-bs-parent="#mobileAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>虚拟环境下，浏览器无法直接跳转到Among Us。</p>
+                    <p>
+                      需将浏览器（推荐Via浏览器）导入虚拟环境，先启动Among
+                      Us挂后台，再用虚拟环境内浏览器打开本页面并点击上方按钮。
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- 移动端安装方法 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Android / 苹果手机玩家</h3>
-                    <ul>
-                        <li>非虚拟环境玩家只需完成第一步。</li>
-                        <li>使用Gspace或OurPlay等虚拟环境请先看第二步。</li>
-                    </ul>
-                    <div class="accordion mt-3" id="mobileAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="mobile-step1-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#mobile-step1" aria-expanded="true" aria-controls="mobile-step1">
-                                    步骤一：点击下方按钮
-                                </button>
-                            </h2>
-                            <div id="mobile-step1" class="accordion-collapse collapse show"
-                                aria-labelledby="mobile-step1-header" data-bs-parent="#mobileAccordion">
-                                <div class="accordion-body">
-                                    <p>先打开Among Us挂后台，再用浏览器点击下方按钮，每次点击会添加一个服务器。</p>
-                                    <p>如果你是江苏、福建等网络环境特殊的玩家，可以使用我们的备案链接加入服务器</p>
-                                    <div class="button-container mb-2">
-                                        <button class="btn btn-outline-success btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.me&usedtls=false'">Niko
-                                            AS</button>
-                                        <button class="btn btn-outline-success btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Niko233(AS)备案&serverport=443&serverip=https%3A%2F%2Fauas.ndvfp.cn&usedtls=false'">Niko
-                                            AS 备案</button>
-                                        <button class="btn btn-outline-success btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false'">Niko
-                                            NA</button>
-                                        <button class="btn btn-outline-success btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.me&usedtls=false'">Niko
-                                            EU</button>
-                                        <button class="btn btn-outline-secondary btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.us&usedtls=false'">Modded
-                                            NA</button>
-                                        <button class="btn btn-outline-secondary btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false'">Modded
-                                            EU</button>
-                                        <button class="btn btn-outline-secondary btn-sm"
-                                            onclick="window.location.href='amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false'">Modded
-                                            AS</button>
-                                    </div>
-                                    <p>点击按钮时请保持Among Us在后台运行。</p>
-                                    <strong>
-                                        <p>虚拟环境如OurPlay/Gspace请看第二步。</p>
-                                    </strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="mobile-video-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#mobile-video" aria-expanded="false" aria-controls="mobile-video">
-                                    手机安装视频教程
-                                </button>
-                            </h2>
-                            <div id="mobile-video" class="accordion-collapse collapse"
-                                aria-labelledby="mobile-video-header" data-bs-parent="#mobileAccordion">
-                                <div class="accordion-body">
-                                    <p>1分钟视频教程：<a href="./mobile_guide.webm"
-                                            target="_blank">https://au.niko233.me/mobile_guide.webm</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="mobile-step2-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#mobile-step2" aria-expanded="false" aria-controls="mobile-step2">
-                                    步骤二：虚拟环境（OurPlay/Gspace等）
-                                </button>
-                            </h2>
-                            <div id="mobile-step2" class="accordion-collapse collapse"
-                                aria-labelledby="mobile-step2-header" data-bs-parent="#mobileAccordion">
-                                <div class="accordion-body">
-                                    <p>虚拟环境下，浏览器无法直接跳转到Among Us。</p>
-                                    <p>需将浏览器（推荐Via浏览器）导入虚拟环境，先启动Among Us挂后台，再用虚拟环境内浏览器打开本页面并点击上方按钮。</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- 主机端说明 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">主机玩家（PS/XBOX/SWITCH等）</h3>
+            <p>很遗憾，目前没有成熟的主机私服安装方案。</p>
+            <p>如愿意钻研，可尝试手动修改regioninfo.json。</p>
+          </div>
+        </div>
+      </section>
 
-        <!-- 主机端说明 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">主机玩家（PS/XBOX/SWITCH等）</h3>
-                    <p>很遗憾，目前没有成熟的主机私服安装方案。</p>
-                    <p>如愿意钻研，可尝试手动修改regioninfo.json。</p>
-                </div>
-            </div>
-        </section>
+      <!-- 联系方式与支持 -->
+      <section class="mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="card-title">联系方式与支持</h3>
+            <ul>
+              <li>
+                TOHE Discord:
+                <a href="https://discord.gg/tohe" target="_blank"
+                  >https://discord.gg/tohe</a
+                >
+              </li>
+              <li>你能在那里找到并DM <strong>NikoCat233</strong>！</li>
+              <li>
+                常见问题:
+                <a href="https://au.niko233.me/trouble_cn.html" target="_blank"
+                  >https://au.niko233.me/trouble_cn.html</a
+                >
+              </li>
+              <li>
+                到Ko-fi捐助Niko:
+                <a href="https://ko-fi.com/nikocat233" target="_blank"
+                  >https://ko-fi.com/nikocat233</a
+                >
+              </li>
+              <li>
+                到Ko-fi捐助Pietro:
+                <a href="https://ko-fi.com/pietro420" target="_blank"
+                  >https://ko-fi.com/pietro420</a
+                >
+              </li>
+              <li>
+                QQ群聊:
+                <span class="copy-text" data-copy="975714136">975714136</span>
+                <a href="https://aucn.niko233.me/qq" target="_blank"
+                  >https://aucn.niko233.me/qq</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <!-- 联系方式与支持 -->
-        <section class="mb-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">联系方式与支持</h3>
-                    <ul>
-                        <li>TOHE Discord: <a href="https://discord.gg/tohe" target="_blank">https://discord.gg/tohe</a>
-                        </li>
-                        <li>你能在那里找到并DM <strong>NikoCat233</strong>！</li>
-                        <li>常见问题: <a href="https://au.niko233.me/trouble_cn.html"
-                                target="_blank">https://au.niko233.me/trouble_cn.html</a></li>
-                        <li>到Ko-fi捐助Niko: <a href="https://ko-fi.com/nikocat233"
-                                target="_blank">https://ko-fi.com/nikocat233</a></li>
-                        <li>到Ko-fi捐助Pietro: <a href="https://ko-fi.com/pietro420"
-                                target="_blank">https://ko-fi.com/pietro420</a></li>
-                        <li>QQ群聊: <span class="copy-text" data-copy="975714136">975714136</span> <a
-                                href="https://aucn.niko233.me/qq" target="_blank">https://aucn.niko233.me/qq</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 捐助者 -->
-        <section class="mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">捐助者 Sponsors</h3>
-                    <p>感谢你们的捐赠！你们的支持能让这个私服走得更远！</p>
-                    <ul>
-                        <li>SpicyPoops - 50 USD</li>
-                        <li>瑞 - 5 USD</li>
-                        <li>Sarhadactyl - 40 USD - Join MAUL now! <a href="https://discord.gg/maul"
-                                target="_blank">https://discord.gg/maul</a></li>
-                        <li>kk - 14 CNY</li>
-                        <li>月饼 - 1 CNY</li>
-                        <li>风叧 - 1 CNY - 跟我念：fenggua</li>
-                        <li>全员天选之子 - 10 CNY - 每日首刀+50xp</li>
-                        <li>Yourfather - 0.01 CNY - 好活当赏</li>
-                        <li>Slok7565 - 50 CNY - 都去玩TONEX !!!</li>
-                        <li>川 - 10 CNY</li>
-                        <li>黄雾 - 10 CNY</li>
-                        <li>。 - 5 CNY</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+      <!-- 捐助者 -->
+      <section class="mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Sponsors | 捐助者</h3>
+            <p class="lang-en">
+              Thank you for your donation! I'm bond to make my custom region
+              more stable and useful!
+            </p>
+            <p class="lang-zh d-none">
+              感谢你们的捐赠！ 你们的支持能让这个私服走的更远！
+            </p>
+            <ul>
+              <li>SpicyPoops - 50 USD</li>
+              <li>瑞 - 5 USD</li>
+              <li>
+                Sarhadactyl - 40 USD - Join MAUL now!
+                <a href="https://discord.gg/maul" target="_blank"
+                  >https://discord.gg/maul</a
+                >
+              </li>
+              <li>kk - 14 CNY</li>
+              <li>月饼 - 1 CNY</li>
+              <li>风叧 - 1 CNY - 跟我念：fenggua</li>
+              <li>全员天选之子 - 10 CNY - 每日首刀+50xp</li>
+              <li>Yourfather - 0.01 CNY - 好活当赏</li>
+              <li>Slok7565 - 50 CNY - 都去玩TONEX !!!</li>
+              <li>川 - 10 CNY</li>
+              <li>黄雾 - 10 CNY</li>
+              <li>。 - 5 CNY</li>
+              <li>Mr.LKQ - 70 CNY</li>
+              <li>小赖哟 - 5 CNY</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <div id="wechat-qr-overlay" class="qr-overlay" style="display:none;">
-        <div class="qr-content">
-            <img src="./wechat.png" alt="WeChat Pay QR Code">
-            <p>点击屏幕关闭 | Click to close</p>
-        </div>
+    <div id="wechat-qr-overlay" class="qr-overlay" style="display: none">
+      <div class="qr-content">
+        <img src="./wechat.png" alt="WeChat Pay QR Code" />
+        <p>点击屏幕关闭 | Click to close</p>
+      </div>
     </div>
 
     <script>
-        // 关闭弹窗函数
-        function closePopup() {
-            document.getElementById('popup-overlay').style.display = 'none';
+      // 关闭弹窗函数
+      function closePopup() {
+        document.getElementById("popup-overlay").style.display = "none";
+      }
+
+      // 点击遮罩层关闭弹窗
+      document
+        .getElementById("popup-overlay")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closePopup();
+          }
+        });
+
+      // ESC键关闭弹窗
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closePopup();
         }
-
-        // 点击遮罩层关闭弹窗
-        document.getElementById('popup-overlay').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closePopup();
-            }
-        });
-
-        // ESC键关闭弹窗
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closePopup();
-            }
-        });
+      });
     </script>
 
-    <div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99">
-        <a href="https://myssl.com/au.niko233.me?from=mysslid"><img
-                src="https://static.myssl.com/res/images/myssl-id.png" alt="" style="width:100%;height:100%"></a>
+    <div
+      id="cc-myssl-id"
+      style="
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 65px;
+        height: 65px;
+        z-index: 99;
+      "
+    >
+      <a href="https://myssl.com/au.niko233.me?from=mysslid"
+        ><img
+          src="https://static.myssl.com/res/images/myssl-id.png"
+          alt=""
+          style="width: 100%; height: 100%"
+      /></a>
     </div>
-</body>
-
+  </body>
 </html>
