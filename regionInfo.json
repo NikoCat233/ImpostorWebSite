@@ -37,23 +37,6 @@
     },
     {
       "$type": "StaticHttpRegionInfo, Assembly-CSharp",
-      "Name": "Niko233(EU)",
-      "PingServer": "https://au-eu.niko233.me",
-      "Servers": [
-        {
-          "Name": "http-1",
-          "Ip": "https://au-eu.niko233.me",
-          "Port": 443,
-          "UseDtls": false,
-          "Players": 0,
-          "ConnectionFailures": 0
-        }
-      ],
-      "TargetServer": null,
-      "TranslateName": 1003
-    },
-    {
-      "$type": "StaticHttpRegionInfo, Assembly-CSharp",
       "Name": "Modded EU (MEU)",
       "PingServer": "https://au-eu.duikbo.at",
       "Servers": [
