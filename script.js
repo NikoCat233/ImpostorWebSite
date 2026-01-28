@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const wechatDonateButtons = document.querySelectorAll(
-    "#wechat-donate-btn, #wechat-donate-btn-2"
+    "#wechat-donate-btn, #wechat-donate-btn-2",
   );
 
   wechatDonateButtons.forEach((button) => {
@@ -60,9 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const regions = [
-    { name: "na", url: "https://au-us.niko233.me/api/counts" },
-    { name: "as", url: "https://au-as.niko233.me/api/counts" },
-    { name: "eu", url: "https://au-eu.niko233.me/api/counts" },
+    { name: "na", url: "https://au-us.niko233.top/api/counts" },
+    { name: "as", url: "https://au-as.niko233.top/api/counts" },
+    { name: "eu", url: "https://au-eu.niko233.top/api/counts" },
   ];
 
   regions.forEach((region) => {
