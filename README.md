@@ -10,13 +10,13 @@ This repository contains the static website files for NikoCat233's Impostor serv
 
 If you are a global player, please click the following link to access the server:
 
-[Global Server](https://au.niko233.me/en.html)
+[Global Server](https://au.niko233.top/en.html)
 
 ## 中国玩家
 
 如果您是中国玩家，请访问以下链接以访问该服务器：
 
-[中国服务器](https://au.niko233.me/cn.html)
+[中国服务器](https://au.niko233.top/cn.html)
 
 Feel free to explore the website and enjoy the gaming experience!
 

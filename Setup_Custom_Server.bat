@@ -13,7 +13,7 @@ IF %ERRORLEVEL% NEQ 0 (
 )
 
 echo Downloading custom regions info from au.niko233.top
-echo 正在从 au.niko233.me 下载配置文件
+echo 正在从 au.niko233.top 下载配置文件
 echo.  
 
 curl -L --output "%APPDATA%/../LocalLow/Innersloth/Among Us/regionInfo.json" --url "https://au.niko233.top/regionInfo.json"
