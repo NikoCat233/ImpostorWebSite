@@ -316,6 +316,23 @@
             const zhBtn = document.getElementById("lang-zh-btn");
             const panels = document.querySelectorAll(".lang-panel");
 
+            function detectInitialLang() {
+                const browserLangs = navigator.languages && navigator.languages.length
+                    ? navigator.languages
+                    : [navigator.language || ""];
+
+                const normalized = browserLangs.map((lang) => String(lang).toLowerCase());
+
+                const isChinese = normalized.some((lang) => {
+                    return lang === "zh" ||
+                        lang.startsWith("zh-") ||
+                        lang.includes("hans") ||
+                        lang.includes("hant");
+                });
+
+                return isChinese ? "zh" : "en";
+            }
+
             function setLang(lang) {
                 document.documentElement.lang = lang;
                 panels.forEach((panel) => {
@@ -344,7 +361,7 @@
                 });
             });
 
-            setLang("en");
+            setLang(detectInitialLang());
         });
     </script>
 </body>
