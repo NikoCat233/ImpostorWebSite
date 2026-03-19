@@ -1,456 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NikoCat233's Impostor Server</title>
-    <meta name="title" content="NikoCat233的Among Us私服" lang="zh">
-    <meta name="description"
-        content="Niko's Among Us custom regions offer full friendcode support & InnerSloth Auth, reliable network connection and stable game experience.">
-    <meta name="description" content="Niko's的Among Us私服提供完整的好友代码支持与树懒验证，可信的网络与稳定的游戏体验。" lang="zh">
-    <meta name="keywords"
-        content="NikoCat233, Custom Region, Among Us, Among Us Custom Server, Among Us server, install instructions, community, donations">
-    <meta name="baidu-site-verification" content="codeva-xydPumf8wF" />
-    <!-- Bootstrap 5 CDN -->
+    <meta name="description" content="Bilingual install guide for NikoCat233's Among Us custom server.">
+    <meta name="keywords" content="Among Us, Impostor, custom server, install guide, bilingual">
     <link href="./bootstrap.min.css" rel="stylesheet">
     <script src="./bootstrap.bundle.min.js"></script>
-    <script src="script.js" defer></script>
     <style>
-        .qr-overlay {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.6);
-            align-items: center;
-            justify-content: center;
+        body {
+            min-height: 100vh;
+            background: url('./background.jpg') repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
 
-        .qr-content {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 1rem;
-            text-align: center;
+        .page-shell {
+            max-width: 960px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12);
         }
 
         .copy-text {
             cursor: pointer;
-            color: #0d6efd;
             text-decoration: underline;
         }
 
-        .region-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 2px solid #dee2e6 !important;
-            transition: all 0.3s ease;
+        .lang-panel.d-none {
+            display: none !important;
         }
 
-        .region-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        .button-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
-        .region-title {
-            color: #495057;
-            font-weight: bold;
-            margin-bottom: 0.75rem;
+        .button-grid .btn {
+            min-width: 150px;
         }
 
-        .region-card p {
-            color: #6c757d;
-            margin-bottom: 0.25rem;
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
-        .region-card span {
-            color: #198754;
-            font-size: 1.1em;
+        .button-row .btn {
+            flex: 1 1 150px;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
+<body>
+    <main class="container py-4 py-md-5 page-shell">
+        <section class="card glass-card mb-4">
+            <div class="card-body p-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                    <div>
+                        <h1 class="mb-2">NikoCat233's Impostor Server</h1>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Language Switch">
+                        <button id="lang-en-btn" type="button" class="btn btn-primary">English</button>
+                        <button id="lang-zh-btn" type="button" class="btn btn-outline-primary">中文</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<body style="background: url('./background.jpg') repeat; background-size: cover; background-attachment: fixed;">
-    <div class="container py-4">
-        <div class="container py-4">
-            <!-- 顶部标题和语言切换按钮卡片 -->
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h1 class="text-center mb-3">NikoCat233's Impostor Server <span class="fs-5">| Among Us Custom
-                            Regions / Servers</span></h1>
-                    <p class="text-center" id="header-desc-en">Thank you for using my Impostor server!</p>
-                    <p class="text-center d-none" id="header-desc-zh">感谢您使用我的 Impostor 私服！</p>
-                    <div class="d-flex justify-content-center mt-3">
-                        <div class="btn-group" role="group" aria-label="Language Switch">
-                            <button id="lang-en-btn" type="button" class="btn btn-primary btn-sm">English</button>
-                            <button id="lang-zh-btn" type="button" class="btn btn-outline-primary btn-sm">中文</button>
+        <section class="lang-panel" data-lang="en">
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">Windows Desktop</h2>
+                    <div class="accordion" id="windowsAccordionEn">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="win-en-script-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#win-en-script" aria-expanded="true" aria-controls="win-en-script">
+                                    Method 1: Run the install script
+                                </button>
+                            </h3>
+                            <div id="win-en-script" class="accordion-collapse collapse show" aria-labelledby="win-en-script-header" data-bs-parent="#windowsAccordionEn">
+                                <div class="accordion-body">
+                                    <p>Download and run the script below, then restart the game.</p>
+                                    <p class="mb-2">Microsoft Store version users should skip to Method 3.</p>
+                                    <p><a href="./Setup_Custom_Server.bat" target="_blank">Setup_Custom_Server.bat</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="win-en-manual-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#win-en-manual" aria-expanded="false" aria-controls="win-en-manual">
+                                    Method 2: Replace `regioninfo.json` manually
+                                </button>
+                            </h3>
+                            <div id="win-en-manual" class="accordion-collapse collapse" aria-labelledby="win-en-manual-header" data-bs-parent="#windowsAccordionEn">
+                                <div class="accordion-body">
+                                    <ol class="mb-0">
+                                        <li>Download <a href="./regioninfo.json" target="_blank">regioninfo.json</a>.</li>
+                                        <li>Press <kbd>Win + R</kbd> and open <span class="copy-text" data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us">%userprofile%\AppData\LocalLow\Innersloth\Among Us</span>.</li>
+                                        <li>Replace the existing `regioninfo.json` file, then restart the game.</li>
+                                    </ol>
+                                    <div class="mt-3">
+                                        <img src="./win-run.png" alt="Open Among Us folder from Run">
+                                    </div>
+                                    <div class="mt-3">
+                                        <img src="./replace.png" alt="Replace regioninfo.json">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="win-en-ms-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#win-en-ms" aria-expanded="false" aria-controls="win-en-ms">
+                                    Method 3: Microsoft Store version
+                                </button>
+                            </h3>
+                            <div id="win-en-ms" class="accordion-collapse collapse" aria-labelledby="win-en-ms-header" data-bs-parent="#windowsAccordionEn">
+                                <div class="accordion-body">
+                                    <ol class="mb-0">
+                                        <li>Download <a href="./regioninfo.json" target="_blank">regioninfo.json</a>.</li>
+                                        <li>Open <span class="copy-text" data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs">%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span>.</li>
+                                        <li>Find the folder with long numeric names and open the JSON-like save file inside.</li>
+                                        <li>Paste the contents of `regioninfo.json`, save, and restart the game.</li>
+                                    </ol>
+                                    <div class="mt-3">
+                                        <img src="./microsoft-data-folder.png" alt="Microsoft Store save folder">
+                                    </div>
+                                    <div class="mt-3">
+                                        <img src="./microsoft-data-folder-2.png" alt="Open files with Notepad">
+                                    </div>
+                                    <div class="mt-3">
+                                        <img src="./microsoft-data-folder-3.png" alt="Find the region info file">
+                                    </div>
+                                    <div class="mt-3">
+                                        <img src="./microsoft-data-folder-4.png" alt="Paste the region info data">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="win-en-mini-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#win-en-mini" aria-expanded="false" aria-controls="win-en-mini">
+                                    Extra: Mini.RegionInstall
+                                </button>
+                            </h3>
+                            <div id="win-en-mini" class="accordion-collapse collapse" aria-labelledby="win-en-mini-header" data-bs-parent="#windowsAccordionEn">
+                                <div class="accordion-body">
+                                    <p>If you use Mini.RegionInstall, download <a href="./at.duikbo.regioninstall.cfg" target="_blank">at.duikbo.regioninstall.cfg</a> and copy it to <span class="copy-text" data-copy="Among Us\BepInEx\config">Among Us\BepInEx\config</span>.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 在线人数 -->
-            <section class="mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center mb-3">Online Players | 在线玩家</h5>
-                        <div class="row text-center">
-                            <div class="col-12 col-md-4 mb-2">
-                                <div class="region-card border rounded-3 p-3 h-100">
-                                    <h5 class="region-title">NA</h5>
-                                    <p class="mb-1">Games: <span id="na-games" class="fw-bold">0</span></p>
-                                    <p class="mb-0">Players: <span id="na-players" class="fw-bold">0</span></p>
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">Android / iPhone</h2>
+                    <p>Keep Among Us running in the background, then tap a region button.</p>
+                    <div class="button-grid mb-3">
+                        <div class="button-row w-100">
+                            <button class="btn btn-outline-success" onclick="window.location.href='amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.top&usedtls=false'">Niko AS</button>
+                            <button class="btn btn-outline-success" onclick="window.location.href='amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.top&usedtls=false'">Niko NA</button>
+                            <button class="btn btn-outline-success" onclick="window.location.href='amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.top&usedtls=false'">Niko EU</button>
+                        </div>
+                        <div class="button-row w-100">
+                            <button class="btn btn-outline-secondary" onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.org&usedtls=false'">Modded NA</button>
+                            <button class="btn btn-outline-secondary" onclick="window.location.href='amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false'">Modded EU</button>
+                            <button class="btn btn-outline-secondary" onclick="window.location.href='amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false'">Modded AS</button>
+                        </div>
+                    </div>
+                    <p class="mb-2">Using Gspace / OurPlay or another virtual environment:</p>
+                    <p class="mb-2">Import a browser into that environment, launch Among Us there first, then open this page from that browser and tap the buttons again.</p>
+                    <p class="mb-0">Video: <a href="./mobile_guide.webm" target="_blank">mobile_guide.webm</a></p>
+                </div>
+            </div>
+
+            <div class="card glass-card">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">Console</h2>
+                    <p class="mb-0">There is no simple install flow for PS / Xbox / Switch right now.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lang-panel d-none" data-lang="zh">
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">Windows 桌面端</h2>
+                    <div class="accordion" id="windowsAccordionZh">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="win-zh-script-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#win-zh-script" aria-expanded="true" aria-controls="win-zh-script">
+                                    方法 1：运行安装脚本
+                                </button>
+                            </h3>
+                            <div id="win-zh-script" class="accordion-collapse collapse show" aria-labelledby="win-zh-script-header" data-bs-parent="#windowsAccordionZh">
+                                <div class="accordion-body">
+                                    <p>下载并运行下面的脚本，然后重启游戏即可。</p>
+                                    <p class="mb-2">微软商店版请直接看方法 3。</p>
+                                    <p><a href="./Setup_Custom_Server.bat" target="_blank">Setup_Custom_Server.bat</a></p>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-4 mb-2">
-                                <div class="region-card border rounded-3 p-3 h-100">
-                                    <h5 class="region-title">EU</h5>
-                                    <p class="mb-1">Games: <span id="eu-games" class="fw-bold">0</span></p>
-                                    <p class="mb-0">Players: <span id="eu-players" class="fw-bold">0</span></p>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="win-zh-manual-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#win-zh-manual" aria-expanded="false" aria-controls="win-zh-manual">
+                                    方法 2：手动替换 `regioninfo.json`
+                                </button>
+                            </h3>
+                            <div id="win-zh-manual" class="accordion-collapse collapse" aria-labelledby="win-zh-manual-header" data-bs-parent="#windowsAccordionZh">
+                                <div class="accordion-body">
+                                    <ol class="mb-0">
+                                        <li>下载 <a href="./regioninfo.json" target="_blank">regioninfo.json</a>。</li>
+                                        <li>按 <kbd>Win + R</kbd>，打开 <span class="copy-text" data-copy="%userprofile%\AppData\LocalLow\Innersloth\Among Us">%userprofile%\AppData\LocalLow\Innersloth\Among Us</span>。</li>
+                                        <li>把下载好的 `regioninfo.json` 替换进去，然后重启游戏。</li>
+                                    </ol>
+                                    <div class="mt-3">
+                                        <img src="./win-run.png" alt="运行中打开 Among Us 目录">
+                                    </div>
+                                    <div class="mt-3">
+                                        <img src="./replace.png" alt="替换 regioninfo.json">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-4 mb-2">
-                                <div class="region-card border rounded-3 p-3 h-100">
-                                    <h5 class="region-title">AS</h5>
-                                    <p class="mb-1">Games: <span id="as-games" class="fw-bold">0</span></p>
-                                    <p class="mb-0">Players: <span id="as-players" class="fw-bold">0</span></p>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="win-zh-ms-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#win-zh-ms" aria-expanded="false" aria-controls="win-zh-ms">
+                                    方法 3：微软商店版
+                                </button>
+                            </h3>
+                            <div id="win-zh-ms" class="accordion-collapse collapse" aria-labelledby="win-zh-ms-header" data-bs-parent="#windowsAccordionZh">
+                                <div class="accordion-body">
+                                    <ol class="mb-0">
+                                        <li>下载 <a href="./regioninfo.json" target="_blank">regioninfo.json</a>。</li>
+                                        <li>打开 <span class="copy-text" data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs">%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span>。</li>
+                                        <li>进入名称很长的数字文件夹，找到里面类似 JSON 的存档文件。</li>
+                                        <li>把 `regioninfo.json` 的内容粘贴进去，保存后重启游戏。</li>
+                                    </ol>
+                                    <div class="mt-3">
+                                        <img src="./microsoft-data-folder.png" alt="微软商店版存档目录">
+                                    </div>
+                                    <div class="mt-3">
+                                        <img src="./microsoft-data-folder-2.png" alt="用记事本打开文件">
+                                    </div>
+                                    <div class="mt-3">
+                                        <img src="./microsoft-data-folder-3.png" alt="找到 region info 文件">
+                                    </div>
+                                    <div class="mt-3">
+                                        <img src="./microsoft-data-folder-4.png" alt="粘贴 region info 内容">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="win-zh-mini-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#win-zh-mini" aria-expanded="false" aria-controls="win-zh-mini">
+                                    额外方式：Mini.RegionInstall
+                                </button>
+                            </h3>
+                            <div id="win-zh-mini" class="accordion-collapse collapse" aria-labelledby="win-zh-mini-header" data-bs-parent="#windowsAccordionZh">
+                                <div class="accordion-body">
+                                    <p>如果你使用 Mini.RegionInstall，下载 <a href="./at.duikbo.regioninstall.cfg" target="_blank">at.duikbo.regioninstall.cfg</a>，并复制到 <span class="copy-text" data-copy="Among Us\BepInEx\config">Among Us\BepInEx\config</span>。</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- 安装指南卡片 -->
-            <section class="mb-4">
-                <div class="card mb-3 lang-en">
-                    <div class="card-body">
-                        <h3 class="card-title">Install Instructions</h3>
-                        <p>Global players please visit this link for install instructions: <a href="./en.html"
-                                target="_blank">https://au.niko233.top/en.html</a></p>
-                        <button class="btn btn-success w-100 mb-2" onclick="location.href='./en.html'">Click me for EN
-                            Install Guide</button>
-                    </div>
-                </div>
-                <div class="card mb-3 lang-zh d-none">
-                    <div class="card-body">
-                        <h3 class="card-title">安装指南</h3>
-                        <p>中国玩家请访问这个链接获取安装指南: <a href="./cn.html" target="_blank">https://au.niko233.top/cn.html</a></p>
-                        <button class="btn btn-success w-100 mb-2"
-                            onclick="location.href='./cn.html'">点我看中文安装指南</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 分享卡片 -->
-            <section class="mb-4">
-                <div class="card mb-3 lang-en">
-                    <div class="card-body">
-                        <h3 class="card-title">Feel Free to Share</h3>
-                        <p>This region is open for public. We appreciate you playing here and it would be better if you
-                            share our server to others.</p>
-                        <strong>
-                            <p>Use the link below to share the server!</p>
-                        </strong>
-                        <p><span class="copy-text" data-copy="https://au.niko233.top">https://au.niko233.top</span></p>
-                    </div>
-                </div>
-                <div class="card mb-3 lang-zh d-none">
-                    <div class="card-body">
-                        <h3 class="card-title">欢迎分享传播此服务器</h3>
-                        <p>我们的私服是公有服务，感谢您选择我们！我们也希望您能向您的朋友或其他人分享此服务器。</p>
-                        <strong>
-                            <p>用下面的链接来分享我们的私服！</p>
-                        </strong>
-                        <p><span class="copy-text" data-copy="https://au.niko233.top">https://au.niko233.top</span></p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 优势卡片 -->
-            <section class="mb-4">
-                <div class="card mb-3 lang-en">
-                    <div class="card-body">
-                        <h3 class="card-title">Our outstanding features</h3>
-                        <ul>
-                            <li>Our region will auth and assign friendcodes to players</li>
-                            <li>We implemented fixes server side, which probably eases the modded protocol issues after
-                                6.18 release</li>
-                            <li>Our region has server side silent AntiCheat & Anti Guest Account</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card mb-3 lang-zh d-none">
-                    <div class="card-body">
-                        <h3 class="card-title">我们的优势</h3>
-                        <ul>
-                            <li>我们的服务器会对玩家进行验证并分配好友代码</li>
-                            <li>我们在服务端植入了修复，极大缓解了6.18更新之后的模组入房黑屏掉线问题。</li>
-                            <li>我们的服务器有静默的反作弊，反游客账号支持</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 隐私政策 -->
-            <section class="mb-4">
-                <div class="card mb-3 lang-en">
-                    <div class="card-body">
-                        <h3 class="card-title">Privacy Policy</h3>
-                        <p>You can find our privacy policy here: <a href="./policy.html"
-                                target="_blank">https://au.niko233.top/policy.html</a></p>
-                        <p>By playing on this server, you are deemed to have read and fully understood the above policy
-                            and agree to our reasonable collection of your personal data.</p>
-                    </div>
-                </div>
-                <div class="card mb-3 lang-zh d-none">
-                    <div class="card-body">
-                        <h3 class="card-title">隐私政策</h3>
-                        <p>你可以在这里查阅我们的隐私政策: <a href="./policy.html"
-                                target="_blank">https://au.niko233.top/policy.html</a></p>
-                        <p>通过在本私服游玩，默认您已阅读并完全理解上述政策，同意我们在合理范围内收集您的个人数据。</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 公告 -->
-            <section class="mb-4">
-                <div class="card mb-3 lang-en">
-                    <div class="card-body">
-                        <h3 class="card-title">Announcements</h3>
-                        <ul>
-                            <li>
-                            <p>Dear players,</p>
-
-                            <p>
-                                This announcement is to inform you that
-                                <strong>niko233.me will be migrated to a new domain, niko233.top</strong>,
-                                due to the increasingly high renewal cost of the current domain.
-                            </p>
-
-                            <h3>📅 Migration Timeline</h3>
-
-                            <p><strong>Starting February 1</strong></p>
-                            <ul>
-                                <li>The latest <strong>NA / EU / AS server domains</strong> will begin resolving to <strong>niko233.top</strong>.</li>
-                                <li>When joining the server, you will receive a prompt asking you to migrate to the new domain.</li>
-                                <li>During this period, <strong>niko233.me will remain available</strong>.</li>
-                            </ul>
-
-                            <p><strong>Starting May 1</strong></p>
-                            <ul>
-                                <li>
-                                If you continue to join my game servers using <strong>niko233.me</strong>,
-                                you will be <strong>automatically kicked</strong> and informed to migrate to the new domain as soon as possible.
-                                </li>
-                            </ul>
-
-                            <p><strong>Starting June 1</strong></p>
-                            <ul>
-                                <li><strong>niko233.me will no longer be renewed</strong>.</li>
-                                <li>
-                                All related DNS records will be <strong>permanently disabled</strong>.
-                                After this date I no longer control the domain and
-                                <strong>anything on it afterwards should not be trusted</strong>.
-                                </li>
-                            </ul>
-
-                            <h3>⚠️ Action Required</h3>
-
-                            <p>
-                                No matter what, <strong>please update any locally saved domains after February 1</strong>.
-                            </p>
-
-                            <p>
-                                I will update the domain on the installation website and will also contact relevant mod administrators
-                                to ensure the domain is updated accordingly.
-                            </p>
-
-                            <p>
-                                Thank you for your understanding and continued support.
-                            </p>
-
-                            <p>
-                                Best regards,<br>
-                                <strong>NikoCat233</strong>
-                            </p>
-                            </li>
-
-                            <li>We now have a discord server! <a href="https://au.niko233.top/discord"
-                                    target="_blank">https://au.niko233.top/discord</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card mb-3 lang-zh d-none">
-                    <div class="card-body">
-                        <h3 class="card-title">公告</h3>
-                        <ul>
-                            <li>
-                                <p>亲爱的玩家们：</p>
-
-                                <p>
-                                    本公告旨在通知大家，由于当前域名续费成本持续升高，
-                                    <strong>niko233.me 将迁移至新的域名 niko233.top</strong>。
-                                </p>
-
-                                <h3>📅 域名迁移时间安排</h3>
-
-                                <p><strong>自 2 月 1 日起</strong></p>
-                                <ul>
-                                    <li>最新的 <strong>NA / EU / AS 服务器域名</strong> 将开始解析至 <strong>niko233.top</strong>。</li>
-                                    <li>加入服务器时，您将收到提示，要求您迁移至新域名。</li>
-                                    <li>在此期间，<strong>niko233.me 仍可正常使用</strong>。</li>
-                                </ul>
-
-                                <p><strong>自 5 月 1 日起</strong></p>
-                                <ul>
-                                    <li>
-                                    如果您仍通过 <strong>niko233.me</strong> 加入我的游戏服务器，
-                                    将会被 <strong>自动踢出</strong>，并提示您尽快迁移至新域名。
-                                    </li>
-                                </ul>
-
-                                <p><strong>自 6 月 1 日起</strong></p>
-                                <ul>
-                                    <li><strong>niko233.me 将不再续费</strong>。</li>
-                                    <li>
-                                    所有相关 DNS 记录将被 <strong>永久禁用</strong>。
-                                    在此日期之后，我将不再拥有该域名的控制权，
-                                    <strong>届时该域名上的任何内容均不可信</strong>。
-                                    </li>
-                                </ul>
-
-                                <h3>⚠️ 重要提示</h3>
-
-                                <p>
-                                    无论如何，<strong>请务必在 2 月 1 日之后更新所有本地保存的域名</strong>。
-                                </p>
-
-                                <p>
-                                    我将同步更新安装网站中的域名，并联系相关模组管理员，
-                                    以确保域名在各处得到及时更新。
-                                </p>
-
-                                <p>
-                                    感谢大家的理解与一直以来的支持。
-                                </p>
-
-                                <p>
-                                    此致<br>
-                                    <strong>NikoCat233</strong>
-                                </p>
-                                </li>
-                            <li>我们现在有Discord服务器了！ <a href="https://au.niko233.top/discord"
-                                    target="_blank">https://au.niko233.top/discord</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 联系方式与支持 -->
-            <section class="mb-4">
-                <div class="card mb-3 lang-en">
-                    <div class="card-body">
-                        <h3 class="card-title">Contact & Support</h3>
-                        <ul>
-                            <li>Discord Server: <a href="https://au.niko233.top/discord"
-                                    target="_blank">https://au.niko233.top/discord</a></li>
-                            <li>You can find <strong>NikoCat233</strong> & DM me there!</li>
-                            <li>FAQ / TroubleShooting: <a href="https://au.niko233.top/trouble_en.html"
-                                    target="_blank">https://au.niko233.top/trouble_en.html</a></li>
-                            <li>Support me on Ko-fi: <a href="https://ko-fi.com/nikocat233"
-                                    target="_blank">https://ko-fi.com/nikocat233</a></li>
-                            <li>Support Pietro on Ko-fi: <a href="https://ko-fi.com/pietro420"
-                                    target="_blank">https://ko-fi.com/pietro420</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card mb-3 lang-zh d-none">
-                    <div class="card-body">
-                        <h3 class="card-title">联系方式与支持我们</h3>
-                        <button id="wechat-donate-btn" class="btn btn-warning w-100 mb-2">微信赞赏码捐助<br>WeChat Pay
-                            Donation</button>
-                        <ul>
-                            <li>Discord Server: <a href="https://au.niko233.top/discord"
-                                    target="_blank">https://au.niko233.top/discord</a></li>
-                            <li>常见问题: <a href="https://au.niko233.top/trouble_cn.html"
-                                    target="_blank">https://au.niko233.top/trouble_cn.html</a></li>
-                            <li>到Ko-fi捐助Niko: <a href="https://ko-fi.com/nikocat233"
-                                    target="_blank">https://ko-fi.com/nikocat233</a></li>
-                            <li>到Ko-fi捐助Pietro: <a href="https://ko-fi.com/pietro420"
-                                    target="_blank">https://ko-fi.com/pietro420</a></li>
-                            <li>我们的QQ群聊: <span class="copy-text" data-copy="975714136">975714136</span> <a
-                                    href="https://au.niko233.top/qq" target="_blank">https://au.niko233.top/qq</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 捐助者 -->
-            <section class="mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Sponsors | 捐助者</h3>
-                        <p class="lang-en">Thank you for your donation! I'm bond to make my custom region more stable
-                            and useful!</p>
-                        <p class="lang-zh d-none">感谢你们的捐赠！ 你们的支持能让这个私服走的更远！</p>
-                        <ul>
-                            <li>SpicyPoops - 50 USD</li>
-                            <li>瑞 - 5 USD</li>
-                            <li>Sarhadactyl - 70 USD - Join MAUL now! <a href="https://discord.gg/maul"
-                                    target="_blank">https://discord.gg/maul</a></li>
-                            <li>kk - 14 CNY</li>
-                            <li>月饼 - 1 CNY</li>
-                            <li>风叧 - 1 CNY - 跟我念：fenggua</li>
-                            <li>全员天选之子 - 10 CNY - 每日首刀+50xp</li>
-                            <li>Yourfather - 0.01 CNY - 好活当赏</li>
-                            <li>Slok7565 - 50 CNY - 都去玩TONEX !!!</li>
-                            <li>川 - 10 CNY</li>
-                            <li>黄雾 - 10 CNY</li>
-                            <li>。 - 5 CNY</li>
-                            <li>Mr.LKQ - 70 CNY</li>
-                            <li>小赖哟 - 5 CNY</li>
-                            <li>中立小黑 - 3 CNY</li>
-                            <li>Moe on behalf of TEN - 400 CAD</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- 微信二维码弹窗 -->
-        <div id="wechat-qr-overlay" class="qr-overlay">
-            <div class="qr-content">
-                <img src="./wechat.png" alt="WeChat Pay QR Code" style="max-width: 300px;">
-                <p>点击屏幕关闭 | Click to close</p>
             </div>
-        </div>
 
-        <div id="cc-myssl-id" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99">
-            <a href="https://myssl.com/au.niko233.top?from=mysslid"><img
-                    src="https://static.myssl.com/res/images/myssl-id.png" alt="" style="width:100%;height:100%"></a>
-        </div>
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">Android / iPhone 手机端</h2>
+                    <p>先让 Among Us 保持后台运行，再点击下面的服务器按钮。</p>
+                    <div class="button-grid mb-3">
+                        <div class="button-row w-100">
+                            <button class="btn btn-outline-success" onclick="window.location.href='amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.top&usedtls=false'">Niko AS</button>
+                            <button class="btn btn-outline-success" onclick="window.location.href='amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.top&usedtls=false'">Niko NA</button>
+                            <button class="btn btn-outline-success" onclick="window.location.href='amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.top&usedtls=false'">Niko EU</button>
+                        </div>
+                        <div class="button-row w-100">
+                            <button class="btn btn-outline-secondary" onclick="window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.org&usedtls=false'">Modded NA</button>
+                            <button class="btn btn-outline-secondary" onclick="window.location.href='amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false'">Modded EU</button>
+                            <button class="btn btn-outline-secondary" onclick="window.location.href='amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false'">Modded AS</button>
+                        </div>
+                    </div>
+                    <p class="mb-2">如果你在 Gspace、OurPlay 或其他虚拟环境里运行游戏：</p>
+                    <p class="mb-2">把浏览器也导入同一个环境，先在其中启动 Among Us，再用该浏览器打开本页并重新点击按钮。</p>
+                    <p class="mb-0">视频指引：<a href="./mobile_guide.webm" target="_blank">mobile_guide.webm</a></p>
+                </div>
+            </div>
+
+            <div class="card glass-card">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">主机平台</h2>
+                    <p class="mb-0">目前 PS / Xbox / Switch 没有简单安装方式。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const enBtn = document.getElementById("lang-en-btn");
+            const zhBtn = document.getElementById("lang-zh-btn");
+            const panels = document.querySelectorAll(".lang-panel");
+
+            function setLang(lang) {
+                document.documentElement.lang = lang;
+                panels.forEach((panel) => {
+                    panel.classList.toggle("d-none", panel.dataset.lang !== lang);
+                });
+                enBtn.classList.toggle("btn-primary", lang === "en");
+                enBtn.classList.toggle("btn-outline-primary", lang !== "en");
+                zhBtn.classList.toggle("btn-primary", lang === "zh");
+                zhBtn.classList.toggle("btn-outline-primary", lang !== "zh");
+            }
+
+            enBtn.addEventListener("click", function () {
+                setLang("en");
+            });
+
+            zhBtn.addEventListener("click", function () {
+                setLang("zh");
+            });
+
+            document.querySelectorAll(".copy-text").forEach((element) => {
+                element.addEventListener("click", function () {
+                    const text = element.getAttribute("data-copy");
+                    navigator.clipboard.writeText(text).then(function () {
+                        alert("Copied to clipboard / 已复制到剪贴板");
+                    });
+                });
+            });
+
+            setLang("en");
+        });
+    </script>
 </body>
-<script>
-    // 语言切换
-    document.addEventListener("DOMContentLoaded", function () {
-        function setLang(lang) {
-            document.querySelectorAll('.lang-en').forEach(e => e.classList.toggle('d-none', lang !== 'en'));
-            document.querySelectorAll('.lang-zh').forEach(e => e.classList.toggle('d-none', lang !== 'zh'));
-            document.getElementById('header-desc-en').classList.toggle('d-none', lang !== 'en');
-            document.getElementById('header-desc-zh').classList.toggle('d-none', lang !== 'zh');
-            document.getElementById('lang-en-btn').classList.toggle('btn-primary', lang === 'en');
-            document.getElementById('lang-en-btn').classList.toggle('btn-outline-primary', lang !== 'en');
-            document.getElementById('lang-zh-btn').classList.toggle('btn-primary', lang === 'zh');
-            document.getElementById('lang-zh-btn').classList.toggle('btn-outline-primary', lang !== 'zh');
-        }
-        document.getElementById('lang-en-btn').onclick = () => setLang('en');
-        document.getElementById('lang-zh-btn').onclick = () => setLang('zh');
-        setLang('en');
-    });
-</script>
-
 </html>
