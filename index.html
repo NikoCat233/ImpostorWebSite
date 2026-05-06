@@ -59,6 +59,51 @@
             max-width: 100%;
             height: auto;
         }
+
+        .support-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .kofi-donate-btn {
+            color: #212529;
+            border-color: #d18b00;
+            background: #ffd24d;
+        }
+
+        .kofi-donate-btn:hover,
+        .kofi-donate-btn:focus {
+            color: #212529;
+            border-color: #b87700;
+            background: #f0c13d;
+        }
+
+        .qr-overlay {
+            position: fixed;
+            inset: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1055;
+            padding: 1rem;
+        }
+
+        .qr-content {
+            width: min(100%, 360px);
+            background: #fff;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            text-align: center;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+        }
+
+        .qr-content img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 0.75rem;
+        }
     </style>
 </head>
 <body>
@@ -80,6 +125,17 @@
         <section class="lang-panel" data-lang="en">
             <div class="card glass-card mb-4">
                 <div class="card-body p-4">
+                    <h2 class="h4 mb-3">Donate</h2>
+                    <p class="mb-3">If this server helps you, you can donate to support the hosting costs here.</p>
+                    <div class="support-actions">
+                        <a class="btn kofi-donate-btn" href="https://ko-fi.com/nikocat233" target="_blank" rel="noopener noreferrer">Donate via Ko-fi</a>
+                        <button id="wechat-donate-btn-en" type="button" class="btn btn-outline-success">WeChat Donate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
                     <h2 class="h4 mb-3">Windows Desktop</h2>
                     <div class="accordion" id="windowsAccordionEn">
                         <div class="accordion-item">
@@ -88,10 +144,10 @@
                                     Method 1: Run the install script
                                 </button>
                             </h3>
-                            <div id="win-en-script" class="accordion-collapse collapse show" aria-labelledby="win-en-script-header" data-bs-parent="#windowsAccordionEn">
+                                <div id="win-en-script" class="accordion-collapse collapse show" aria-labelledby="win-en-script-header" data-bs-parent="#windowsAccordionEn">
                                 <div class="accordion-body">
                                     <p>Download and run the script below, then restart the game.</p>
-                                    <p class="mb-2">Microsoft Store version users should skip to Method 3.</p>
+                                    <p class="mb-2">This script now supports both the default / Steam version and the Microsoft Store version. Use Method 3 only if the script fails.</p>
                                     <p><a href="./Setup_Custom_Server.bat" target="_blank">Setup_Custom_Server.bat</a></p>
                                 </div>
                             </div>
@@ -124,8 +180,9 @@
                                     Method 3: Microsoft Store version
                                 </button>
                             </h3>
-                            <div id="win-en-ms" class="accordion-collapse collapse" aria-labelledby="win-en-ms-header" data-bs-parent="#windowsAccordionEn">
+                                <div id="win-en-ms" class="accordion-collapse collapse" aria-labelledby="win-en-ms-header" data-bs-parent="#windowsAccordionEn">
                                 <div class="accordion-body">
+                                    <p class="mb-3">If Method 1 does not work for the Microsoft Store version, follow these manual steps:</p>
                                     <ol class="mb-0">
                                         <li>Download <a href="./regioninfo.json" target="_blank">regioninfo.json</a>.</li>
                                         <li>Open <span class="copy-text" data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs">%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span>.</li>
@@ -191,9 +248,21 @@
                     <p class="mb-0">There is no simple install flow for PS / Xbox / Switch right now.</p>
                 </div>
             </div>
+
         </section>
 
         <section class="lang-panel d-none" data-lang="zh">
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">Donate / 赞助</h2>
+                    <p class="mb-3">如果这个服务器对你有帮助，可以在这里捐赠，支持服务器开销。</p>
+                    <div class="support-actions">
+                        <a class="btn kofi-donate-btn" href="https://ko-fi.com/nikocat233" target="_blank" rel="noopener noreferrer">Ko-fi Donate</a>
+                        <button id="wechat-donate-btn" type="button" class="btn btn-outline-success">WeChat Donate</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="card glass-card mb-4">
                 <div class="card-body p-4">
                     <h2 class="h4 mb-3">Windows 桌面端</h2>
@@ -204,10 +273,10 @@
                                     方法 1：运行安装脚本
                                 </button>
                             </h3>
-                            <div id="win-zh-script" class="accordion-collapse collapse show" aria-labelledby="win-zh-script-header" data-bs-parent="#windowsAccordionZh">
+                                <div id="win-zh-script" class="accordion-collapse collapse show" aria-labelledby="win-zh-script-header" data-bs-parent="#windowsAccordionZh">
                                 <div class="accordion-body">
                                     <p>下载并运行下面的脚本，然后重启游戏即可。</p>
-                                    <p class="mb-2">微软商店版请直接看方法 3。</p>
+                                    <p class="mb-2">这个脚本现在同时支持默认版 / Steam 和微软商店版。只有在脚本安装失败时，才需要看方法 3。</p>
                                     <p><a href="./Setup_Custom_Server.bat" target="_blank">Setup_Custom_Server.bat</a></p>
                                 </div>
                             </div>
@@ -240,8 +309,9 @@
                                     方法 3：微软商店版
                                 </button>
                             </h3>
-                            <div id="win-zh-ms" class="accordion-collapse collapse" aria-labelledby="win-zh-ms-header" data-bs-parent="#windowsAccordionZh">
+                                <div id="win-zh-ms" class="accordion-collapse collapse" aria-labelledby="win-zh-ms-header" data-bs-parent="#windowsAccordionZh">
                                 <div class="accordion-body">
+                                    <p class="mb-3">如果方法 1 在微软商店版上安装失败，再按下面步骤手动安装：</p>
                                     <ol class="mb-0">
                                         <li>下载 <a href="./regioninfo.json" target="_blank">regioninfo.json</a>。</li>
                                         <li>打开 <span class="copy-text" data-copy="%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs">%userprofile%\AppData\Local\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemAppData\wgs</span>。</li>
@@ -307,8 +377,16 @@
                     <p class="mb-0">目前 PS / Xbox / Switch 没有简单安装方式。</p>
                 </div>
             </div>
+
         </section>
     </main>
+
+    <div id="wechat-qr-overlay" class="qr-overlay" aria-hidden="true">
+        <div class="qr-content">
+            <img src="./wechat.png" alt="WeChat donation QR code">
+            <p class="mt-3 mb-0">微信扫码赞助</p>
+        </div>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -360,6 +438,25 @@
                     });
                 });
             });
+
+            const wechatDonateButtons = document.querySelectorAll("#wechat-donate-btn, #wechat-donate-btn-en");
+            const wechatOverlay = document.getElementById("wechat-qr-overlay");
+
+            if (wechatDonateButtons.length && wechatOverlay) {
+                wechatDonateButtons.forEach(function (button) {
+                    button.addEventListener("click", function () {
+                        wechatOverlay.style.display = "flex";
+                        wechatOverlay.setAttribute("aria-hidden", "false");
+                    });
+                });
+
+                wechatOverlay.addEventListener("click", function (event) {
+                    if (event.target === wechatOverlay) {
+                        wechatOverlay.style.display = "none";
+                        wechatOverlay.setAttribute("aria-hidden", "true");
+                    }
+                });
+            }
 
             setLang(detectInitialLang());
         });
