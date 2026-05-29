@@ -66,6 +66,20 @@
             gap: 0.75rem;
         }
 
+        .icon-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+        }
+
+        .contact-icon {
+            width: 1.1em;
+            height: 1.1em;
+            flex: 0 0 auto;
+            display: block;
+        }
+
         .kofi-donate-btn {
             color: #212529;
             border-color: #d18b00;
@@ -77,6 +91,58 @@
             color: #212529;
             border-color: #b87700;
             background: #f0c13d;
+        }
+
+        .email-contact-btn {
+            color: #fff;
+            border-color: #495057;
+            background: #495057;
+        }
+
+        .email-contact-btn:hover,
+        .email-contact-btn:focus {
+            color: #fff;
+            border-color: #343a40;
+            background: #343a40;
+        }
+
+        .discord-contact-btn {
+            color: #fff;
+            border-color: #5865f2;
+            background: #5865f2;
+        }
+
+        .discord-contact-btn:hover,
+        .discord-contact-btn:focus {
+            color: #fff;
+            border-color: #4752c4;
+            background: #4752c4;
+        }
+
+        .qq-contact-btn {
+            color: #fff;
+            border-color: #12b7f5;
+            background: #12b7f5;
+        }
+
+        .qq-contact-btn:hover,
+        .qq-contact-btn:focus {
+            color: #fff;
+            border-color: #0b93c7;
+            background: #0b93c7;
+        }
+
+        .wechat-donate-btn {
+            color: #fff;
+            border-color: #07c160;
+            background: #07c160;
+        }
+
+        .wechat-donate-btn:hover,
+        .wechat-donate-btn:focus {
+            color: #fff;
+            border-color: #05964a;
+            background: #05964a;
         }
 
         .qr-overlay {
@@ -125,11 +191,36 @@
         <section class="lang-panel" data-lang="en">
             <div class="card glass-card mb-4">
                 <div class="card-body p-4">
+                    <h2 class="h4 mb-3">Rules</h2>
+                    <p class="mb-3">Players must follow the <a href="https://www.innersloth.com/code-of-conduct/" target="_blank" rel="noopener noreferrer">Innersloth Code of Conduct</a>.</p>
+                    <ul class="mb-0">
+                        <li>No cheating of any kind.</li>
+                        <li>No insults, harassment, or racial discrimination.</li>
+                        <li>No ban evasion.</li>
+                        <li>Breaking these rules may result in a ban.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
                     <h2 class="h4 mb-3">Donate</h2>
                     <p class="mb-3">If this server helps you, you can donate to support the hosting costs here.</p>
                     <div class="support-actions">
-                        <a class="btn kofi-donate-btn" href="https://ko-fi.com/nikocat233" target="_blank" rel="noopener noreferrer">Donate via Ko-fi</a>
-                        <button id="wechat-donate-btn-en" type="button" class="btn btn-outline-success">WeChat Donate</button>
+                        <a class="btn kofi-donate-btn icon-button" href="https://ko-fi.com/nikocat233" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/kofi.svg" alt="">Donate via Ko-fi</a>
+                        <button id="wechat-donate-btn-en" type="button" class="btn wechat-donate-btn icon-button"><img class="contact-icon" src="./assets/icons/wechat.svg" alt="">WeChat Donate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">Contact</h2>
+                    <p class="mb-3">Contact NikoCat233 by email, or join the community channels below.</p>
+                    <div class="support-actions">
+                        <a class="btn email-contact-btn icon-button" href="mailto:admin@niko233.top"><img class="contact-icon" src="./assets/icons/mail.svg" alt="">Email</a>
+                        <a class="btn discord-contact-btn icon-button" href="/discord" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/discord.svg" alt="">Discord</a>
+                        <a class="btn qq-contact-btn icon-button" href="/qq" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/qq.svg" alt="">China QQ Group</a>
                     </div>
                 </div>
             </div>
@@ -254,11 +345,36 @@
         <section class="lang-panel d-none" data-lang="zh">
             <div class="card glass-card mb-4">
                 <div class="card-body p-4">
+                    <h2 class="h4 mb-3">服务器规则</h2>
+                    <p class="mb-3">玩家必须遵守 <a href="https://www.innersloth.com/code-of-conduct/" target="_blank" rel="noopener noreferrer">Innersloth Code of Conduct</a>。</p>
+                    <ul class="mb-0">
+                        <li>禁止任何形式的作弊。</li>
+                        <li>禁止辱骂、骚扰和种族歧视。</li>
+                        <li>禁止绕过封禁。</li>
+                        <li>违反规则的后果将是封禁。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
                     <h2 class="h4 mb-3">Donate / 赞助</h2>
                     <p class="mb-3">如果这个服务器对你有帮助，可以在这里捐赠，支持服务器开销。</p>
                     <div class="support-actions">
-                        <a class="btn kofi-donate-btn" href="https://ko-fi.com/nikocat233" target="_blank" rel="noopener noreferrer">Ko-fi Donate</a>
-                        <button id="wechat-donate-btn" type="button" class="btn btn-outline-success">WeChat Donate</button>
+                        <a class="btn kofi-donate-btn icon-button" href="https://ko-fi.com/nikocat233" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/kofi.svg" alt="">Ko-fi Donate</a>
+                        <button id="wechat-donate-btn" type="button" class="btn wechat-donate-btn icon-button"><img class="contact-icon" src="./assets/icons/wechat.svg" alt="">WeChat Donate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card glass-card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3">联系方式</h2>
+                    <p class="mb-3">联系 NikoCat233 可通过邮件，也可以加入下面的社区频道。</p>
+                    <div class="support-actions">
+                        <a class="btn email-contact-btn icon-button" href="mailto:admin@niko233.top"><img class="contact-icon" src="./assets/icons/mail.svg" alt="">邮件</a>
+                        <a class="btn discord-contact-btn icon-button" href="/discord" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/discord.svg" alt="">Discord</a>
+                        <a class="btn qq-contact-btn icon-button" href="/qq" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/qq.svg" alt="">QQ 群</a>
                     </div>
                 </div>
             </div>
