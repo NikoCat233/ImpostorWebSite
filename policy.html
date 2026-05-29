@@ -10,33 +10,117 @@
     <script src="./bootstrap.bundle.min.js"></script>
     <style>
         body {
-            background: #f8f9fa;
+            min-height: 100vh;
+            background: url('./background.jpg') repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .page-shell {
+            max-width: 960px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12);
         }
 
         .lang-zh.d-none,
         .lang-en.d-none {
             display: none !important;
         }
+
+        .policy-content h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .support-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .icon-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+        }
+
+        .contact-icon {
+            width: 1.1em;
+            height: 1.1em;
+            flex: 0 0 auto;
+            display: block;
+        }
+
+        .email-contact-btn {
+            color: #fff;
+            border-color: #495057;
+            background: #495057;
+        }
+
+        .email-contact-btn:hover,
+        .email-contact-btn:focus {
+            color: #fff;
+            border-color: #343a40;
+            background: #343a40;
+        }
+
+        .discord-contact-btn {
+            color: #fff;
+            border-color: #5865f2;
+            background: #5865f2;
+        }
+
+        .discord-contact-btn:hover,
+        .discord-contact-btn:focus {
+            color: #fff;
+            border-color: #4752c4;
+            background: #4752c4;
+        }
+
+        .qq-contact-btn {
+            color: #fff;
+            border-color: #12b7f5;
+            background: #12b7f5;
+        }
+
+        .qq-contact-btn:hover,
+        .qq-contact-btn:focus {
+            color: #fff;
+            border-color: #0b93c7;
+            background: #0b93c7;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container py-4">
-        <div class="card mb-4">
-            <div class="card-body">
-                <h1 class="text-center mb-3">隐私守则 <span class="fs-5">(Privacy Policy)</span></h1>
-                <div class="d-flex justify-content-center mt-3">
+    <main class="container py-4 py-md-5 page-shell">
+        <section class="card glass-card mb-4">
+            <div class="card-body p-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                    <div>
+                        <h1 class="mb-2">隐私守则 <span class="fs-5">(Privacy Policy)</span></h1>
+                    </div>
                     <div class="btn-group" role="group" aria-label="Language Switch">
-                        <button id="lang-zh-btn" type="button" class="btn btn-primary btn-sm">中文</button>
-                        <button id="lang-en-btn" type="button" class="btn btn-outline-primary btn-sm">English</button>
+                        <button id="lang-zh-btn" type="button" class="btn btn-primary">中文</button>
+                        <button id="lang-en-btn" type="button" class="btn btn-outline-primary">English</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- 中文内容 -->
-        <div class="card mb-4 lang-zh">
-            <div class="card-body">
+        <section class="card glass-card mb-4 lang-zh">
+            <div class="card-body p-4 policy-content">
                 <h2>1. 简介</h2>
                 <p>本隐私守则阐述了 NikoCat233 运营的多个《Among Us》Impostor
                     服务器（以下简称“私服”）如何收集、使用和保护您的个人信息。为了确保服务的安全，保障玩家和谐稳定的游戏体验，以及对抗作弊者和攻击者，我们可能需要收集您的相关数据。</p>
@@ -60,22 +144,22 @@
                 <p>我们可能会不时更新本隐私守则。任何变更将在发布于此页面后立即生效。</p>
                 <h2>6. 联系我们</h2>
                 <p>如果您对本隐私守则有任何疑问，请通过以下方式联系我们：</p>
-                <ul>
-                    <li>Discord: <a href="https://discord.gg/ten">NikoCat233</a></li>
-                    <li>Tencent QQ: 1529729259</li>
-                    <li>E-Mail: admin@niko233.top</li>
-                </ul>
+                <div class="support-actions">
+                    <a class="btn email-contact-btn icon-button" href="mailto:admin@niko233.top"><img class="contact-icon" src="./assets/icons/mail.svg" alt="">邮件</a>
+                    <a class="btn discord-contact-btn icon-button" href="/discord" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/discord.svg" alt="">Discord</a>
+                    <a class="btn qq-contact-btn icon-button" href="/qq" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/qq.svg" alt="">QQ 群</a>
+                </div>
                 <h2>重要提示</h2>
                 <ul>
                     <li>请确保您遵守《Among Us》的官方服务条款和隐私政策。</li>
                     <li>请注意，私服运营可能存在一定的风险，请您自行承担风险。</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
         <!-- English Content -->
-        <div class="card mb-4 lang-en d-none">
-            <div class="card-body">
+        <section class="card glass-card mb-4 lang-en d-none">
+            <div class="card-body p-4 policy-content">
                 <h2>1. Introduction</h2>
                 <p>This Privacy Policy outlines how NikoCat233, the operator of multiple Among Us Impostor servers
                     (hereinafter referred to as "servers"), collects, uses, and protects your personal information. To
@@ -106,14 +190,13 @@
                 <h2>5. Changes to this Policy</h2>
                 <p>We may update this Privacy Policy from time to time. Any changes will be effective immediately upon
                     posting to this page.</p>
-                <h2>Contact Us</h2>
+                <h2>6. Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, please contact us through:</p>
-                <ul>
-                    <li>Discord: <a href="https://discord.gg/ten">NikoCat233</a> (Please access DM from The Enhanced
-                        Network and inform your needs clearly.)</li>
-                    <li>Tencent QQ: 1529729259</li>
-                    <li>E-Mail: admin@niko233.top</li>
-                </ul>
+                <div class="support-actions">
+                    <a class="btn email-contact-btn icon-button" href="mailto:admin@niko233.top"><img class="contact-icon" src="./assets/icons/mail.svg" alt="">Email</a>
+                    <a class="btn discord-contact-btn icon-button" href="/discord" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/discord.svg" alt="">Discord</a>
+                    <a class="btn qq-contact-btn icon-button" href="/qq" target="_blank" rel="noopener noreferrer"><img class="contact-icon" src="./assets/icons/qq.svg" alt="">China QQ Group</a>
+                </div>
                 <h2>Important Notes</h2>
                 <ul>
                     <li>Please ensure that you comply with the official Terms of Service and Privacy Policy of Among Us.
@@ -122,12 +205,13 @@
                         you assume these risks yourself.</li>
                 </ul>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
     <script>
         // 语言切换
         document.addEventListener("DOMContentLoaded", function () {
             function setLang(lang) {
+                document.documentElement.lang = lang;
                 document.querySelectorAll('.lang-en').forEach(e => e.classList.toggle('d-none', lang !== 'en'));
                 document.querySelectorAll('.lang-zh').forEach(e => e.classList.toggle('d-none', lang !== 'zh'));
                 document.getElementById('lang-en-btn').classList.toggle('btn-primary', lang === 'en');
