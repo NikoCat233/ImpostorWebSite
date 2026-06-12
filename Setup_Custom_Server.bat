@@ -67,6 +67,7 @@ set "WGS_BASE=%LOCALAPPDATA%\Packages\Innersloth.AmongUs_fw5x688tam7rm\SystemApp
 set "STEAM_OK=0"
 set "MS_OK=0"
 set "ANY_INSTALLED=0"
+set "INSTALL_FAILED=0"
 
 if exist "%STEAM_DIR%\" (
     set "STEAM_OK=1"
@@ -97,12 +98,8 @@ echo.
 
 if "%STEAM_OK%"=="1" (
     echo [Default / Steam] Installing region info...
-    copy /y "%TEMP_JSON%" "%STEAM_DIR%\regionInfo.json" >nul
-    if !ERRORLEVEL! EQU 0 (
-        echo [Default / Steam] OK - Installation completed.
-    ) else (
-        echo [Default / Steam] ERROR - Failed to copy regionInfo.json.
-    )
+    call :CopyRegionInfo "Default / Steam" "%TEMP_JSON%" "%STEAM_DIR%\regionInfo.json"
+    if !ERRORLEVEL! NEQ 0 set "INSTALL_FAILED=1"
     echo.
 )
 
@@ -116,12 +113,8 @@ if "%MS_OK%"=="1" (
                 findstr /m "CurrentRegionIdx" "%%F" >nul 2>nul
                 if !ERRORLEVEL! EQU 0 (
                     echo [Microsoft Store] Found file: %%F
-                    copy /y "%TEMP_JSON%" "%%F" >nul
-                    if !ERRORLEVEL! EQU 0 (
-                        echo [Microsoft Store] OK - Installation completed.
-                    ) else (
-                        echo [Microsoft Store] ERROR - Failed to copy the file.
-                    )
+                    call :CopyRegionInfo "Microsoft Store" "%TEMP_JSON%" "%%F"
+                    if !ERRORLEVEL! NEQ 0 set "INSTALL_FAILED=1"
                     set "MS_FOUND=1"
                 )
             )
@@ -139,8 +132,59 @@ if "%MS_OK%"=="1" (
 del "%TEMP_JSON%" >nul 2>nul
 
 echo ==================================================
-echo Installation completed. Restart Among Us.
-echo https://au.niko233.top
+if "%INSTALL_FAILED%"=="1" (
+    echo Installation finished with errors.
+    echo Please read the error message above, then try again or use the manual guide:
+    echo https://au.niko233.top
+) else (
+    echo Installation completed. Restart Among Us.
+    echo https://au.niko233.top
+)
 echo ==================================================
 echo.
 pause
+exit /b 0
+
+:CopyRegionInfo
+set "COPY_LABEL=%~1"
+set "COPY_SOURCE=%~2"
+set "COPY_TARGET=%~3"
+
+copy /y "%COPY_SOURCE%" "%COPY_TARGET%" >nul 2>nul
+if !ERRORLEVEL! EQU 0 (
+    echo [%COPY_LABEL%] OK - Installation completed.
+    exit /b 0
+)
+
+if not exist "%COPY_TARGET%" (
+    echo [%COPY_LABEL%] ERROR - Failed to copy regionInfo.json.
+    echo [%COPY_LABEL%] Target file was not found or could not be created:
+    echo %COPY_TARGET%
+    exit /b 1
+)
+
+attrib "%COPY_TARGET%" | findstr /r /c:"^.....R" >nul 2>nul
+if !ERRORLEVEL! NEQ 0 (
+    echo [%COPY_LABEL%] ERROR - Failed to copy regionInfo.json.
+    echo [%COPY_LABEL%] The target file is not read-only. Close the game and try again.
+    exit /b 1
+)
+
+echo [%COPY_LABEL%] Target file is read-only. Removing read-only attribute and retrying...
+attrib -r "%COPY_TARGET%" >nul 2>nul
+if !ERRORLEVEL! NEQ 0 (
+    echo [%COPY_LABEL%] ERROR - Failed to remove the read-only attribute.
+    echo [%COPY_LABEL%] Please check file permissions and try again.
+    exit /b 1
+)
+
+copy /y "%COPY_SOURCE%" "%COPY_TARGET%" >nul 2>nul
+if !ERRORLEVEL! EQU 0 (
+    echo [%COPY_LABEL%] OK - Installation completed after removing read-only attribute.
+    exit /b 0
+)
+
+echo [%COPY_LABEL%] ERROR - Failed to copy regionInfo.json after removing read-only attribute.
+echo [%COPY_LABEL%] Close the game, check file permissions, or use the manual install guide:
+echo https://au.niko233.top
+exit /b 1
