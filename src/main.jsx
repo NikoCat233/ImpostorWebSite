@@ -62,12 +62,15 @@ const copy = {
     heroDescription: 'A custom Among Us region, hosted for friends, modded communities, and anyone who wants a safer corner of the Skeld.',
     heroPrimary: 'Start installation',
     heroSecondary: 'Join Discord',
-    heroFootnote: 'Hosted by NikoCat233 · since 2024',
+    heroFootnote: 'Hosted since 2023 by NikoCat233 with love',
     heroOrigin: 'custom region',
     regions: 'regions',
     platforms: 'platforms',
     online: 'online now',
-    live: 'LIVE SIGNAL',
+    rooms: 'active rooms',
+    onlinePlayers: 'online players',
+    playerPulse: 'PLAYER PULSE',
+    live: 'Online',
     checking: 'CHECKING SIGNAL',
     installEyebrow: '01 / Add the regions',
     installTitle: 'Choose your platform.',
@@ -130,10 +133,12 @@ const copy = {
     kofi: 'Donate via Ko-fi',
     wechat: 'WeChat donate',
     contact: 'Contact',
+    contactHeadline: 'Reach the crew.',
     contactLead: 'Need help or want to share feedback? Reach out here.',
     email: 'Email',
     qq: 'China QQ group',
     footer: 'A small server for mega lobbies.',
+    hostedWithLove: 'Hosted since 2023 by NikoCat233 with love',
     footerPolicy: 'Privacy policy',
     modalTitle: 'Scan to support',
     modalClose: 'Close',
@@ -148,13 +153,16 @@ const copy = {
     heroTitleAccent: '加入房间',
     heroDescription: '一个遥遥领先于同行的 Among Us 私服。(不包括 miniduikboot 的产品)',
     heroPrimary: '开始安装',
-    heroSecondary: '加入 Discord',
-    heroFootnote: 'NikoCat233 维护 · 自 2023 年起',
+    heroSecondary: '加入 QQ 群',
+    heroFootnote: 'NikoCat233 用爱维护 · 自 2023 年起',
     heroOrigin: '自定义私服',
     regions: '区域',
     platforms: '平台',
     online: '当前在线',
-    live: '信号在线',
+    rooms: '当前房间',
+    onlinePlayers: '在线玩家',
+    playerPulse: '在线玩家',
+    live: 'Online',
     checking: '正在检测',
     installEyebrow: '01 / 选择平台',
     installTitle: '选择进入方式。',
@@ -191,8 +199,8 @@ const copy = {
     mobileLead: '先让 Among Us 保持后台运行，再点击下面的区域按钮。',
     mobileVirtual: '如果你在 Gspace、OurPlay 或其他虚拟环境里运行？',
     mobileVirtualDetail: '把浏览器也导入同一个环境，先在那里启动 Among Us，再用该浏览器打开本页并重新点击。',
-    videoGuide: '观看手机端指引',
-    modded: '模组区域',
+    videoGuide: '观看手机端安装指引',
+    modded: 'Modded 私服',
     consoleLead: '目前 PS / Xbox / Switch 没有简单的安装方式。',
     consoleHint: '如果主机支持有变化，我们会第一时间在这里更新。',
     quickEyebrow: '快速开始',
@@ -217,10 +225,12 @@ const copy = {
     kofi: '通过 Ko-fi 赞助',
     wechat: '微信赞助',
     contact: '联系方式',
+    contactHeadline: '找到我们。',
     contactLead: '需要帮助或想反馈？可以从这里联系。',
     email: '邮件',
     qq: '中国 QQ 群',
     footer: '为所有玩家准备的私服。',
+    hostedWithLove: 'Hosted since 2023 by NikoCat233 with love',
     footerPolicy: '隐私政策',
     modalTitle: '扫码支持',
     modalClose: '关闭',
@@ -269,6 +279,7 @@ function Icon({ name, size = 18, strokeWidth = 1.8 }) {
     heart: <path d="M20.8 8.6c0 5.2-8.8 10.4-8.8 10.4S3.2 13.8 3.2 8.6A4.6 4.6 0 0 1 12 6.3a4.6 4.6 0 0 1 8.8 2.3Z" />,
     mail: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></>,
     message: <><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.6 8.6 0 0 1-3-.5L4 20l1.5-3.6A7.1 7.1 0 0 1 4 11.5 7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 8 7.5Z" /><path d="M8 12h.01M12 12h.01M16 12h.01" /></>,
+    home: <><path d="m3 11 9-8 9 8" /><path d="M5 10v10h14V10" /><path d="M9 20v-6h6v6" /></>,
     lock: <><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></>,
     close: <><path d="m6 6 12 12M18 6 6 18" /></>,
   };
@@ -396,7 +407,7 @@ function DesktopInstall({ t, language, copied, onCopy, openMethod, setOpenMethod
       <div className="panel-intro-row">
         <div>
           <p className="panel-kicker"><Icon name="terminal" size={16} /> {language === 'zh' ? '桌面端安装' : 'DESKTOP INSTALL'}</p>
-          <p className="panel-lead">{language === 'zh' ? '推荐先试试自动脚本。需要更多控制权时，再展开下面的手动方式。' : 'Try the automatic script first. When you want more control, open one of the manual routes below.'}</p>
+          <p className="panel-lead">{language === 'zh' ? '优先使用自动安装脚本。脚本安装失败后，再展开下面的手动方式。' : 'Try the automatic script first. When you want more control, open one of the manual routes below.'}</p>
         </div>
         <span className="platform-stamp"><Icon name="shield" size={15} /> {t.recommended}</span>
       </div>
@@ -455,7 +466,7 @@ function MobileInstall({ t, language, counts }) {
         {regionLinks.map((region) => <RegionButton key={region.code} region={region} language={language} counts={counts} />)}
       </div>
       <div className="modded-block">
-        <div className="modded-heading"><span><Icon name="globe" size={15} /> {t.modded}</span><small>DUiKBO</small></div>
+        <div className="modded-heading"><span><Icon name="globe" size={15} /> {t.modded}</span><small>miniduikboot</small></div>
         <div className="modded-links">{moddedLinks.map((region) => <a key={region.code} href={region.url}>{region.label}<Icon name="arrow" size={14} /></a>)}</div>
       </div>
       <div className="mobile-note">
@@ -492,6 +503,17 @@ function QuickStart({ t }) {
   );
 }
 
+function PlayerPresence({ t, counts, totalPlayers, hasLiveData }) {
+  return (
+    <section className="player-presence" aria-label={t.onlinePlayers}>
+      <div className="player-presence-head"><span className="eyebrow"><Icon name="activity" size={14} /> {t.playerPulse}</span><strong>{hasLiveData ? totalPlayers : '—'}</strong><small>{t.onlinePlayers}</small></div>
+      <div className="player-region-list">
+        {regionLinks.filter((region) => region.api).map((region) => <div key={region.code} className="player-region"><span><i className={`player-region-dot ${region.tone}`} />{region.code}</span><strong>{hasLiveData ? (counts[region.code]?.players ?? '—') : '—'}</strong></div>)}
+      </div>
+    </section>
+  );
+}
+
 function RulesCard({ t, language }) {
   return (
     <section className="rules-card card-surface" id="rules">
@@ -506,22 +528,39 @@ function RulesCard({ t, language }) {
   );
 }
 
-function SupportCard({ t, onWechat }) {
+function SupportCard({ t, language, onWechat }) {
+  const contacts = language === 'zh'
+    ? [
+        { key: 'qq', href: QQ_URL, icon: 'qq', label: t.qq, detail: '975714136 · 点击加入', featured: 'is-qq' },
+        { key: 'discord', href: DISCORD_URL, icon: 'discord', label: 'Discord', detail: 'discord.gg/guf9ca4YSA' },
+        { key: 'email', href: 'mailto:admin@niko233.top', icon: 'mail', label: t.email, detail: 'admin@niko233.top' },
+      ]
+    : [
+        { key: 'discord', href: DISCORD_URL, icon: 'discord', label: 'Discord', detail: 'discord.gg/guf9ca4YSA', featured: 'is-discord' },
+        { key: 'email', href: 'mailto:admin@niko233.top', icon: 'mail', label: t.email, detail: 'admin@niko233.top' },
+        { key: 'qq', href: QQ_URL, icon: 'qq', label: t.qq, detail: '975714136' },
+      ];
+
   return (
     <section className="support-card card-surface" id="support">
-      <p className="eyebrow">{t.supportEyebrow}</p>
-      <h2>{t.supportTitle}</h2>
-      <p className="card-lead">{t.supportLead}</p>
-      <div className="support-actions">
-        <a className="support-button support-kofi" href="https://ko-fi.com/nikocat233" target="_blank" rel="noreferrer"><img src="/assets/icons/kofi.svg" alt="" />{t.kofi}<Icon name="external" size={14} /></a>
-        <button className="support-button support-wechat" type="button" onClick={onWechat}><img src="/assets/icons/wechat.svg" alt="" />{t.wechat}<Icon name="arrow" size={14} /></button>
+      <div className="contact-spotlight">
+        <div className="contact-spotlight-copy">
+          <p className="eyebrow">{t.contact}</p>
+          <h2>{t.contactHeadline}</h2>
+          <p className="contact-lead">{t.contactLead}</p>
+        </div>
+        <div className="contact-actions">
+          {contacts.map((contact) => <a key={contact.key} className={contact.featured || ''} href={contact.href} target={contact.key === 'email' ? undefined : '_blank'} rel={contact.key === 'email' ? undefined : 'noreferrer'}><img src={`/assets/icons/${contact.icon}.svg`} alt="" /><span><strong>{contact.label}</strong><small>{contact.detail}</small></span><Icon name="arrow" size={17} /></a>)}
+        </div>
       </div>
-      <div className="contact-divider"><span>{t.contact}</span></div>
-      <p className="contact-lead">{t.contactLead}</p>
-      <div className="contact-actions">
-        <a href="mailto:admin@niko233.top"><img src="/assets/icons/mail.svg" alt="" />{t.email}</a>
-        <a href={DISCORD_URL} target="_blank" rel="noreferrer"><img src="/assets/icons/discord.svg" alt="" />Discord</a>
-        <a href={QQ_URL} target="_blank" rel="noreferrer"><img src="/assets/icons/qq.svg" alt="" />{t.qq}</a>
+      <div className="support-copy">
+        <p className="eyebrow">{t.supportEyebrow}</p>
+        <h2>{t.supportTitle}</h2>
+        <p className="card-lead">{t.supportLead}</p>
+        <div className="support-actions">
+          <a className="support-button support-kofi" href="https://ko-fi.com/nikocat233" target="_blank" rel="noreferrer"><img src="/assets/icons/kofi.svg" alt="" />{t.kofi}<Icon name="external" size={14} /></a>
+          <button className="support-button support-wechat" type="button" onClick={onWechat}><img src="/assets/icons/wechat.svg" alt="" />{t.wechat}<Icon name="arrow" size={14} /></button>
+        </div>
       </div>
     </section>
   );
@@ -581,7 +620,7 @@ function MainPage({ language, setLanguage }) {
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#install">{t.navInstall}</a><a href="#mobile">{t.navMobile}</a><a href="#rules">{t.navRules}</a><a href="#support">{t.navSupport}</a>
         </nav>
-        <div className="nav-actions"><LanguageToggle language={language} onChange={setLanguage} /><a className="nav-discord" href={DISCORD_URL} target="_blank" rel="noreferrer"><span>Discord</span><Icon name="external" size={15} /></a></div>
+        <div className="nav-actions"><LanguageToggle language={language} onChange={setLanguage} /><a className="nav-discord" href={language === 'zh' ? QQ_URL : DISCORD_URL} target="_blank" rel="noreferrer"><span>{language === 'zh' ? 'QQ 群' : 'Discord'}</span><Icon name="external" size={15} /></a></div>
       </header>
 
       <main>
@@ -590,7 +629,7 @@ function MainPage({ language, setLanguage }) {
             <p className="eyebrow hero-eyebrow"><span className="pulse-dot" /> {t.heroEyebrow}</p>
             <h1>{t.heroTitle}<em>{t.heroTitleAccent}</em></h1>
             <p className="hero-description">{t.heroDescription}</p>
-            <div className="hero-actions"><a className="button button-primary" href="#install">{t.heroPrimary}<Icon name="arrow" size={17} /></a><a className="button button-ghost" href={DISCORD_URL} target="_blank" rel="noreferrer">{t.heroSecondary}<Icon name="external" size={15} /></a></div>
+            <div className="hero-actions"><a className="button button-primary" href="#install">{t.heroPrimary}<Icon name="arrow" size={17} /></a><a className="button button-ghost" href={language === 'zh' ? QQ_URL : DISCORD_URL} target="_blank" rel="noreferrer">{t.heroSecondary}<Icon name="external" size={15} /></a></div>
             <p className="hero-footnote"><span>{t.heroFootnote}</span><span className="footnote-line" /><span>{t.heroOrigin}</span></p>
           </div>
           <div className="hero-visual" aria-hidden="true">
@@ -606,6 +645,7 @@ function MainPage({ language, setLanguage }) {
           <div className="pulse-stat"><span className="pulse-stat-icon orange"><Icon name="globe" size={18} /></span><span><strong>04</strong><small>{t.regions}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon violet"><Icon name="gamepad" size={18} /></span><span><strong>03</strong><small>{t.platforms}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon green"><Icon name="activity" size={18} /></span><span><strong>{live.hasLiveData ? live.totalPlayers : '—'}</strong><small>{t.online}</small></span></div>
+          <div className="pulse-stat"><span className="pulse-stat-icon blue"><Icon name="home" size={18} /></span><span><strong>{live.hasLiveData ? live.totalGames : '—'}</strong><small>{t.rooms}</small></span></div>
           <div className="pulse-note"><span className="pulse-dot" /> <span>{live.hasLiveData ? t.live : t.checking} <small>·</small> Niko233</span></div>
         </section>
 
@@ -623,13 +663,13 @@ function MainPage({ language, setLanguage }) {
               {activePlatform === 'console' && <ConsoleInstall t={t} />}
             </div>
           </div>
-          <aside className="side-column"><QuickStart t={t} /><div className="side-signal"><span className="eyebrow">{language === 'zh' ? '区域信号' : 'REGION SIGNAL'}</span><div className="mini-radar"><span /><span /><span /></div><div className="mini-signal-copy"><strong>{live.hasLiveData ? `${live.totalGames} active lobbies` : 'Scanning lobbies'}</strong><small>AS · NA · EU · CN1</small></div></div></aside>
+          <aside className="side-column"><QuickStart t={t} /><div className="side-signal"><span className="eyebrow">{language === 'zh' ? '当前房间' : 'Online games'}</span><div className="mini-radar"><span /><span /><span /></div><div className="mini-signal-copy"><strong>{live.hasLiveData ? `${live.totalGames} active lobbies` : 'Scanning lobbies'}</strong><small>AS · NA · EU · CN1</small></div></div><PlayerPresence t={t} counts={live.counts} totalPlayers={live.totalPlayers} hasLiveData={live.hasLiveData} /></aside>
         </section>
 
-        <section className="lower-grid shell"><RulesCard t={t} language={language} /><SupportCard t={t} onWechat={() => setShowQr(true)} /></section>
+        <section className="lower-grid shell"><RulesCard t={t} language={language} /><SupportCard t={t} language={language} onWechat={() => setShowQr(true)} /></section>
       </main>
 
-      <footer className="site-footer shell"><div className="footer-brand"><BrandMark /><span>{t.footer}</span></div><span className="footer-center">NIKOCAT233 / 2024—2026</span><a href="/policy.html">{t.footerPolicy} <Icon name="arrow" size={14} /></a></footer>
+      <footer className="site-footer shell"><div className="footer-brand"><BrandMark /><span>{t.footer}</span></div><span className="footer-center">{t.hostedWithLove}</span><a href="/policy.html">{t.footerPolicy} <Icon name="arrow" size={14} /></a></footer>
       {showQr && <QRModal t={{ ...t, language }} onClose={() => setShowQr(false)} />}
     </div>
   );
