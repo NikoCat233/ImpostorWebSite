@@ -35,3 +35,20 @@ SpicyPoops (50 usd)
 ## Author
 
 - Name: NikoCat233
+
+## Development
+
+This site is built with React and Vite.
+
+```bash
+npm install
+npm run dev
+```
+
+Create a Netlify site from this GitHub repository. Netlify can use the checked-in `netlify.toml` automatically:
+
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Node version: `20`
+
+After the repository is connected, every push to the configured production branch triggers a fresh build and deploy.
