@@ -392,7 +392,7 @@ function RegionButton({ region, language, counts }) {
     <a className={`region-button region-${region.tone}`} href={region.url}>
       <span className="region-button-top">
         <span className="region-code">{region.code}</span>
-        <Icon name="arrow" size={16} />
+        <span className="region-install-hint"><Icon name="arrow" size={16} /><small>Click to Install</small></span>
       </span>
       <strong>{name}</strong>
       <span className="region-host">{region.host}</span>
