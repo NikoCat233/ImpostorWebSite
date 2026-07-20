@@ -179,6 +179,7 @@ button { font: inherit; }
 .contact-spotlight-copy .eyebrow { margin-bottom: 11px; color: var(--orange-soft); }
 .contact-spotlight h2 { margin: 0; max-width: none; font-size: clamp(31px, 4vw, 49px); line-height: .92; }
 .contact-spotlight .contact-lead { max-width: 300px; margin: 17px 0 0; color: var(--muted-strong); font-size: 12px; line-height: 1.65; }
+.contact-notice { max-width: 340px; margin: 15px 0 0; padding-left: 11px; border-left: 2px solid var(--orange); color: var(--orange-soft); font-size: 10px; line-height: 1.65; }
 .contact-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; align-content: center; }
 .contact-actions a { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 11px; min-height: 91px; padding: 14px; border: 1px solid rgba(255, 255, 255, .17); background: rgba(9, 9, 23, .35); color: var(--ink); text-decoration: none; transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
 .contact-actions a:hover { transform: translateY(-3px); border-color: var(--orange); background: rgba(255, 123, 74, .14); box-shadow: 0 13px 25px rgba(0, 0, 0, .2); color: var(--ink); }

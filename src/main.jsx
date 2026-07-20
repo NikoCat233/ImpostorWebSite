@@ -135,6 +135,7 @@ const copy = {
     contact: 'Contact',
     contactHeadline: 'Reach the crew.',
     contactLead: 'Need help or want to share feedback? Reach out here.',
+    contactNotice: 'We do not provide and will never provide WhatsApp contact details or groups. We only support Discord, QQ groups, and email.',
     email: 'Email',
     qq: 'China QQ group',
     footer: 'A small server for mega lobbies.',
@@ -227,6 +228,7 @@ const copy = {
     contact: '联系方式',
     contactHeadline: '找到我们。',
     contactLead: '需要帮助或想反馈？可以从这里联系。',
+    contactNotice: '我们不提供，也不会提供任何 WhatsApp 联系方式或群组。我们仅支持 Discord、QQ群聊和邮件联系。',
     email: '邮件',
     qq: '中国 QQ 群',
     footer: '为所有玩家准备的私服。',
@@ -548,6 +550,7 @@ function SupportCard({ t, language, onWechat }) {
           <p className="eyebrow">{t.contact}</p>
           <h2>{t.contactHeadline}</h2>
           <p className="contact-lead">{t.contactLead}</p>
+          <p className="contact-notice">{t.contactNotice}</p>
         </div>
         <div className="contact-actions">
           {contacts.map((contact) => <a key={contact.key} className={contact.featured || ''} href={contact.href} target={contact.key === 'email' ? undefined : '_blank'} rel={contact.key === 'email' ? undefined : 'noreferrer'}><img src={`/assets/icons/${contact.icon}.svg`} alt="" /><span><strong>{contact.label}</strong><small>{contact.detail}</small></span><Icon name="arrow" size={17} /></a>)}
