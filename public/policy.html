@@ -1,483 +1,64 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="color-scheme" content="light dark">
-  <title>Niko Among Us 私服服务条款与玩家守则</title>
+  <meta name="theme-color" content="#191b18">
+  <meta name="description" content="Niko's Impostor Server Terms of Service and Player Rules">
+  <title>Niko · Terms of Service and Player Rules</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <style>
-    :root {
-      --page-bg: #f4f6f8;
-      --card-bg: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #d9dee5;
-      --accent: #2563eb;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --page-bg: #111827;
-        --card-bg: #1f2937;
-        --text: #f3f4f6;
-        --muted: #c5cbd5;
-        --border: #374151;
-        --accent: #60a5fa;
-      }
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      padding:
-        max(20px, env(safe-area-inset-top))
-        max(14px, env(safe-area-inset-right))
-        max(28px, env(safe-area-inset-bottom))
-        max(14px, env(safe-area-inset-left));
-      background: var(--page-bg);
-      color: var(--text);
-      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei",
-                   "Noto Sans CJK SC", Arial, sans-serif;
-      line-height: 1.9;
-    }
-
-    main {
-      width: min(100%, 1080px);
-      margin: 0 auto;
-      padding: clamp(24px, 4vw, 64px) clamp(18px, 5vw, 72px);
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-    }
-
-    .content {
-      text-align: center;
-      overflow-wrap: anywhere;
-      word-break: normal;
-    }
-
-    p {
-      margin: 0 auto 1.25em;
-      max-width: 46em;
-      font-size: clamp(18px, 1.25vw + 12px, 24px);
-    }
-
-    .main-title {
-      max-width: 34em;
-      margin-bottom: 0.45em;
-      font-size: clamp(28px, 3.2vw, 48px);
-      line-height: 1.4;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-    }
-
-    .updated {
-      margin-bottom: 2.3em;
-      color: var(--muted);
-      font-size: clamp(16px, 1vw + 11px, 21px);
-    }
-
-    .section-title {
-      max-width: 34em;
-      margin-top: 2.3em;
-      margin-bottom: 1em;
-      padding-bottom: 0.45em;
-      border-bottom: 2px solid var(--border);
-      color: var(--accent);
-      font-size: clamp(24px, 2.2vw, 34px);
-      line-height: 1.5;
-      font-weight: 800;
-    }
-
-    .subheading {
-      margin-top: 1.7em;
-      margin-bottom: 0.8em;
-      font-weight: 700;
-      font-size: clamp(20px, 1.55vw + 12px, 27px);
-    }
-
-
-    .contact-card {
-      max-width: 46em;
-      margin: 0 auto 2.6em;
-      padding: clamp(18px, 3vw, 28px);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: color-mix(in srgb, var(--card-bg) 92%, var(--accent) 8%);
-    }
-
-    .contact-card:last-child {
-      margin-top: 3em;
-      margin-bottom: 0;
-    }
-
-    .contact-title {
-      margin-bottom: 0.7em;
-      color: var(--accent);
-      font-size: clamp(22px, 1.8vw + 12px, 30px);
-      font-weight: 800;
-    }
-
-    .contact-item {
-      margin-bottom: 0.45em;
-      font-size: clamp(18px, 1.1vw + 12px, 23px);
-    }
-
-    .contact-item:last-child {
-      margin-bottom: 0;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration-thickness: 1.5px;
-      text-underline-offset: 0.18em;
-      overflow-wrap: anywhere;
-    }
-
-    a:hover,
-    a:focus-visible {
-      text-decoration-thickness: 2.5px;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding-left: 8px;
-        padding-right: 8px;
-      }
-
-      main {
-        padding-left: 14px;
-        padding-right: 14px;
-        border-radius: 12px;
-      }
-
-      p { line-height: 1.85; }
-    }
-
-    @media print {
-      body {
-        padding: 0;
-        background: #ffffff;
-        color: #000000;
-      }
-
-      main {
-        width: 100%;
-        padding: 12mm;
-        border: 0;
-        border-radius: 0;
-        box-shadow: none;
-      }
-
-      .section-title { color: #000000; }
-    }
+    @font-face{font-family:'IBM Plex Mono';font-style:normal;font-display:swap;font-weight:400;src:url('https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2') format('woff2')}@font-face{font-family:'IBM Plex Mono';font-style:normal;font-display:swap;font-weight:500;src:url('https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-500-normal.woff2') format('woff2')}@font-face{font-family:'Source Serif 4';font-style:normal;font-display:swap;font-weight:200 900;src:url('https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2') format('woff2-variations')}:root{font-family:'Source Serif 4',Georgia,serif;color:#191b18;background:#f1efe8;font-synthesis:none;text-rendering:optimizeLegibility;--ink:#191b18;--paper:#faf9f5;--muted:#666a62;--line:#d5d2c8;--green:#315f48}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:#f1efe8;color:var(--ink)}button{font:inherit}.site-header{position:sticky;top:0;z-index:20;height:64px;padding:0 clamp(20px,5vw,72px);display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line);background:rgba(241,239,232,.94);backdrop-filter:blur(12px);font:500 12px 'IBM Plex Mono',monospace;color:var(--muted)}.wordmark{color:var(--ink);font-weight:500;letter-spacing:.18em;padding-right:16px;border-right:1px solid var(--line)}.site-header>a{margin-left:auto;color:var(--muted);text-decoration:none}.site-header>a:hover{color:var(--ink)}.language-switch{display:flex;gap:6px}.site-header .language-switch{margin-left:8px}.language-switch button{min-height:38px;border:1px solid transparent;background:transparent;color:var(--muted);padding:9px 13px;font:500 13px 'IBM Plex Mono',monospace;cursor:pointer}.language-switch button:hover{color:var(--ink)}.language-switch button.active{border-color:var(--ink);background:var(--paper);color:var(--ink)}.hero{width:min(1220px,calc(100% - 48px));margin:0 auto;padding:clamp(60px,9vw,116px) 0 66px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:9%;align-items:end}.eyebrow{margin:0 0 18px;color:var(--green);font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase}.hero h1{max-width:800px;margin:0;font-size:clamp(48px,7vw,92px);line-height:.96;letter-spacing:-.055em;font-weight:600}.hero-intro{max-width:690px;margin:28px 0 30px;color:#4f554f;font-size:19px;line-height:1.65}.meta{display:flex;gap:12px;flex-wrap:wrap}.meta span{border:1px solid var(--line);padding:7px 9px;color:var(--muted);font:11px 'IBM Plex Mono',monospace}.language-panel{border-top:2px solid var(--ink);padding-top:18px}.language-panel>span{display:block;margin-bottom:13px;color:var(--muted);font:500 11px 'IBM Plex Mono',monospace}.language-switch-large{display:grid;grid-template-columns:1fr 1fr}.language-switch-large button{min-height:58px;border-color:var(--line);font-size:15px}.language-switch-large button.active{border-color:var(--ink);background:var(--ink);color:#fff}.reading-layout{width:min(1220px,calc(100% - 48px));margin:0 auto 100px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;align-items:start}.toc{position:sticky;top:94px;max-height:calc(100vh - 120px);overflow:auto;padding-right:8px}.toc h2{margin:0 0 19px;font-size:21px}.toc a{display:grid;grid-template-columns:27px 1fr;gap:8px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.35;text-decoration:none}.toc a:hover{color:var(--ink)}.toc a span{color:var(--green);font:10px 'IBM Plex Mono',monospace}.policy-paper{min-width:0;background:var(--paper);border:1px solid var(--line);padding:clamp(30px,6vw,76px);box-shadow:14px 16px 0 rgba(25,27,24,.08)}.policy-section{position:relative;padding:0 0 55px;margin:0 0 55px;border-bottom:1px solid var(--line);scroll-margin-top:94px}.policy-section:last-of-type{border-bottom:0}.section-number{margin-bottom:15px;color:var(--green);font:500 11px 'IBM Plex Mono',monospace}.policy-section h2{max-width:780px;margin:0 0 27px;font-size:clamp(27px,3.2vw,38px);line-height:1.15;letter-spacing:-.025em}.policy-section p{max-width:86ch;margin:0 0 21px;color:#30342f;font-size:18px;line-height:1.9}.policy-section .rule-item{padding:15px 18px;border-left:3px solid #aab9ae;background:#f1f3ee}.contact-card{margin-top:18px;padding:clamp(25px,5vw,44px);border-top:4px solid var(--green);background:#e8eee9}.contact-card h2{margin:0;font-size:34px}.contact-card>p:not(.eyebrow){max-width:720px;margin:12px 0 26px;font-size:17px;line-height:1.6}.contact-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.contact-links a{min-width:0;padding:15px;border:1px solid #a9bbae;background:var(--paper);color:var(--ink);text-decoration:none}.contact-links a:hover{border-color:var(--ink)}.contact-links span,.contact-links strong{display:block}.contact-links span{margin-bottom:6px;color:var(--green);font:500 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em}.contact-links strong{font:500 12px/1.4 'IBM Plex Mono',monospace;overflow-wrap:anywhere}.back-top{display:inline-block;margin-top:30px;color:var(--green);font:500 12px 'IBM Plex Mono',monospace;text-decoration:none}footer{width:min(1220px,calc(100% - 48px));margin:0 auto;padding:25px 0;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);color:var(--muted);font:10px 'IBM Plex Mono',monospace}
+    [hidden]{display:none!important}@media(max-width:900px){.hero{grid-template-columns:1fr;gap:45px}.language-panel{max-width:500px}.reading-layout{grid-template-columns:1fr}.toc{position:static;max-height:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}.toc h2{grid-column:1/-1}.contact-links{grid-template-columns:1fr}.site-header>a{display:none}}@media(max-width:600px){.site-header{height:58px;padding:0 15px;gap:10px}.site-header>span:not(.wordmark){display:none}.wordmark{padding-right:10px}.site-header .language-switch{margin-left:auto}.site-header .language-switch button{min-height:34px;padding:7px 9px;font-size:11px}.hero,.reading-layout,footer{width:min(100% - 30px,1220px)}.hero{padding-top:50px}.hero h1{font-size:48px}.hero-intro{font-size:17px}.toc{grid-template-columns:1fr}.policy-paper{padding:26px 20px;box-shadow:7px 8px 0 rgba(25,27,24,.08)}.policy-section{padding-bottom:38px;margin-bottom:38px}.policy-section p{font-size:16px;line-height:1.78}.language-switch-large button{font-size:14px}footer{flex-direction:column}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
-<body>
-  <main>
-    <article class="content">
-
-      <section class="contact-card" aria-label="联系方式">
-        <p class="contact-title">联系方式 / Contact</p>
-        <p class="contact-item">Discord：<a href="https://au.niko233.top/discord" target="_blank" rel="noopener noreferrer">https://au.niko233.top/discord</a></p>
-        <p class="contact-item">QQ群：<a href="https://au.niko233.top/qq" target="_blank" rel="noopener noreferrer">https://au.niko233.top/qq</a></p>
-        <p class="contact-item">Email：<a href="mailto:admin@niko233.top">admin@niko233.top</a></p>
-      </section>
-      <p class="main-title">Niko&#x27;s Impostor Server / Niko&#x27;s Among Us Private Server 私服服务条款与玩家守则<br>
-Niko&#x27;s Impostor Server / Niko&#x27;s Among Us Private Server Terms of Service and Player Rules</p>
-      <p class="updated">最后更新日期：2026年7月29日<br>
-Last Updated: July 29, 2026</p>
-      <p class="section-title">第1节　条款的接受<br>
-Section 1　Acceptance of Terms</p>
-      <p class="main-title">你必须阅读、理解并同意本《服务条款与玩家守则》（以下简称“本守则”），才能访问、连接或使用 Niko Among Us 私服及其相关服务。</p>
-      <p class="paragraph">当你连接服务器、加入游戏、创建或使用账号、勾选同意选项、点击确认按钮，或者继续使用 Niko 私服时，即视为你已经阅读、理解并接受本守则的全部内容。</p>
-      <p class="paragraph">你不得以未阅读、未注意、未理解、不熟悉语言、由他人代为操作或不知道本守则存在为理由，拒绝承担因违反本守则而产生的责任。</p>
-      <p class="main-title">You must read, understand, and agree to these Terms of Service and Player Rules, hereinafter referred to as “these Rules,” before accessing, connecting to, or using the Niko Among Us Private Server and its related services.</p>
-      <p class="paragraph">By connecting to the server, joining a game, creating or using an account, checking an acceptance box, clicking a confirmation button, or continuing to use the Niko Private Server, you are deemed to have read, understood, and accepted all provisions of these Rules.</p>
-      <p class="paragraph">You may not avoid responsibility for violating these Rules by claiming that you did not read, notice, understand, or know about them, that you were unfamiliar with the language used, or that another person operated the account on your behalf.</p>
-      <p class="section-title">第2节　Among Us 官方行为准则<br>
-Section 2　Official Among Us Code of Conduct</p>
-      <p class="paragraph">所有玩家必须首先遵守由 Innersloth 发布的 Among Us Code of Conduct，即《Among Us 行为准则》。</p>
-      <p class="paragraph">本守则是对 Among Us 官方行为准则的补充，而不是替代。玩家在使用 Niko 私服期间，必须同时遵守 Among Us 官方行为准则和本守则。</p>
-      <p class="paragraph">如果本守则与 Among Us 官方行为准则对同一行为提出不同要求，则应当遵守其中更加严格的要求，但适用法律另有规定的除外。</p>
-      <p class="paragraph">All players must first comply with the Among Us Code of Conduct published by Innersloth.</p>
-      <p class="paragraph">These Rules supplement rather than replace the official Among Us Code of Conduct. While using the Niko Private Server, players must comply with both the official Among Us Code of Conduct and these Rules.</p>
-      <p class="paragraph">Where these Rules and the official Among Us Code of Conduct impose different requirements concerning the same conduct, the stricter requirement shall apply unless otherwise required by applicable law.</p>
-      <p class="section-title">第3节　公平游戏与禁止作弊<br>
-Section 3　Fair Play and Prohibition of Cheating</p>
-      <p class="paragraph">禁止任何形式的作弊、外挂、入侵、漏洞滥用、数据篡改或其他破坏公平游戏环境的行为。</p>
-      <p class="subheading">禁止行为包括但不限于：</p>
-      <p class="paragraph">1. 使用外挂、修改器、注入工具、脚本、机器人、内存编辑器或其他未经允许的第三方程序。</p>
-      <p class="paragraph">2. 修改游戏客户端、游戏文件、网络数据、身份信息、设备信息或服务器交互数据，以获得不公平优势或规避检测。</p>
-      <p class="paragraph">3. 获取、显示、使用或传播玩家在正常游戏过程中不应当获得的信息。</p>
-      <p class="paragraph">4. 利用服务器、客户端、模组、网络协议、账号系统或游戏机制中的错误、缺陷或漏洞。</p>
-      <p class="paragraph">5. 绕过、干扰、欺骗或破坏反作弊系统、身份验证系统、封禁系统或其他安全措施。</p>
-      <p class="paragraph">6. 与其他玩家串通作弊，或者帮助、教唆、指导、掩护、宣传他人作弊。</p>
-      <p class="paragraph">7. 使用多个账号操纵游戏结果、破坏匹配公平性、刷取数据或规避服务器限制。</p>
-      <p class="paragraph">8. 未经明确授权，对服务器进行漏洞测试、端口扫描、压力测试、数据抓取、攻击或其他可能影响服务器正常运行的操作。</p>
-      <p class="paragraph">9. 制作、传播、出售、交换、推广或提供与 Niko 私服作弊有关的工具、程序、账号、教程、方法或服务。</p>
-      <p class="paragraph">10. 以测试、研究、娱乐、玩笑、演示或仅使用一次为理由实施上述行为。</p>
-      <p class="paragraph">无论作弊行为是否成功、是否改变游戏结果、是否被其他玩家发现，或者是否造成实际损失，均可以被认定为违规。</p>
-      <p class="paragraph">Cheating, hacking, exploitation, data manipulation, and any other conduct that undermines a fair gameplay environment are prohibited.</p>
-      <p class="subheading">Prohibited conduct includes, but is not limited to:</p>
-      <p class="paragraph">1. Using cheats, modifications, injectors, scripts, bots, memory editors, or other unauthorized third-party programs.</p>
-      <p class="paragraph">2. Modifying the game client, game files, network traffic, identity information, device information, or server communications to obtain an unfair advantage or evade detection.</p>
-      <p class="paragraph">3. Obtaining, displaying, using, or distributing information that players should not normally have access to during gameplay.</p>
-      <p class="paragraph">4. Exploiting errors, defects, or vulnerabilities in the server, client, modifications, network protocols, account systems, or game mechanics.</p>
-      <p class="paragraph">5. Bypassing, interfering with, deceiving, or disabling anti-cheat systems, authentication systems, ban systems, or other security measures.</p>
-      <p class="paragraph">6. Cooperating with, assisting, encouraging, instructing, concealing, or promoting another person’s cheating.</p>
-      <p class="paragraph">7. Using multiple accounts to manipulate match results, undermine matchmaking fairness, farm data, or bypass server restrictions.</p>
-      <p class="paragraph">8. Conducting vulnerability testing, port scanning, stress testing, data scraping, attacks, or other operations that may affect the normal operation of the server without explicit authorization.</p>
-      <p class="paragraph">9. Creating, distributing, selling, exchanging, promoting, or providing tools, programs, accounts, tutorials, methods, or services related to cheating on the Niko Private Server.</p>
-      <p class="paragraph">10. Engaging in any of the above conduct under the claimed purpose of testing, research, entertainment, joking, demonstration, or one-time use.</p>
-      <p class="paragraph">Conduct may be treated as a violation regardless of whether the cheating attempt succeeded, changed the outcome of a game, was discovered by another player, or caused actual damage.</p>
-      <p class="section-title">第4节　玩家行为与社区秩序<br>
-Section 4　Player Conduct and Community Order</p>
-      <p class="paragraph">玩家必须尊重其他玩家以及服务器管理人员，不得实施影响服务器安全、社区秩序或其他玩家正常游戏体验的行为。</p>
-      <p class="subheading">禁止行为包括但不限于：</p>
-      <p class="paragraph">1. 骚扰、威胁、侮辱、欺凌、歧视或恶意针对其他玩家。</p>
-      <p class="paragraph">2. 发布仇恨、色情、露骨、违法、诈骗、恐吓或令人严重不适的内容。</p>
-      <p class="paragraph">3. 泄露、传播或威胁泄露他人的个人信息、账号信息、联系方式、地址或其他隐私信息。</p>
-      <p class="paragraph">4. 冒充 NikoCat233、服务器管理员、开发人员、社区工作人员或其他玩家。</p>
-      <p class="paragraph">5. 发布垃圾信息、重复信息、恶意广告、钓鱼链接、欺诈内容或危险文件。</p>
-      <p class="paragraph">6. 恶意举报其他玩家、伪造证据、篡改证据或利用举报系统骚扰他人。</p>
-      <p class="paragraph">7. 煽动、组织或协助他人攻击服务器、破坏游戏或骚扰特定个人。</p>
-      <p class="paragraph">8. 故意干扰正常游戏，包括恶意退出、恶意挂机、刷屏、持续破坏房间秩序或故意拖延游戏。</p>
-      <p class="paragraph">9. 使用玩家名称、房间名称、聊天内容、符号、头像或其他方式规避内容限制。</p>
-      <p class="paragraph">10. 拒绝配合管理团队为调查违规行为或维护服务器正常秩序而提出的合理要求。</p>
-      <p class="paragraph">Players must respect other players and server administrators and must not engage in conduct that harms server security, community order, or the normal gameplay experience of others.</p>
-      <p class="subheading">Prohibited conduct includes, but is not limited to:</p>
-      <p class="paragraph">1. Harassing, threatening, insulting, bullying, discriminating against, or maliciously targeting another player.</p>
-      <p class="paragraph">2. Posting hateful, pornographic, explicit, illegal, fraudulent, threatening, or severely disturbing content.</p>
-      <p class="paragraph">3. Disclosing, distributing, or threatening to disclose another person’s personal information, account information, contact details, address, or other private information.</p>
-      <p class="paragraph">4. Impersonating NikoCat233, a server administrator, developer, community staff member, or another player.</p>
-      <p class="paragraph">5. Posting spam, repeated messages, malicious advertisements, phishing links, fraudulent content, or dangerous files.</p>
-      <p class="paragraph">6. Maliciously reporting another player, fabricating or altering evidence, or using the reporting system to harass others.</p>
-      <p class="paragraph">7. Encouraging, organizing, or assisting others in attacking the server, disrupting gameplay, or harassing a specific person.</p>
-      <p class="paragraph">8. Intentionally interfering with normal gameplay, including maliciously leaving games, remaining deliberately inactive, spamming, repeatedly disrupting lobby order, or intentionally delaying games.</p>
-      <p class="paragraph">9. Using player names, lobby names, chat content, symbols, avatars, or other methods to evade content restrictions.</p>
-      <p class="paragraph">10. Refusing to cooperate with reasonable requests made by the administration team for investigating violations or maintaining normal server order.</p>
-      <p class="section-title">第5节　违规调查与证据<br>
-Section 5　Investigations and Evidence</p>
-      <p class="paragraph">为调查违规行为、保护玩家权益以及维护服务器安全，管理团队可以在合理范围内收集、保存和审查与服务器有关的信息。</p>
-      <p class="subheading">相关信息包括但不限于：</p>
-      <p class="paragraph">1. 游戏记录和房间记录。</p>
-      <p class="paragraph">2. 服务器日志和反作弊日志。</p>
-      <p class="paragraph">3. 登录记录、连接记录、网络信息和设备关联信息。</p>
-      <p class="paragraph">4. 玩家举报、申诉及相关交流记录。</p>
-      <p class="paragraph">5. 游戏内聊天记录以及相关社区中的交流记录。</p>
-      <p class="paragraph">6. 截图、录像、录音和直播记录。</p>
-      <p class="paragraph">7. 反作弊系统、自动检测系统或服务器安全系统产生的结果。</p>
-      <p class="paragraph">8. 玩家、管理员或其他相关人员提交的证据。</p>
-      <p class="paragraph">管理团队可以根据技术检测结果、服务器日志、行为模式、举报内容、玩家陈述以及其他合理信息，对是否存在违规行为作出综合判断。</p>
-      <p class="paragraph">为防止检测方式被绕过、保护举报人和其他玩家的隐私，或者维护服务器安全，管理团队没有义务向被封禁玩家公开全部证据、内部日志、检测规则、技术细节或举报人身份。</p>
-      <p class="paragraph">To investigate violations, protect players, and maintain server security, the administration team may reasonably collect, retain, and review information related to the server.</p>
-      <p class="subheading">Such information may include, but is not limited to:</p>
-      <p class="paragraph">1. Match records and lobby records.</p>
-      <p class="paragraph">2. Server logs and anti-cheat logs.</p>
-      <p class="paragraph">3. Login records, connection records, network information, and device association information.</p>
-      <p class="paragraph">4. Player reports, appeals, and related communications.</p>
-      <p class="paragraph">5. In-game chat records and communications in related communities.</p>
-      <p class="paragraph">6. Screenshots, video recordings, audio recordings, and livestream recordings.</p>
-      <p class="paragraph">7. Results generated by anti-cheat systems, automated detection systems, or server security systems.</p>
-      <p class="paragraph">8. Evidence submitted by players, administrators, or other relevant persons.</p>
-      <p class="paragraph">The administration team may determine whether a violation occurred based on technical detection results, server logs, behavioral patterns, reports, player statements, and other reasonably available information.</p>
-      <p class="paragraph">To prevent detection methods from being bypassed, protect the privacy of reporters and other players, or maintain server security, the administration team is not required to disclose all evidence, internal logs, detection rules, technical details, or the identity of a reporter to a banned player.</p>
-      <p class="section-title">第6节　封禁<br>
-Section 6　Bans</p>
-      <p class="paragraph">Niko 私服对违反本守则的玩家采取的唯一正式处罚措施为封禁。</p>
-      <p class="subheading">封禁分为：</p>
-      <p class="paragraph">1. 临时封禁。</p>
-      <p class="paragraph">2. 永久封禁。</p>
-      <p class="paragraph">管理团队可以根据违规行为的性质、严重程度、影响范围、历史违规记录、是否主动配合调查以及其他相关情况，决定封禁期限。</p>
-      <p class="paragraph">任何形式的作弊行为一经确认，均会被处以封禁。</p>
-      <p class="paragraph">对于严重作弊、重复违规、服务器攻击、漏洞恶意利用、泄露他人个人信息、伪造证据、威胁管理人员、组织他人违规或规避封禁等行为，管理团队可以直接实施永久封禁。</p>
-      <p class="paragraph">管理团队可以在不提前通知、不事先警告和不给予整改机会的情况下实施封禁。</p>
-      <p class="paragraph">警告、禁言、踢出房间、限制匹配、限制聊天或限制部分服务器功能，不属于本守则规定的正式处罚方式。</p>
-      <p class="paragraph">The only formal enforcement action imposed by the Niko Private Server for violations of these Rules is a ban.</p>
-      <p class="subheading">Bans may be:</p>
-      <p class="paragraph">1. Temporary bans.</p>
-      <p class="paragraph">2. Permanent bans.</p>
-      <p class="paragraph">The administration team may determine the duration of a ban based on the nature and severity of the violation, its impact, the player’s previous violation history, the player’s cooperation with the investigation, and other relevant circumstances.</p>
-      <p class="paragraph">Any confirmed form of cheating will result in a ban.</p>
-      <p class="paragraph">Serious cheating, repeated violations, attacks against the server, malicious exploitation of vulnerabilities, disclosure of another person’s personal information, fabrication of evidence, threats against administrators, organization of violations, or ban evasion may result in an immediate permanent ban.</p>
-      <p class="paragraph">The administration team may impose a ban without prior notice, prior warning, or an opportunity to correct the conduct.</p>
-      <p class="paragraph">Warnings, chat restrictions, lobby removals, matchmaking restrictions, or restrictions on particular server functions are not formal enforcement actions under these Rules.</p>
-      <p class="section-title">第7节　禁止规避封禁<br>
-Section 7　Ban Evasion</p>
-      <p class="paragraph">玩家受到封禁后，不得以任何方式规避、绕过或削弱封禁措施。</p>
-      <p class="subheading">禁止行为包括但不限于：</p>
-      <p class="paragraph">1. 创建或使用其他账号进入服务器。</p>
-      <p class="paragraph">2. 借用、购买、租用或使用他人的账号。</p>
-      <p class="paragraph">3. 将自己的账号交给他人代为使用。</p>
-      <p class="paragraph">4. 修改、伪造或隐藏设备信息、网络信息、身份信息或账号关联信息。</p>
-      <p class="paragraph">5. 使用代理、VPN、虚拟机或其他技术手段隐藏账号之间的关联关系。</p>
-      <p class="paragraph">6. 请求、指导或安排他人代替被封禁玩家进入服务器。</p>
-      <p class="paragraph">7. 通过其他未经允许的方式绕过服务器封禁系统。</p>
-      <p class="paragraph">规避封禁属于独立违规行为。相关账号可以被封禁，原有临时封禁可以被延长或变更为永久封禁。</p>
-      <p class="paragraph">After being banned, a player must not evade, bypass, or weaken the effect of the ban by any means.</p>
-      <p class="subheading">Prohibited conduct includes, but is not limited to:</p>
-      <p class="paragraph">1. Creating or using another account to access the server.</p>
-      <p class="paragraph">2. Borrowing, purchasing, renting, or using another person’s account.</p>
-      <p class="paragraph">3. Allowing another person to use the banned player’s account.</p>
-      <p class="paragraph">4. Modifying, falsifying, or concealing device information, network information, identity information, or account association information.</p>
-      <p class="paragraph">5. Using a proxy, VPN, virtual machine, or other technical means to conceal associations between accounts.</p>
-      <p class="paragraph">6. Asking, instructing, or arranging for another person to access the server on behalf of the banned player.</p>
-      <p class="paragraph">7. Bypassing the server’s ban system through any other unauthorized method.</p>
-      <p class="paragraph">Ban evasion is a separate violation. Associated accounts may be banned, and an existing temporary ban may be extended or converted into a permanent ban.</p>
-      <p class="section-title">第8节　封禁申诉<br>
-Section 8　Ban Appeals</p>
-      <p class="paragraph">如果你认为封禁存在错误，可以通过 Niko 私服公布的官方 Discord、官方 QQ 群或官方电子邮件提交申诉。</p>
-      <p class="paragraph">申诉必须在你首次看到封禁提示之日起七个自然日内提交。</p>
-      <p class="paragraph">七个自然日的申诉期限从玩家首次看到或按照正常情况应当看到封禁提示之时开始计算。</p>
-      <p class="paragraph">超过七个自然日提交的申诉将被无条件拒绝。管理团队主动决定重新审查的情况除外。</p>
-      <p class="subheading">申诉应当至少包含以下内容：</p>
-      <p class="paragraph">1. 被封禁账号、玩家名称、玩家编号或其他可以识别账号的信息。</p>
-      <p class="paragraph">2. 封禁提示的完整截图。</p>
-      <p class="paragraph">3. 首次看到封禁提示的日期和时间。</p>
-      <p class="paragraph">4. 对相关事件的完整说明。</p>
-      <p class="paragraph">5. 认为封禁存在错误的具体理由。</p>
-      <p class="paragraph">6. 可以支持申诉的截图、录像、日志或其他证据。</p>
-      <p class="paragraph">7. 管理团队要求提供的其他必要信息。</p>
-      <p class="subheading">出现下列情况之一的，申诉可以被直接拒绝：</p>
-      <p class="paragraph">1. 超过七个自然日的申诉期限。</p>
-      <p class="paragraph">2. 重复提交相同或实质相同的申诉。</p>
-      <p class="paragraph">3. 提供虚假信息、伪造证据或故意隐瞒重要事实。</p>
-      <p class="paragraph">4. 辱骂、威胁、骚扰或恶意攻击审核人员。</p>
-      <p class="paragraph">5. 拒绝提供识别账号或核实事件所必需的信息。</p>
-      <p class="paragraph">6. 通过非官方渠道反复联系或骚扰工作人员。</p>
-      <p class="paragraph">7. 由与封禁事件无关的第三方代替被封禁玩家提出申诉。</p>
-      <p class="paragraph">8. 在申诉期间继续规避封禁或实施其他违规行为。</p>
-      <p class="paragraph">提交申诉不代表封禁一定会被撤销，也不会自动暂停封禁的执行。</p>
-      <p class="paragraph">管理团队在审核申诉后，可以维持、缩短、延长、变更为永久封禁或撤销原封禁。</p>
-      <p class="paragraph">原则上，每次封禁仅接受一次正式申诉。申诉审核结果通常为最终结果。</p>
-      <p class="paragraph">If you believe that a ban was issued in error, you may submit an appeal through the official Discord, official QQ group, or official email address published by the Niko Private Server.</p>
-      <p class="paragraph">An appeal must be submitted within seven calendar days from the date on which you first see the ban notice.</p>
-      <p class="paragraph">The seven-calendar-day appeal period begins when the player first sees, or under normal circumstances should have seen, the ban notice.</p>
-      <p class="paragraph">Appeals submitted after seven calendar days will be rejected without exception, unless the administration team independently decides to reopen the case.</p>
-      <p class="subheading">An appeal must include at least the following information:</p>
-      <p class="paragraph">1. The banned account, player name, player identifier, or other information sufficient to identify the account.</p>
-      <p class="paragraph">2. A complete screenshot of the ban notice.</p>
-      <p class="paragraph">3. The date and time when the ban notice was first seen.</p>
-      <p class="paragraph">4. A complete explanation of the relevant events.</p>
-      <p class="paragraph">5. The specific reasons why the player believes the ban was incorrect.</p>
-      <p class="paragraph">6. Supporting screenshots, video recordings, logs, or other evidence.</p>
-      <p class="paragraph">7. Any other necessary information requested by the administration team.</p>
-      <p class="subheading">An appeal may be rejected immediately under any of the following circumstances:</p>
-      <p class="paragraph">1. It is submitted after the seven-calendar-day deadline.</p>
-      <p class="paragraph">2. The same or substantially identical appeal is repeatedly submitted.</p>
-      <p class="paragraph">3. False information or fabricated evidence is provided, or material facts are intentionally concealed.</p>
-      <p class="paragraph">4. Review staff are insulted, threatened, harassed, or maliciously attacked.</p>
-      <p class="paragraph">5. Information necessary to identify the account or verify the incident is withheld.</p>
-      <p class="paragraph">6. Staff members are repeatedly contacted or harassed through unofficial channels.</p>
-      <p class="paragraph">7. An unrelated third party submits the appeal on behalf of the banned player.</p>
-      <p class="paragraph">8. The player continues to evade the ban or commits additional violations while the appeal is under review.</p>
-      <p class="paragraph">Submitting an appeal does not guarantee that the ban will be removed and does not automatically suspend enforcement of the ban.</p>
-      <p class="paragraph">After reviewing an appeal, the administration team may uphold, reduce, extend, convert to a permanent ban, or revoke the original ban.</p>
-      <p class="paragraph">As a general rule, only one formal appeal will be accepted for each ban. The appeal decision will normally be final.</p>
-      <p class="section-title">第9节　服务性质与可用性<br>
-Section 9　Nature and Availability of the Service</p>
-      <p class="paragraph">Niko 私服是非官方社区服务器。除非另有明确声明，Niko 私服与 Innersloth、Among Us 官方及其关联公司之间不存在隶属、授权、赞助、合作或认可关系。</p>
-      <p class="paragraph">管理团队不保证服务器持续、稳定、及时、安全或无错误运行，也不保证玩家数据、游戏记录、账号状态或其他服务器数据不会发生丢失、损坏、回滚或重置。</p>
-      <p class="paragraph">管理团队可以因服务器维护、安全事件、游戏更新、运营调整、技术故障、法律要求、不可抗力或其他原因，暂停、修改、限制或终止全部或部分服务。</p>
-      <p class="paragraph">服务器暂停、数据丢失、连接中断、延迟、错误、版本不兼容或服务终止本身，不当然构成管理团队对玩家承担赔偿责任的依据，但适用法律另有强制规定的除外。</p>
-      <p class="paragraph">The Niko Private Server is an unofficial community server. Unless expressly stated otherwise, the Niko Private Server is not affiliated with, authorized by, sponsored by, operated in cooperation with, or endorsed by Innersloth, the official Among Us service, or their affiliates.</p>
-      <p class="paragraph">The administration team does not guarantee that the server will operate continuously, reliably, promptly, securely, or without error. It also does not guarantee that player data, match records, account status, or other server data will not be lost, damaged, rolled back, or reset.</p>
-      <p class="paragraph">The administration team may suspend, modify, restrict, or discontinue all or part of the service due to maintenance, security incidents, game updates, operational adjustments, technical failures, legal requirements, force majeure, or other reasons.</p>
-      <p class="paragraph">Server downtime, data loss, connection interruption, latency, errors, version incompatibility, or service termination does not by itself create a basis for compensation liability, except where otherwise required by mandatory applicable law.</p>
-      <p class="section-title">第10节　账号使用、安全责任与责任承担<br>
-Section 10　Account Use, Security, and Responsibility</p>
-      <p class="paragraph">玩家应当妥善保护自己的账号、登录凭据、设备和网络环境，并对通过其账号实施的全部行为负责。</p>
-      <p class="paragraph">玩家不得出售、出租、出借、共享、转让或以其他方式向他人提供账号，不得允许他人使用自己的账号进入服务器、实施违规行为或规避封禁。</p>
-      <p class="paragraph">通过玩家账号、设备或网络环境发生的行为，原则上均视为该玩家本人实施的行为。</p>
-      <p class="paragraph">账号被盗、账号被借用、账号被共享、设备被他人使用、网络被他人使用、账号由朋友或家庭成员操作、玩家不知道他人正在使用账号，或者玩家声称相关行为不是本人实施，均不能当然免除玩家依据本守则应当承担的任何责任。</p>
-      <p class="paragraph">玩家不得以账号安全措施不足、密码泄露、账号被盗、他人代为操作、设备被共用、网络环境被共用、未成年人操作、误操作、不了解软件功能或任何其他类似理由，要求管理团队撤销封禁或免除责任。</p>
-      <p class="paragraph">即使违规行为由第三方通过玩家账号、设备或网络环境实施，玩家仍可能被封禁，并仍需承担由该行为产生的全部责任。</p>
-      <p class="paragraph">只有在玩家能够提供充分、真实且可核实的证据，并且管理团队经过审查后明确认定玩家对相关行为不存在责任时，管理团队才可以自行决定是否调整封禁。</p>
-      <p class="paragraph">该例外不构成管理团队必须撤销或缩短封禁的义务，也不影响管理团队基于账号安全、服务器安全或其他证据维持封禁的权利。</p>
-      <p class="paragraph">玩家发现账号、设备或登录凭据存在异常后，应当立即停止使用相关账号、修改登录凭据，并通过官方渠道联系管理团队。</p>
-      <p class="paragraph">未及时采取安全措施、未及时报告异常或继续使用存在安全风险的账号，不得作为免除任何责任的理由。</p>
-      <p class="paragraph">Players must properly protect their accounts, login credentials, devices, and network environments and are responsible for all conduct carried out through their accounts.</p>
-      <p class="paragraph">Players must not sell, rent, lend, share, transfer, or otherwise provide their accounts to another person. Players must not allow another person to use their accounts to access the server, commit violations, or evade a ban.</p>
-      <p class="paragraph">Conduct occurring through a player’s account, device, or network environment will generally be treated as conduct performed by that player.</p>
-      <p class="paragraph">Claims that an account was stolen, borrowed, or shared, that a device or network was used by another person, that a friend or family member operated the account, that the player did not know another person was using the account, or that the player did not personally perform the conduct do not automatically exempt the player from any responsibility under these Rules.</p>
-      <p class="paragraph">A player may not demand that a ban be revoked or that responsibility be waived by claiming inadequate account security, a leaked password, account theft, operation by another person, shared use of a device or network, use by a minor, accidental operation, lack of knowledge regarding software functions, or any other similar reason.</p>
-      <p class="paragraph">Even where a violation was committed by a third party through the player’s account, device, or network environment, the player may still be banned and may still be held fully responsible for the consequences of that conduct.</p>
-      <p class="paragraph">Only where the player provides sufficient, genuine, and verifiable evidence, and the administration team expressly determines after review that the player was not responsible for the relevant conduct, may the administration team decide at its sole discretion whether to adjust the ban.</p>
-      <p class="paragraph">This exception does not create any obligation for the administration team to revoke or reduce a ban and does not limit the administration team’s right to maintain the ban based on account security, server security, or other evidence.</p>
-      <p class="paragraph">If a player discovers unusual activity involving an account, device, or login credentials, the player must immediately stop using the affected account, change the relevant credentials, and contact the administration team through an official channel.</p>
-      <p class="paragraph">Failure to take security measures promptly, failure to report suspicious activity promptly, or continued use of an account with known security risks may not be used as a reason to avoid any responsibility.</p>
-      <p class="section-title">第11节　规则变更<br>
-Section 11　Changes to These Rules</p>
-      <p class="paragraph">管理团队可以根据服务器运营、安全需求、游戏更新、技术变化、社区情况或法律要求修改本守则。</p>
-      <p class="paragraph">修改后的守则可以通过官方网站、游戏内公告、Discord、QQ群或其他官方渠道公布。</p>
-      <p class="paragraph">除公告另有说明外，修改后的守则自公布之时起生效。</p>
-      <p class="paragraph">玩家在规则更新后继续访问、连接或使用服务器，即视为已经接受修改后的守则。</p>
-      <p class="paragraph">The administration team may modify these Rules based on server operations, security requirements, game updates, technical changes, community circumstances, or legal requirements.</p>
-      <p class="paragraph">Updated Rules may be published through the official website, in-game announcements, Discord, QQ groups, or other official channels.</p>
-      <p class="paragraph">Unless otherwise stated in the announcement, updated Rules take effect upon publication.</p>
-      <p class="paragraph">By continuing to access, connect to, or use the server after an update, a player is deemed to have accepted the revised Rules.</p>
-      <p class="section-title">第12节　条款的可分割性<br>
-Section 12　Severability</p>
-      <p class="paragraph">如果本守则中的任何条款被有权机构认定为无效、违法或无法执行，该条款应当在必要范围内进行调整或停止适用。</p>
-      <p class="paragraph">其他条款的效力不受影响，仍然继续有效。</p>
-      <p class="paragraph">如果某项条款只有部分内容无效或无法执行，则其余可以独立适用的部分仍然有效。</p>
-      <p class="paragraph">If any provision of these Rules is determined by a competent authority to be invalid, unlawful, or unenforceable, that provision shall be adjusted or cease to apply only to the extent necessary.</p>
-      <p class="paragraph">The validity of the remaining provisions will not be affected, and they will continue in effect.</p>
-      <p class="paragraph">Where only part of a provision is invalid or unenforceable, any remaining part capable of independent application will remain effective.</p>
-      <p class="section-title">第13节　未列明行为与最终解释权<br>
-Section 13　Unlisted Conduct and Final Interpretation</p>
-      <p class="paragraph">本守则无法列举所有可能出现的违规方式。</p>
-      <p class="paragraph">对于虽未在本守则中明确列出，但明显破坏公平游戏、服务器安全、社区秩序、管理工作或其他玩家正常游戏体验的行为，管理团队仍可以认定其构成违规并实施封禁。</p>
-      <p class="paragraph">管理团队有权根据具体情况判断某项行为是否构成作弊、违规、规避封禁或其他应当封禁的行为。</p>
-      <p class="paragraph">在适用法律允许的范围内，本守则的最终解释权、执行权以及 Niko 私服的管理权归 NikoCat233 所有。</p>
-      <p class="paragraph">管理团队对服务器日志、反作弊结果、违规事实、封禁期限和申诉结果作出的决定，原则上为最终决定。</p>
-      <p class="paragraph">These Rules cannot list every possible form of prohibited conduct.</p>
-      <p class="paragraph">The administration team may determine that conduct constitutes a violation and impose a ban where the conduct is not expressly listed but clearly harms fair gameplay, server security, community order, administrative operations, or the normal gameplay experience of other players.</p>
-      <p class="paragraph">The administration team has the right to determine, based on the particular circumstances, whether conduct constitutes cheating, a violation, ban evasion, or other conduct warranting a ban.</p>
-      <p class="paragraph">To the extent permitted by applicable law, the final authority to interpret and enforce these Rules and administer the Niko Private Server belongs to NikoCat233.</p>
-      <p class="paragraph">Decisions made by the administration team concerning server logs, anti-cheat results, violation findings, ban duration, and appeal outcomes will generally be final.</p>
-      <p class="section-title">第14节　玩家确认<br>
-Section 14　Player Acknowledgment</p>
-      <p class="subheading">通过勾选“我同意”、点击确认按钮、连接服务器、加入游戏或继续使用 Niko 私服，你确认并同意：</p>
-      <p class="paragraph">1. 你已经阅读并理解本守则的全部内容。</p>
-      <p class="paragraph">2. 你同意遵守本守则和 Among Us 官方行为准则。</p>
-      <p class="paragraph">3. 你理解任何形式的作弊和违规行为一经确认，均可能导致临时封禁或永久封禁。</p>
-      <p class="paragraph">4. 你理解 Niko 私服唯一的正式处罚措施为封禁。</p>
-      <p class="paragraph">5. 你理解封禁申诉必须在首次看到封禁提示后的七个自然日内提交。</p>
-      <p class="paragraph">6. 你理解超过七个自然日提交的申诉将被无条件拒绝，但管理团队主动重新审查的情况除外。</p>
-      <p class="paragraph">7. 你理解通过你的账号、设备或网络环境发生的行为原则上由你承担责任。</p>
-      <p class="paragraph">8. 你同意不得以未阅读规则、账号被盗、账号共享、他人操作、设备共用、网络共用、误操作或其他类似理由免除责任。</p>
-      <p class="paragraph">9. 你接受管理团队依据本守则作出的封禁和申诉决定。</p>
-      <p class="subheading">By checking “I Agree,” clicking a confirmation button, connecting to the server, joining a game, or continuing to use the Niko Private Server, you acknowledge and agree that:</p>
-      <p class="paragraph">1. You have read and understood all provisions of these Rules.</p>
-      <p class="paragraph">2. You agree to comply with these Rules and the official Among Us Code of Conduct.</p>
-      <p class="paragraph">3. You understand that any confirmed form of cheating or other violation may result in a temporary or permanent ban.</p>
-      <p class="paragraph">4. You understand that the only formal enforcement action used by the Niko Private Server is a ban.</p>
-      <p class="paragraph">5. You understand that a ban appeal must be submitted within seven calendar days after first seeing the ban notice.</p>
-      <p class="paragraph">6. You understand that an appeal submitted after seven calendar days will be rejected without exception unless the administration team independently decides to reopen the case.</p>
-      <p class="paragraph">7. You understand that you are generally responsible for conduct occurring through your account, device, or network environment.</p>
-      <p class="paragraph">8. You agree that claims involving unread rules, account theft, account sharing, operation by another person, shared devices, shared networks, accidental operation, or similar circumstances do not exempt you from responsibility.</p>
-      <p class="paragraph">9. You accept ban and appeal decisions made by the administration team under these Rules.</p>
-      <p class="main-title">我已阅读、理解并同意本《Niko Among Us 私服服务条款与玩家守则》。</p>
-      <p class="main-title">I have read, understood, and agreed to the Niko Among Us Private Server Terms of Service and Player Rules.</p>
-
-      <section class="contact-card" aria-label="联系方式">
-        <p class="contact-title">联系方式 / Contact</p>
-        <p class="contact-item">Discord：<a href="https://au.niko233.top/discord" target="_blank" rel="noopener noreferrer">https://au.niko233.top/discord</a></p>
-        <p class="contact-item">QQ群：<a href="https://au.niko233.top/qq" target="_blank" rel="noopener noreferrer">https://au.niko233.top/qq</a></p>
-        <p class="contact-item">Email：<a href="mailto:admin@niko233.top">admin@niko233.top</a></p>
-      </section>
-    </article>
-  </main>
+<body id="top">
+  <header class="site-header"><span class="wordmark">NIKO</span><span>POLICY / TOS</span><a href="https://au.niko233.top/">au.niko233.top ↗</a><div class="language-switch"><button type="button" data-set-locale="en">English</button><button type="button" data-set-locale="zh-CN">中文</button></div></header>
+  <main><div class="localized" data-locale="en" hidden>
+    <section class="hero">
+      <div><p class="eyebrow">Niko&#039;s Impostor Server</p><h1>Terms of Service and Player Rules</h1><p class="hero-intro">The rules that apply when accessing and playing on the Niko Among Us Private Server.</p><div class="meta"><span>Last updated · 2026-07-29</span><span>Version 2026.07.29</span></div></div>
+      <div class="language-panel"><span>Language / 语言</span><div class="language-switch language-switch-large"><button type="button" data-set-locale="en">English</button><button type="button" data-set-locale="zh-CN">中文</button></div></div>
+    </section>
+    <div class="reading-layout">
+      <aside><nav class="toc" aria-label="Contents"><h2>Contents</h2><a href="#en-section-1"><span>01</span>Section 1　Acceptance of Terms</a><a href="#en-section-2"><span>02</span>Section 2　Official Among Us Code of Conduct</a><a href="#en-section-3"><span>03</span>Section 3　Fair Play and Prohibition of Cheating</a><a href="#en-section-4"><span>04</span>Section 4　Player Conduct and Community Order</a><a href="#en-section-5"><span>05</span>Section 5　Investigations and Evidence</a><a href="#en-section-6"><span>06</span>Section 6　Bans</a><a href="#en-section-7"><span>07</span>Section 7　Ban Evasion</a><a href="#en-section-8"><span>08</span>Section 8　Ban Appeals</a><a href="#en-section-9"><span>09</span>Section 9　Nature and Availability of the Service</a><a href="#en-section-10"><span>10</span>Section 10　Account Use, Security, and Responsibility</a><a href="#en-section-11"><span>11</span>Section 11　Changes to These Rules</a><a href="#en-section-12"><span>12</span>Section 12　Severability</a><a href="#en-section-13"><span>13</span>Section 13　Unlisted Conduct and Final Interpretation</a><a href="#en-section-14"><span>14</span>Section 14　Player Acknowledgment</a></nav></aside>
+      <article class="policy-paper"><section id="en-section-1" class="policy-section"><div class="section-number">01</div><h2>Section 1　Acceptance of Terms</h2><p>You must read, understand, and agree to these Terms of Service and Player Rules, hereinafter referred to as “these Rules,” before accessing, connecting to, or using the Niko Among Us Private Server and its related services.</p><p>By connecting to the server, joining a game, creating or using an account, checking an acceptance box, clicking a confirmation button, or continuing to use the Niko Private Server, you are deemed to have read, understood, and accepted all provisions of these Rules.</p><p>You may not avoid responsibility for violating these Rules by claiming that you did not read, notice, understand, or know about them, that you were unfamiliar with the language used, or that another person operated the account on your behalf.</p></section><section id="en-section-2" class="policy-section"><div class="section-number">02</div><h2>Section 2　Official Among Us Code of Conduct</h2><p>All players must first comply with the Among Us Code of Conduct published by Innersloth.</p><p>These Rules supplement rather than replace the official Among Us Code of Conduct. While using the Niko Private Server, players must comply with both the official Among Us Code of Conduct and these Rules.</p><p>Where these Rules and the official Among Us Code of Conduct impose different requirements concerning the same conduct, the stricter requirement shall apply unless otherwise required by applicable law.</p></section><section id="en-section-3" class="policy-section"><div class="section-number">03</div><h2>Section 3　Fair Play and Prohibition of Cheating</h2><p>Cheating, hacking, exploitation, data manipulation, and any other conduct that undermines a fair gameplay environment are prohibited.</p><p>Prohibited conduct includes, but is not limited to:</p><p class="rule-item">1. Using cheats, modifications, injectors, scripts, bots, memory editors, or other unauthorized third-party programs.</p><p class="rule-item">2. Modifying the game client, game files, network traffic, identity information, device information, or server communications to obtain an unfair advantage or evade detection.</p><p class="rule-item">3. Obtaining, displaying, using, or distributing information that players should not normally have access to during gameplay.</p><p class="rule-item">4. Exploiting errors, defects, or vulnerabilities in the server, client, modifications, network protocols, account systems, or game mechanics.</p><p class="rule-item">5. Bypassing, interfering with, deceiving, or disabling anti-cheat systems, authentication systems, ban systems, or other security measures.</p><p class="rule-item">6. Cooperating with, assisting, encouraging, instructing, concealing, or promoting another person’s cheating.</p><p class="rule-item">7. Using multiple accounts to manipulate match results, undermine matchmaking fairness, farm data, or bypass server restrictions.</p><p class="rule-item">8. Conducting vulnerability testing, port scanning, stress testing, data scraping, attacks, or other operations that may affect the normal operation of the server without explicit authorization.</p><p class="rule-item">9. Creating, distributing, selling, exchanging, promoting, or providing tools, programs, accounts, tutorials, methods, or services related to cheating on the Niko Private Server.</p><p class="rule-item">10. Engaging in any of the above conduct under the claimed purpose of testing, research, entertainment, joking, demonstration, or one-time use.</p><p>Conduct may be treated as a violation regardless of whether the cheating attempt succeeded, changed the outcome of a game, was discovered by another player, or caused actual damage.</p></section><section id="en-section-4" class="policy-section"><div class="section-number">04</div><h2>Section 4　Player Conduct and Community Order</h2><p>Players must respect other players and server administrators and must not engage in conduct that harms server security, community order, or the normal gameplay experience of others.</p><p>Prohibited conduct includes, but is not limited to:</p><p class="rule-item">1. Harassing, threatening, insulting, bullying, discriminating against, or maliciously targeting another player.</p><p class="rule-item">2. Posting hateful, pornographic, explicit, illegal, fraudulent, threatening, or severely disturbing content.</p><p class="rule-item">3. Disclosing, distributing, or threatening to disclose another person’s personal information, account information, contact details, address, or other private information.</p><p class="rule-item">4. Impersonating NikoCat233, a server administrator, developer, community staff member, or another player.</p><p class="rule-item">5. Posting spam, repeated messages, malicious advertisements, phishing links, fraudulent content, or dangerous files.</p><p class="rule-item">6. Maliciously reporting another player, fabricating or altering evidence, or using the reporting system to harass others.</p><p class="rule-item">7. Encouraging, organizing, or assisting others in attacking the server, disrupting gameplay, or harassing a specific person.</p><p class="rule-item">8. Intentionally interfering with normal gameplay, including maliciously leaving games, remaining deliberately inactive, spamming, repeatedly disrupting lobby order, or intentionally delaying games.</p><p class="rule-item">9. Using player names, lobby names, chat content, symbols, avatars, or other methods to evade content restrictions.</p><p class="rule-item">10. Refusing to cooperate with reasonable requests made by the administration team for investigating violations or maintaining normal server order.</p></section><section id="en-section-5" class="policy-section"><div class="section-number">05</div><h2>Section 5　Investigations and Evidence</h2><p>To investigate violations, protect players, and maintain server security, the administration team may reasonably collect, retain, and review information related to the server.</p><p>Such information may include, but is not limited to:</p><p class="rule-item">1. Match records and lobby records.</p><p class="rule-item">2. Server logs and anti-cheat logs.</p><p class="rule-item">3. Login records, connection records, network information, and device association information.</p><p class="rule-item">4. Player reports, appeals, and related communications.</p><p class="rule-item">5. In-game chat records and communications in related communities.</p><p class="rule-item">6. Screenshots, video recordings, audio recordings, and livestream recordings.</p><p class="rule-item">7. Results generated by anti-cheat systems, automated detection systems, or server security systems.</p><p class="rule-item">8. Evidence submitted by players, administrators, or other relevant persons.</p><p>The administration team may determine whether a violation occurred based on technical detection results, server logs, behavioral patterns, reports, player statements, and other reasonably available information.</p><p>To prevent detection methods from being bypassed, protect the privacy of reporters and other players, or maintain server security, the administration team is not required to disclose all evidence, internal logs, detection rules, technical details, or the identity of a reporter to a banned player.</p></section><section id="en-section-6" class="policy-section"><div class="section-number">06</div><h2>Section 6　Bans</h2><p>The only formal enforcement action imposed by the Niko Private Server for violations of these Rules is a ban.</p><p>Bans may be:</p><p class="rule-item">1. Temporary bans.</p><p class="rule-item">2. Permanent bans.</p><p>The administration team may determine the duration of a ban based on the nature and severity of the violation, its impact, the player’s previous violation history, the player’s cooperation with the investigation, and other relevant circumstances.</p><p>Any confirmed form of cheating will result in a ban.</p><p>Serious cheating, repeated violations, attacks against the server, malicious exploitation of vulnerabilities, disclosure of another person’s personal information, fabrication of evidence, threats against administrators, organization of violations, or ban evasion may result in an immediate permanent ban.</p><p>The administration team may impose a ban without prior notice, prior warning, or an opportunity to correct the conduct.</p><p>Warnings, chat restrictions, lobby removals, matchmaking restrictions, or restrictions on particular server functions are not formal enforcement actions under these Rules.</p></section><section id="en-section-7" class="policy-section"><div class="section-number">07</div><h2>Section 7　Ban Evasion</h2><p>After being banned, a player must not evade, bypass, or weaken the effect of the ban by any means.</p><p>Prohibited conduct includes, but is not limited to:</p><p class="rule-item">1. Creating or using another account to access the server.</p><p class="rule-item">2. Borrowing, purchasing, renting, or using another person’s account.</p><p class="rule-item">3. Allowing another person to use the banned player’s account.</p><p class="rule-item">4. Modifying, falsifying, or concealing device information, network information, identity information, or account association information.</p><p class="rule-item">5. Using a proxy, VPN, virtual machine, or other technical means to conceal associations between accounts.</p><p class="rule-item">6. Asking, instructing, or arranging for another person to access the server on behalf of the banned player.</p><p class="rule-item">7. Bypassing the server’s ban system through any other unauthorized method.</p><p>Ban evasion is a separate violation. Associated accounts may be banned, and an existing temporary ban may be extended or converted into a permanent ban.</p></section><section id="en-section-8" class="policy-section"><div class="section-number">08</div><h2>Section 8　Ban Appeals</h2><p>If you believe that a ban was issued in error, you may submit an appeal through the official Discord, official QQ group, or official email address published by the Niko Private Server.</p><p>An appeal must be submitted within seven calendar days from the date on which you first see the ban notice.</p><p>The seven-calendar-day appeal period begins when the player first sees, or under normal circumstances should have seen, the ban notice.</p><p>Appeals submitted after seven calendar days will be rejected without exception, unless the administration team independently decides to reopen the case.</p><p>An appeal must include at least the following information:</p><p class="rule-item">1. The banned account, player name, player identifier, or other information sufficient to identify the account.</p><p class="rule-item">2. A complete screenshot of the ban notice.</p><p class="rule-item">3. The date and time when the ban notice was first seen.</p><p class="rule-item">4. A complete explanation of the relevant events.</p><p class="rule-item">5. The specific reasons why the player believes the ban was incorrect.</p><p class="rule-item">6. Supporting screenshots, video recordings, logs, or other evidence.</p><p class="rule-item">7. Any other necessary information requested by the administration team.</p><p>An appeal may be rejected immediately under any of the following circumstances:</p><p class="rule-item">1. It is submitted after the seven-calendar-day deadline.</p><p class="rule-item">2. The same or substantially identical appeal is repeatedly submitted.</p><p class="rule-item">3. False information or fabricated evidence is provided, or material facts are intentionally concealed.</p><p class="rule-item">4. Review staff are insulted, threatened, harassed, or maliciously attacked.</p><p class="rule-item">5. Information necessary to identify the account or verify the incident is withheld.</p><p class="rule-item">6. Staff members are repeatedly contacted or harassed through unofficial channels.</p><p class="rule-item">7. An unrelated third party submits the appeal on behalf of the banned player.</p><p class="rule-item">8. The player continues to evade the ban or commits additional violations while the appeal is under review.</p><p>Submitting an appeal does not guarantee that the ban will be removed and does not automatically suspend enforcement of the ban.</p><p>After reviewing an appeal, the administration team may uphold, reduce, extend, convert to a permanent ban, or revoke the original ban.</p><p>As a general rule, only one formal appeal will be accepted for each ban. The appeal decision will normally be final.</p></section><section id="en-section-9" class="policy-section"><div class="section-number">09</div><h2>Section 9　Nature and Availability of the Service</h2><p>The Niko Private Server is an unofficial community server. Unless expressly stated otherwise, the Niko Private Server is not affiliated with, authorized by, sponsored by, operated in cooperation with, or endorsed by Innersloth, the official Among Us service, or their affiliates.</p><p>The administration team does not guarantee that the server will operate continuously, reliably, promptly, securely, or without error. It also does not guarantee that player data, match records, account status, or other server data will not be lost, damaged, rolled back, or reset.</p><p>The administration team may suspend, modify, restrict, or discontinue all or part of the service due to maintenance, security incidents, game updates, operational adjustments, technical failures, legal requirements, force majeure, or other reasons.</p><p>Server downtime, data loss, connection interruption, latency, errors, version incompatibility, or service termination does not by itself create a basis for compensation liability, except where otherwise required by mandatory applicable law.</p></section><section id="en-section-10" class="policy-section"><div class="section-number">10</div><h2>Section 10　Account Use, Security, and Responsibility</h2><p>Players must properly protect their accounts, login credentials, devices, and network environments and are responsible for all conduct carried out through their accounts.</p><p>Players must not sell, rent, lend, share, transfer, or otherwise provide their accounts to another person. Players must not allow another person to use their accounts to access the server, commit violations, or evade a ban.</p><p>Conduct occurring through a player’s account, device, or network environment will generally be treated as conduct performed by that player.</p><p>Claims that an account was stolen, borrowed, or shared, that a device or network was used by another person, that a friend or family member operated the account, that the player did not know another person was using the account, or that the player did not personally perform the conduct do not automatically exempt the player from any responsibility under these Rules.</p><p>A player may not demand that a ban be revoked or that responsibility be waived by claiming inadequate account security, a leaked password, account theft, operation by another person, shared use of a device or network, use by a minor, accidental operation, lack of knowledge regarding software functions, or any other similar reason.</p><p>Even where a violation was committed by a third party through the player’s account, device, or network environment, the player may still be banned and may still be held fully responsible for the consequences of that conduct.</p><p>Only where the player provides sufficient, genuine, and verifiable evidence, and the administration team expressly determines after review that the player was not responsible for the relevant conduct, may the administration team decide at its sole discretion whether to adjust the ban.</p><p>This exception does not create any obligation for the administration team to revoke or reduce a ban and does not limit the administration team’s right to maintain the ban based on account security, server security, or other evidence.</p><p>If a player discovers unusual activity involving an account, device, or login credentials, the player must immediately stop using the affected account, change the relevant credentials, and contact the administration team through an official channel.</p><p>Failure to take security measures promptly, failure to report suspicious activity promptly, or continued use of an account with known security risks may not be used as a reason to avoid any responsibility.</p></section><section id="en-section-11" class="policy-section"><div class="section-number">11</div><h2>Section 11　Changes to These Rules</h2><p>The administration team may modify these Rules based on server operations, security requirements, game updates, technical changes, community circumstances, or legal requirements.</p><p>Updated Rules may be published through the official website, in-game announcements, Discord, QQ groups, or other official channels.</p><p>The official website of the Niko Private Server is au.niko233.top.</p><p>Unless otherwise stated in the announcement, updated Rules take effect upon publication.</p><p>By continuing to access, connect to, or use the server after an update, a player is deemed to have accepted the revised Rules.</p></section><section id="en-section-12" class="policy-section"><div class="section-number">12</div><h2>Section 12　Severability</h2><p>If any provision of these Rules is determined by a competent authority to be invalid, unlawful, or unenforceable, that provision shall be adjusted or cease to apply only to the extent necessary.</p><p>The validity of the remaining provisions will not be affected, and they will continue in effect.</p><p>Where only part of a provision is invalid or unenforceable, any remaining part capable of independent application will remain effective.</p></section><section id="en-section-13" class="policy-section"><div class="section-number">13</div><h2>Section 13　Unlisted Conduct and Final Interpretation</h2><p>These Rules cannot list every possible form of prohibited conduct.</p><p>The administration team may determine that conduct constitutes a violation and impose a ban where the conduct is not expressly listed but clearly harms fair gameplay, server security, community order, administrative operations, or the normal gameplay experience of other players.</p><p>The administration team has the right to determine, based on the particular circumstances, whether conduct constitutes cheating, a violation, ban evasion, or other conduct warranting a ban.</p><p>To the extent permitted by applicable law, the final authority to interpret and enforce these Rules and administer the Niko Private Server belongs to NikoCat233.</p><p>Decisions made by the administration team concerning server logs, anti-cheat results, violation findings, ban duration, and appeal outcomes will generally be final.</p></section><section id="en-section-14" class="policy-section"><div class="section-number">14</div><h2>Section 14　Player Acknowledgment</h2><p>By checking “I Agree,” clicking a confirmation button, connecting to the server, joining a game, or continuing to use the Niko Private Server, you acknowledge and agree that:</p><p class="rule-item">1. You have read and understood all provisions of these Rules.</p><p class="rule-item">2. You agree to comply with these Rules and the official Among Us Code of Conduct.</p><p class="rule-item">3. You understand that any confirmed form of cheating or other violation may result in a temporary or permanent ban.</p><p class="rule-item">4. You understand that the only formal enforcement action used by the Niko Private Server is a ban.</p><p class="rule-item">5. You understand that a ban appeal must be submitted within seven calendar days after first seeing the ban notice.</p><p class="rule-item">6. You understand that an appeal submitted after seven calendar days will be rejected without exception unless the administration team independently decides to reopen the case.</p><p class="rule-item">7. You understand that you are generally responsible for conduct occurring through your account, device, or network environment.</p><p class="rule-item">8. You agree that claims involving unread rules, account theft, account sharing, operation by another person, shared devices, shared networks, accidental operation, or similar circumstances do not exempt you from responsibility.</p><p class="rule-item">9. You accept ban and appeal decisions made by the administration team under these Rules.</p><p>I have read, understood, and agreed to the Niko Among Us Private Server Terms of Service and Player Rules.</p></section>
+        <section class="contact-card"><p class="eyebrow">NIKO / CONTACT</p><h2>Contact</h2><p>For questions, appeals, or requests to withdraw your acceptance of these Terms, contact NikoCat233 through an official channel.</p><div class="contact-links"><a href="mailto:admin@niko233.top"><span>Email</span><strong>admin@niko233.top</strong></a><a href="https://discord.gg/guf9ca4YSA" target="_blank" rel="noopener noreferrer"><span>Discord</span><strong>discord.gg/guf9ca4YSA</strong></a><a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=qBP7Ss78sT68OOSMO5mpzAgp5Py3sOKJ&amp;authKey=3I0V1ckK1NCWK%2BmKKZskA6oi6BgA96z1pipSaUjGxgXs%2Br3qPp3aV%2BbChu%2FjPjjO&amp;noverify=0&amp;group_code=975714136" target="_blank" rel="noopener noreferrer"><span>QQ group</span><strong>975714136</strong></a></div></section>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </article>
+    </div>
+    <footer><span>© 2026 Niko's Impostor Server</span><span>Unofficial community server · Not affiliated with Innersloth</span></footer>
+  </div><div class="localized" data-locale="zh-CN" hidden>
+    <section class="hero">
+      <div><p class="eyebrow">Niko&#039;s Impostor Server</p><h1>服务条款与玩家守则</h1><p class="hero-intro">访问和游玩 Niko Among Us 私服时适用的服务条款与玩家规则。</p><div class="meta"><span>最后更新 · 2026-07-29</span><span>版本 2026.07.29</span></div></div>
+      <div class="language-panel"><span>Language / 语言</span><div class="language-switch language-switch-large"><button type="button" data-set-locale="en">English</button><button type="button" data-set-locale="zh-CN">中文</button></div></div>
+    </section>
+    <div class="reading-layout">
+      <aside><nav class="toc" aria-label="目录"><h2>目录</h2><a href="#zh-CN-section-1"><span>01</span>第1节　条款的接受</a><a href="#zh-CN-section-2"><span>02</span>第2节　Among Us 官方行为准则</a><a href="#zh-CN-section-3"><span>03</span>第3节　公平游戏与禁止作弊</a><a href="#zh-CN-section-4"><span>04</span>第4节　玩家行为与社区秩序</a><a href="#zh-CN-section-5"><span>05</span>第5节　违规调查与证据</a><a href="#zh-CN-section-6"><span>06</span>第6节　封禁</a><a href="#zh-CN-section-7"><span>07</span>第7节　禁止规避封禁</a><a href="#zh-CN-section-8"><span>08</span>第8节　封禁申诉</a><a href="#zh-CN-section-9"><span>09</span>第9节　服务性质与可用性</a><a href="#zh-CN-section-10"><span>10</span>第10节　账号使用、安全责任与责任承担</a><a href="#zh-CN-section-11"><span>11</span>第11节　规则变更</a><a href="#zh-CN-section-12"><span>12</span>第12节　条款的可分割性</a><a href="#zh-CN-section-13"><span>13</span>第13节　未列明行为与最终解释权</a><a href="#zh-CN-section-14"><span>14</span>第14节　玩家确认</a></nav></aside>
+      <article class="policy-paper"><section id="zh-CN-section-1" class="policy-section"><div class="section-number">01</div><h2>第1节　条款的接受</h2><p>你必须阅读、理解并同意本《服务条款与玩家守则》（以下简称“本守则”），才能访问、连接或使用 Niko Among Us 私服及其相关服务。</p><p>当你连接服务器、加入游戏、创建或使用账号、勾选同意选项、点击确认按钮，或者继续使用 Niko 私服时，即视为你已经阅读、理解并接受本守则的全部内容。</p><p>你不得以未阅读、未注意、未理解、不熟悉语言、由他人代为操作或不知道本守则存在为理由，拒绝承担因违反本守则而产生的责任。</p></section><section id="zh-CN-section-2" class="policy-section"><div class="section-number">02</div><h2>第2节　Among Us 官方行为准则</h2><p>所有玩家必须首先遵守由 Innersloth 发布的 Among Us Code of Conduct，即《Among Us 行为准则》。</p><p>本守则是对 Among Us 官方行为准则的补充，而不是替代。玩家在使用 Niko 私服期间，必须同时遵守 Among Us 官方行为准则和本守则。</p><p>如果本守则与 Among Us 官方行为准则对同一行为提出不同要求，则应当遵守其中更加严格的要求，但适用法律另有规定的除外。</p></section><section id="zh-CN-section-3" class="policy-section"><div class="section-number">03</div><h2>第3节　公平游戏与禁止作弊</h2><p>禁止任何形式的作弊、外挂、入侵、漏洞滥用、数据篡改或其他破坏公平游戏环境的行为。</p><p>禁止行为包括但不限于：</p><p class="rule-item">1. 使用外挂、修改器、注入工具、脚本、机器人、内存编辑器或其他未经允许的第三方程序。</p><p class="rule-item">2. 修改游戏客户端、游戏文件、网络数据、身份信息、设备信息或服务器交互数据，以获得不公平优势或规避检测。</p><p class="rule-item">3. 获取、显示、使用或传播玩家在正常游戏过程中不应当获得的信息。</p><p class="rule-item">4. 利用服务器、客户端、模组、网络协议、账号系统或游戏机制中的错误、缺陷或漏洞。</p><p class="rule-item">5. 绕过、干扰、欺骗或破坏反作弊系统、身份验证系统、封禁系统或其他安全措施。</p><p class="rule-item">6. 与其他玩家串通作弊，或者帮助、教唆、指导、掩护、宣传他人作弊。</p><p class="rule-item">7. 使用多个账号操纵游戏结果、破坏匹配公平性、刷取数据或规避服务器限制。</p><p class="rule-item">8. 未经明确授权，对服务器进行漏洞测试、端口扫描、压力测试、数据抓取、攻击或其他可能影响服务器正常运行的操作。</p><p class="rule-item">9. 制作、传播、出售、交换、推广或提供与 Niko 私服作弊有关的工具、程序、账号、教程、方法或服务。</p><p class="rule-item">10. 以测试、研究、娱乐、玩笑、演示或仅使用一次为理由实施上述行为。</p><p>无论作弊行为是否成功、是否改变游戏结果、是否被其他玩家发现，或者是否造成实际损失，均可以被认定为违规。</p></section><section id="zh-CN-section-4" class="policy-section"><div class="section-number">04</div><h2>第4节　玩家行为与社区秩序</h2><p>玩家必须尊重其他玩家以及服务器管理人员，不得实施影响服务器安全、社区秩序或其他玩家正常游戏体验的行为。</p><p>禁止行为包括但不限于：</p><p class="rule-item">1. 骚扰、威胁、侮辱、欺凌、歧视或恶意针对其他玩家。</p><p class="rule-item">2. 发布仇恨、色情、露骨、违法、诈骗、恐吓或令人严重不适的内容。</p><p class="rule-item">3. 泄露、传播或威胁泄露他人的个人信息、账号信息、联系方式、地址或其他隐私信息。</p><p class="rule-item">4. 冒充 NikoCat233、服务器管理员、开发人员、社区工作人员或其他玩家。</p><p class="rule-item">5. 发布垃圾信息、重复信息、恶意广告、钓鱼链接、欺诈内容或危险文件。</p><p class="rule-item">6. 恶意举报其他玩家、伪造证据、篡改证据或利用举报系统骚扰他人。</p><p class="rule-item">7. 煽动、组织或协助他人攻击服务器、破坏游戏或骚扰特定个人。</p><p class="rule-item">8. 故意干扰正常游戏，包括恶意退出、恶意挂机、刷屏、持续破坏房间秩序或故意拖延游戏。</p><p class="rule-item">9. 使用玩家名称、房间名称、聊天内容、符号、头像或其他方式规避内容限制。</p><p class="rule-item">10. 拒绝配合管理团队为调查违规行为或维护服务器正常秩序而提出的合理要求。</p></section><section id="zh-CN-section-5" class="policy-section"><div class="section-number">05</div><h2>第5节　违规调查与证据</h2><p>为调查违规行为、保护玩家权益以及维护服务器安全，管理团队可以在合理范围内收集、保存和审查与服务器有关的信息。</p><p>相关信息包括但不限于：</p><p class="rule-item">1. 游戏记录和房间记录。</p><p class="rule-item">2. 服务器日志和反作弊日志。</p><p class="rule-item">3. 登录记录、连接记录、网络信息和设备关联信息。</p><p class="rule-item">4. 玩家举报、申诉及相关交流记录。</p><p class="rule-item">5. 游戏内聊天记录以及相关社区中的交流记录。</p><p class="rule-item">6. 截图、录像、录音和直播记录。</p><p class="rule-item">7. 反作弊系统、自动检测系统或服务器安全系统产生的结果。</p><p class="rule-item">8. 玩家、管理员或其他相关人员提交的证据。</p><p>管理团队可以根据技术检测结果、服务器日志、行为模式、举报内容、玩家陈述以及其他合理信息，对是否存在违规行为作出综合判断。</p><p>为防止检测方式被绕过、保护举报人和其他玩家的隐私，或者维护服务器安全，管理团队没有义务向被封禁玩家公开全部证据、内部日志、检测规则、技术细节或举报人身份。</p></section><section id="zh-CN-section-6" class="policy-section"><div class="section-number">06</div><h2>第6节　封禁</h2><p>Niko 私服对违反本守则的玩家采取的唯一正式处罚措施为封禁。</p><p>封禁分为：</p><p class="rule-item">1. 临时封禁。</p><p class="rule-item">2. 永久封禁。</p><p>管理团队可以根据违规行为的性质、严重程度、影响范围、历史违规记录、是否主动配合调查以及其他相关情况，决定封禁期限。</p><p>任何形式的作弊行为一经确认，均会被处以封禁。</p><p>对于严重作弊、重复违规、服务器攻击、漏洞恶意利用、泄露他人个人信息、伪造证据、威胁管理人员、组织他人违规或规避封禁等行为，管理团队可以直接实施永久封禁。</p><p>管理团队可以在不提前通知、不事先警告和不给予整改机会的情况下实施封禁。</p><p>警告、禁言、踢出房间、限制匹配、限制聊天或限制部分服务器功能，不属于本守则规定的正式处罚方式。</p></section><section id="zh-CN-section-7" class="policy-section"><div class="section-number">07</div><h2>第7节　禁止规避封禁</h2><p>玩家受到封禁后，不得以任何方式规避、绕过或削弱封禁措施。</p><p>禁止行为包括但不限于：</p><p class="rule-item">1. 创建或使用其他账号进入服务器。</p><p class="rule-item">2. 借用、购买、租用或使用他人的账号。</p><p class="rule-item">3. 将自己的账号交给他人代为使用。</p><p class="rule-item">4. 修改、伪造或隐藏设备信息、网络信息、身份信息或账号关联信息。</p><p class="rule-item">5. 使用代理、VPN、虚拟机或其他技术手段隐藏账号之间的关联关系。</p><p class="rule-item">6. 请求、指导或安排他人代替被封禁玩家进入服务器。</p><p class="rule-item">7. 通过其他未经允许的方式绕过服务器封禁系统。</p><p>规避封禁属于独立违规行为。相关账号可以被封禁，原有临时封禁可以被延长或变更为永久封禁。</p></section><section id="zh-CN-section-8" class="policy-section"><div class="section-number">08</div><h2>第8节　封禁申诉</h2><p>如果你认为封禁存在错误，可以通过 Niko 私服公布的官方 Discord、官方 QQ 群或官方电子邮件提交申诉。</p><p>申诉必须在你首次看到封禁提示之日起七个自然日内提交。</p><p>七个自然日的申诉期限从玩家首次看到或按照正常情况应当看到封禁提示之时开始计算。</p><p>超过七个自然日提交的申诉将被无条件拒绝。管理团队主动决定重新审查的情况除外。</p><p>申诉应当至少包含以下内容：</p><p class="rule-item">1. 被封禁账号、玩家名称、玩家编号或其他可以识别账号的信息。</p><p class="rule-item">2. 封禁提示的完整截图。</p><p class="rule-item">3. 首次看到封禁提示的日期和时间。</p><p class="rule-item">4. 对相关事件的完整说明。</p><p class="rule-item">5. 认为封禁存在错误的具体理由。</p><p class="rule-item">6. 可以支持申诉的截图、录像、日志或其他证据。</p><p class="rule-item">7. 管理团队要求提供的其他必要信息。</p><p>出现下列情况之一的，申诉可以被直接拒绝：</p><p class="rule-item">1. 超过七个自然日的申诉期限。</p><p class="rule-item">2. 重复提交相同或实质相同的申诉。</p><p class="rule-item">3. 提供虚假信息、伪造证据或故意隐瞒重要事实。</p><p class="rule-item">4. 辱骂、威胁、骚扰或恶意攻击审核人员。</p><p class="rule-item">5. 拒绝提供识别账号或核实事件所必需的信息。</p><p class="rule-item">6. 通过非官方渠道反复联系或骚扰工作人员。</p><p class="rule-item">7. 由与封禁事件无关的第三方代替被封禁玩家提出申诉。</p><p class="rule-item">8. 在申诉期间继续规避封禁或实施其他违规行为。</p><p>提交申诉不代表封禁一定会被撤销，也不会自动暂停封禁的执行。</p><p>管理团队在审核申诉后，可以维持、缩短、延长、变更为永久封禁或撤销原封禁。</p><p>原则上，每次封禁仅接受一次正式申诉。申诉审核结果通常为最终结果。</p></section><section id="zh-CN-section-9" class="policy-section"><div class="section-number">09</div><h2>第9节　服务性质与可用性</h2><p>Niko 私服是非官方社区服务器。除非另有明确声明，Niko 私服与 Innersloth、Among Us 官方及其关联公司之间不存在隶属、授权、赞助、合作或认可关系。</p><p>管理团队不保证服务器持续、稳定、及时、安全或无错误运行，也不保证玩家数据、游戏记录、账号状态或其他服务器数据不会发生丢失、损坏、回滚或重置。</p><p>管理团队可以因服务器维护、安全事件、游戏更新、运营调整、技术故障、法律要求、不可抗力或其他原因，暂停、修改、限制或终止全部或部分服务。</p><p>服务器暂停、数据丢失、连接中断、延迟、错误、版本不兼容或服务终止本身，不当然构成管理团队对玩家承担赔偿责任的依据，但适用法律另有强制规定的除外。</p></section><section id="zh-CN-section-10" class="policy-section"><div class="section-number">10</div><h2>第10节　账号使用、安全责任与责任承担</h2><p>玩家应当妥善保护自己的账号、登录凭据、设备和网络环境，并对通过其账号实施的全部行为负责。</p><p>玩家不得出售、出租、出借、共享、转让或以其他方式向他人提供账号，不得允许他人使用自己的账号进入服务器、实施违规行为或规避封禁。</p><p>通过玩家账号、设备或网络环境发生的行为，原则上均视为该玩家本人实施的行为。</p><p>账号被盗、账号被借用、账号被共享、设备被他人使用、网络被他人使用、账号由朋友或家庭成员操作、玩家不知道他人正在使用账号，或者玩家声称相关行为不是本人实施，均不能当然免除玩家依据本守则应当承担的任何责任。</p><p>玩家不得以账号安全措施不足、密码泄露、账号被盗、他人代为操作、设备被共用、网络环境被共用、未成年人操作、误操作、不了解软件功能或任何其他类似理由，要求管理团队撤销封禁或免除责任。</p><p>即使违规行为由第三方通过玩家账号、设备或网络环境实施，玩家仍可能被封禁，并仍需承担由该行为产生的全部责任。</p><p>只有在玩家能够提供充分、真实且可核实的证据，并且管理团队经过审查后明确认定玩家对相关行为不存在责任时，管理团队才可以自行决定是否调整封禁。</p><p>该例外不构成管理团队必须撤销或缩短封禁的义务，也不影响管理团队基于账号安全、服务器安全或其他证据维持封禁的权利。</p><p>玩家发现账号、设备或登录凭据存在异常后，应当立即停止使用相关账号、修改登录凭据，并通过官方渠道联系管理团队。</p><p>未及时采取安全措施、未及时报告异常或继续使用存在安全风险的账号，不得作为免除任何责任的理由。</p></section><section id="zh-CN-section-11" class="policy-section"><div class="section-number">11</div><h2>第11节　规则变更</h2><p>管理团队可以根据服务器运营、安全需求、游戏更新、技术变化、社区情况或法律要求修改本守则。</p><p>修改后的守则可以通过官方网站、游戏内公告、Discord、QQ群或其他官方渠道公布。</p><p>Niko 私服官方网站为 au.niko233.top。</p><p>除公告另有说明外，修改后的守则自公布之时起生效。</p><p>玩家在规则更新后继续访问、连接或使用服务器，即视为已经接受修改后的守则。</p></section><section id="zh-CN-section-12" class="policy-section"><div class="section-number">12</div><h2>第12节　条款的可分割性</h2><p>如果本守则中的任何条款被有权机构认定为无效、违法或无法执行，该条款应当在必要范围内进行调整或停止适用。</p><p>其他条款的效力不受影响，仍然继续有效。</p><p>如果某项条款只有部分内容无效或无法执行，则其余可以独立适用的部分仍然有效。</p></section><section id="zh-CN-section-13" class="policy-section"><div class="section-number">13</div><h2>第13节　未列明行为与最终解释权</h2><p>本守则无法列举所有可能出现的违规方式。</p><p>对于虽未在本守则中明确列出，但明显破坏公平游戏、服务器安全、社区秩序、管理工作或其他玩家正常游戏体验的行为，管理团队仍可以认定其构成违规并实施封禁。</p><p>管理团队有权根据具体情况判断某项行为是否构成作弊、违规、规避封禁或其他应当封禁的行为。</p><p>在适用法律允许的范围内，本守则的最终解释权、执行权以及 Niko 私服的管理权归 NikoCat233 所有。</p><p>管理团队对服务器日志、反作弊结果、违规事实、封禁期限和申诉结果作出的决定，原则上为最终决定。</p></section><section id="zh-CN-section-14" class="policy-section"><div class="section-number">14</div><h2>第14节　玩家确认</h2><p>通过勾选“我同意”、点击确认按钮、连接服务器、加入游戏或继续使用 Niko 私服，你确认并同意：</p><p class="rule-item">1. 你已经阅读并理解本守则的全部内容。</p><p class="rule-item">2. 你同意遵守本守则和 Among Us 官方行为准则。</p><p class="rule-item">3. 你理解任何形式的作弊和违规行为一经确认，均可能导致临时封禁或永久封禁。</p><p class="rule-item">4. 你理解 Niko 私服唯一的正式处罚措施为封禁。</p><p class="rule-item">5. 你理解封禁申诉必须在首次看到封禁提示后的七个自然日内提交。</p><p class="rule-item">6. 你理解超过七个自然日提交的申诉将被无条件拒绝，但管理团队主动重新审查的情况除外。</p><p class="rule-item">7. 你理解通过你的账号、设备或网络环境发生的行为原则上由你承担责任。</p><p class="rule-item">8. 你同意不得以未阅读规则、账号被盗、账号共享、他人操作、设备共用、网络共用、误操作或其他类似理由免除责任。</p><p class="rule-item">9. 你接受管理团队依据本守则作出的封禁和申诉决定。</p><p>我已阅读、理解并同意本《Niko Among Us 私服服务条款与玩家守则》。</p></section>
+        <section class="contact-card"><p class="eyebrow">NIKO / CONTACT</p><h2>联系方式</h2><p>如需咨询、申诉或撤销对本 TOS 的同意，请通过以下官方渠道联系 NikoCat233。</p><div class="contact-links"><a href="mailto:admin@niko233.top"><span>邮箱</span><strong>admin@niko233.top</strong></a><a href="https://discord.gg/guf9ca4YSA" target="_blank" rel="noopener noreferrer"><span>Discord</span><strong>discord.gg/guf9ca4YSA</strong></a><a href="https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=qBP7Ss78sT68OOSMO5mpzAgp5Py3sOKJ&amp;authKey=3I0V1ckK1NCWK%2BmKKZskA6oi6BgA96z1pipSaUjGxgXs%2Br3qPp3aV%2BbChu%2FjPjjO&amp;noverify=0&amp;group_code=975714136" target="_blank" rel="noopener noreferrer"><span>QQ 群</span><strong>975714136</strong></a></div></section>
+        <a class="back-top" href="#top">↑ 返回顶部</a>
+      </article>
+    </div>
+    <footer><span>© 2026 Niko's Impostor Server</span><span>非官方社区服务器 · 与 Innersloth 无关联</span></footer>
+  </div></main>
+  <script>
+    (() => {
+      const detect = () => {
+        try { const locale = new Intl.Locale(navigator.languages?.[0] || navigator.language || 'en'); return locale.language === 'zh' && locale.region === 'CN' ? 'zh-CN' : 'en'; }
+        catch { return 'en'; }
+      };
+      const setLocale = (locale, persist = true) => {
+        const selected = locale === 'zh-CN' ? 'zh-CN' : 'en';
+        document.querySelectorAll('[data-locale]').forEach((node) => { node.hidden = node.dataset.locale !== selected; });
+        document.querySelectorAll('[data-set-locale]').forEach((button) => { const active = button.dataset.setLocale === selected; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
+        document.documentElement.lang = selected;
+        document.title = selected === 'zh-CN' ? 'Niko · 服务条款与玩家守则' : 'Niko · Terms of Service and Player Rules';
+        if (persist) { try { localStorage.setItem('niko-policy-locale', selected); } catch {} }
+      };
+      document.addEventListener('click', (event) => { const button = event.target.closest('[data-set-locale]'); if (button) setLocale(button.dataset.setLocale); });
+      let saved = ''; try { saved = localStorage.getItem('niko-policy-locale') || ''; } catch {}
+      setLocale(saved || detect(), false);
+    })();
+  </script>
 </body>
 </html>
