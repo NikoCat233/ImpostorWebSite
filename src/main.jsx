@@ -42,6 +42,15 @@ const regionLinks = [
     api: 'https://au-cn.niko233.top/api/counts',
     url: 'amongus://init?servername=Niko233(CN1)&serverport=443&serverip=https%3A%2F%2Fau-cn.niko233.top&usedtls=false',
   },
+  {
+    code: 'CN-IP',
+    name: 'NikoCN(IP)',
+    nameZh: 'Niko 中国（IP）',
+    host: '43.248.2.100',
+    tone: 'green',
+    api: 'https://43.248.2.100/api/counts',
+    url: 'amongus://init?servername=NikoCN(IP)&serverport=443&serverip=https%3A%2F%2F43.248.2.100&usedtls=false',
+  },
 ];
 
 const moddedLinks = [
@@ -645,7 +654,7 @@ function MainPage({ language, setLanguage }) {
         </section>
 
         <section className="pulse-strip shell" aria-label="Server overview">
-          <div className="pulse-stat"><span className="pulse-stat-icon orange"><Icon name="globe" size={18} /></span><span><strong>04</strong><small>{t.regions}</small></span></div>
+          <div className="pulse-stat"><span className="pulse-stat-icon orange"><Icon name="globe" size={18} /></span><span><strong>05</strong><small>{t.regions}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon violet"><Icon name="gamepad" size={18} /></span><span><strong>03</strong><small>{t.platforms}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon green"><Icon name="activity" size={18} /></span><span><strong>{live.hasLiveData ? live.totalPlayers : '—'}</strong><small>{t.online}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon blue"><Icon name="home" size={18} /></span><span><strong>{live.hasLiveData ? live.totalGames : '—'}</strong><small>{t.rooms}</small></span></div>
