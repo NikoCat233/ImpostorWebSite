@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
-const DISCORD_URL = 'https://discord.gg/guf9ca4YSA';
-const QQ_URL = 'https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=qBP7Ss78sT68OOSMO5mpzAgp5Py3sOKJ&authKey=3I0V1ckK1NCWK%2BmKKZskA6oi6BgA96z1pipSaUjGxgXs%2Br3qPp3aV%2BbChu%2FjPjjO&noverify=0&group_code=975714136';
+const DISCORD_URL = '/discord';
+const QQ_URL = '/qq';
 
 const regionLinks = [
   {
@@ -40,6 +40,7 @@ const regionLinks = [
     host: 'au-cn.niko233.top',
     tone: 'green',
     api: 'https://au-cn.niko233.top/api/counts',
+    countFallbackApis: ['https://43.248.2.100/api/counts'],
     url: 'amongus://init?servername=Niko233(CN1)&serverport=443&serverip=https%3A%2F%2Fau-cn.niko233.top&usedtls=false',
   },
   {
@@ -49,6 +50,8 @@ const regionLinks = [
     host: '43.248.2.100',
     tone: 'green',
     api: 'https://43.248.2.100/api/counts',
+    // This is an alternate address for the CN server, not a separate shard.
+    countSource: 'CN',
     url: 'amongus://init?servername=NikoCN(IP)&serverport=443&serverip=https%3A%2F%2F43.248.2.100&usedtls=false',
   },
 ];
@@ -66,8 +69,8 @@ const copy = {
     navRules: 'Rules',
     navSupport: 'Support',
     heroEyebrow: 'PRIVATE SERVER / CREW READY',
-    heroTitle: 'Install the regions',
-    heroTitleAccent: 'Join the lobby.',
+    heroTitle: 'Space for you.',
+    heroTitleAccent: 'Room for friends.',
     heroDescription: 'A custom Among Us region, hosted for friends, modded communities, and anyone who wants a safer corner of the Skeld.',
     heroPrimary: 'Start installation',
     heroSecondary: 'Join Discord',
@@ -81,6 +84,7 @@ const copy = {
     playerPulse: 'PLAYER PULSE',
     live: 'Online',
     checking: 'CHECKING SIGNAL',
+    unavailable: 'Status unavailable',
     installEyebrow: '01 / Add the regions',
     installTitle: 'Choose your platform.',
     installDescription: 'Pick the platform you play on. The recommended desktop script takes less than a minute; the manual routes are here when you want to see every file.',
@@ -125,7 +129,7 @@ const copy = {
     quick1Title: 'Choose a platform',
     quick1Detail: 'Use the recommended script on Windows, or jump to your mobile region below.',
     quick2Title: 'Restart the game',
-    quick2Detail: 'The custom region loads when Among Us starts again. Keep the app in the foreground on mobile.',
+    quick2Detail: 'The custom region loads when Among Us starts again. Keep the game running in the background while adding a mobile region.',
     quick3Title: 'Find your crew',
     quick3Detail: 'Use the in-game region selector and look for Niko233. See you in the lobby.',
     statusEyebrow: 'NETWORK PULSE',
@@ -135,7 +139,7 @@ const copy = {
     rule2: 'No insults, harassment, or racial discrimination.',
     rule3: 'No ban evasion.',
     rule4: 'Breaking these rules results in a ban.',
-    privacy: 'Read the privacy policy',
+    privacy: 'Read the full player rules',
     supportEyebrow: 'KEEP THE LIGHTS ON',
     supportTitle: 'Built by a player, kept online by the community.',
     supportLead: 'If this server helps you find games, you can help cover hosting and domain costs.',
@@ -149,7 +153,7 @@ const copy = {
     qq: 'China QQ group',
     footer: 'A small server for mega lobbies.',
     hostedWithLove: 'Hosted since 2023 by NikoCat233 with love',
-    footerPolicy: 'Privacy policy',
+    footerPolicy: 'Terms & player rules',
     modalTitle: 'Scan to support',
     modalClose: 'Close',
   },
@@ -159,9 +163,9 @@ const copy = {
     navRules: '规则',
     navSupport: '联系',
     heroEyebrow: '私服频道 / 等你入场',
-    heroTitle: '安装私服',
-    heroTitleAccent: '加入房间',
-    heroDescription: '一个遥遥领先于同行的 Among Us 私服。(不包括 miniduikboot 的产品)',
+    heroTitle: '太空很大，',
+    heroTitleAccent: '一起才好玩。',
+    heroDescription: '欢迎来到 Niko 的 Among Us 私服。选一个区域，叫上你的朋友，把下一局的故事留给你们。',
     heroPrimary: '开始安装',
     heroSecondary: '加入 QQ 群',
     heroFootnote: 'NikoCat233 用爱维护 · 自 2023 年起',
@@ -174,6 +178,7 @@ const copy = {
     playerPulse: '在线玩家',
     live: 'Online',
     checking: '正在检测',
+    unavailable: '状态暂不可用',
     installEyebrow: '01 / 选择平台',
     installTitle: '选择进入方式。',
     installDescription: '选择你正在使用的平台。Windows 推荐脚本不到一分钟即可完成；如果你想知道每个文件的位置，也可以使用手动方式。',
@@ -218,7 +223,7 @@ const copy = {
     quick1Title: '选择方式',
     quick1Detail: 'Windows 使用推荐脚本，手机端直接点击下面的区域按钮。',
     quick2Title: '重启游戏',
-    quick2Detail: 'Among Us 重启后才会加载自定义区域。手机端请保持应用在前台。',
+    quick2Detail: 'Among Us 重启后才会加载自定义区域。手机端添加区域时请保持游戏在后台运行。',
     quick3Title: '找到你的队伍',
     quick3Detail: '在游戏区域选择器里找到 Niko233。大厅见。',
     statusEyebrow: '网络脉冲',
@@ -228,7 +233,7 @@ const copy = {
     rule2: '禁止辱骂、骚扰和种族歧视。',
     rule3: '禁止绕过封禁。',
     rule4: '违反规则可能会被封禁。',
-    privacy: '查看隐私政策',
+    privacy: '查看完整玩家守则',
     supportEyebrow: '支持服务器',
     supportTitle: '由玩家搭建，也由社区一起维持。',
     supportLead: '如果这个服务器帮助到你，可以捐赠支持托管和域名费用。',
@@ -242,7 +247,7 @@ const copy = {
     qq: '中国 QQ 群',
     footer: '为所有玩家准备的私服。',
     hostedWithLove: 'Hosted since 2023 by NikoCat233 with love',
-    footerPolicy: '隐私政策',
+    footerPolicy: '服务条款与玩家守则',
     modalTitle: '扫码支持',
     modalClose: '关闭',
   },
@@ -330,33 +335,40 @@ function SectionHeading({ eyebrow, title, description, dark = false }) {
 
 function useLiveCounts() {
   const [counts, setCounts] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
+    let active = true;
+    const timeout = window.setTimeout(() => controller.abort(), 8000);
     Promise.allSettled(
       regionLinks
-        .filter((region) => region.api)
+        .filter((region) => region.api && (region.countSource || region.code) === region.code)
         .map(async (region) => {
-          const response = await fetch(region.api, { signal: controller.signal });
-          if (!response.ok) throw new Error(`Unable to reach ${region.code}`);
-          const data = await response.json();
-          return [region.code, data];
+          const endpoints = [region.api, ...(region.countFallbackApis || [])];
+          const data = await Promise.any(endpoints.map(async (endpoint) => {
+            const response = await fetch(endpoint, { signal: controller.signal });
+            if (!response.ok) throw new Error(`Unable to reach ${endpoint}`);
+            return response.json();
+          }));
+          return [region.countSource || region.code, data];
         }),
     ).then((results) => {
       const nextCounts = {};
       results.forEach((result) => {
         if (result.status === 'fulfilled') nextCounts[result.value[0]] = result.value[1];
       });
-      setCounts(nextCounts);
+      if (active) { setCounts(nextCounts); setLoading(false); }
+      window.clearTimeout(timeout);
     });
 
-    return () => controller.abort();
+    return () => { active = false; controller.abort(); window.clearTimeout(timeout); };
   }, []);
 
   const totalPlayers = Object.values(counts).reduce((sum, item) => sum + Number(item?.players || 0), 0);
   const totalGames = Object.values(counts).reduce((sum, item) => sum + Number(item?.games || 0), 0);
 
-  return { counts, totalPlayers, totalGames, hasLiveData: Object.keys(counts).length > 0 };
+  return { counts, loading, totalPlayers, totalGames, hasLiveData: Object.keys(counts).length > 0 };
 }
 
 function CopyCode({ children, onCopy, copied, hint }) {
@@ -398,12 +410,12 @@ function AccordionItem({ number, title, open, onToggle, children, badge }) {
 
 function RegionButton({ region, language, counts }) {
   const name = language === 'zh' ? region.nameZh : region.name;
-  const stats = counts?.[region.code];
+  const stats = counts?.[region.countSource || region.code];
   return (
     <a className={`region-button region-${region.tone}`} href={region.url}>
       <span className="region-button-top">
         <span className="region-code">{region.code}</span>
-        <span className="region-install-hint"><Icon name="arrow" size={16} /><small>Click to Install</small></span>
+        <span className="region-install-hint"><Icon name="arrow" size={16} /><small>{language === 'zh' ? '点击安装' : 'Click to install'}</small></span>
       </span>
       <strong>{name}</strong>
       <span className="region-host">{region.host}</span>
@@ -438,8 +450,8 @@ function DesktopInstall({ t, language, copied, onCopy, openMethod, setOpenMethod
             <li>{t.manualStep3}</li>
           </ol>
           <div className="screenshot-stack">
-            <img src="/win-run.png" alt={language === 'zh' ? '从运行窗口打开 Among Us 文件夹' : 'Open the Among Us folder from Run'} />
-            <img src="/replace.png" alt={language === 'zh' ? '替换 regioninfo.json' : 'Replace regioninfo.json'} />
+            <img loading="lazy" src="/win-run.png" alt={language === 'zh' ? '从运行窗口打开 Among Us 文件夹' : 'Open the Among Us folder from Run'} />
+            <img loading="lazy" src="/replace.png" alt={language === 'zh' ? '替换 regioninfo.json' : 'Replace regioninfo.json'} />
           </div>
         </AccordionItem>
         <AccordionItem number="03" title={t.method3} open={openMethod === 2} onToggle={() => setOpenMethod(openMethod === 2 ? -1 : 2)}>
@@ -451,7 +463,7 @@ function DesktopInstall({ t, language, copied, onCopy, openMethod, setOpenMethod
             <li>{t.storeStep4}</li>
           </ol>
           <div className="screenshot-grid">
-            {['microsoft-data-folder.png', 'microsoft-data-folder-2.png', 'microsoft-data-folder-3.png', 'microsoft-data-folder-4.png'].map((image) => <img key={image} src={`/${image}`} alt="Microsoft Store installation guide" />)}
+            {['microsoft-data-folder.png', 'microsoft-data-folder-2.png', 'microsoft-data-folder-3.png', 'microsoft-data-folder-4.png'].map((image) => <img loading="lazy" key={image} src={`/${image}`} alt="Microsoft Store installation guide" />)}
           </div>
         </AccordionItem>
         <AccordionItem number="04" title={t.method4} open={openMethod === 3} onToggle={() => setOpenMethod(openMethod === 3 ? -1 : 3)}>
@@ -519,7 +531,7 @@ function PlayerPresence({ t, counts, totalPlayers, hasLiveData }) {
     <section className="player-presence" aria-label={t.onlinePlayers}>
       <div className="player-presence-head"><span className="eyebrow"><Icon name="activity" size={14} /> {t.playerPulse}</span><strong>{hasLiveData ? totalPlayers : '—'}</strong><small>{t.onlinePlayers}</small></div>
       <div className="player-region-list">
-        {regionLinks.filter((region) => region.api).map((region) => <div key={region.code} className="player-region"><span><i className={`player-region-dot ${region.tone}`} />{region.code}</span><strong>{hasLiveData ? (counts[region.code]?.players ?? '—') : '—'}</strong></div>)}
+        {regionLinks.filter((region) => region.api).map((region) => <div key={region.code} className="player-region"><span><i className={`player-region-dot ${region.tone}`} />{region.code}</span><strong>{hasLiveData ? (counts[region.countSource || region.code]?.players ?? '—') : '—'}</strong></div>)}
       </div>
     </section>
   );
@@ -579,15 +591,23 @@ function SupportCard({ t, language, onWechat }) {
 }
 
 function QRModal({ t, onClose }) {
+  const dialogRef = useRef(null);
   useEffect(() => {
-    const onKeyDown = (event) => event.key === 'Escape' && onClose();
+    const previous = document.activeElement;
+    const oldOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    dialogRef.current?.querySelector('button')?.focus();
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') onClose();
+      if (event.key === 'Tab') { event.preventDefault(); dialogRef.current?.querySelector('button')?.focus(); }
+    };
     window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    return () => { window.removeEventListener('keydown', onKeyDown); document.body.style.overflow = oldOverflow; previous?.focus(); };
   }, [onClose]);
 
   return (
     <div className="modal-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
-      <div className="qr-modal" role="dialog" aria-modal="true" aria-labelledby="qr-title">
+      <div ref={dialogRef} className="qr-modal" role="dialog" aria-modal="true" aria-labelledby="qr-title">
         <button type="button" className="modal-close" onClick={onClose} aria-label={t.modalClose}><Icon name="close" size={18} /></button>
         <div className="qr-modal-copy"><p className="eyebrow">WECHAT / SUPPORT</p><h2 id="qr-title">{t.modalTitle}</h2></div>
         <img src="/wechat.png" alt="WeChat donation QR code" />
@@ -599,7 +619,7 @@ function QRModal({ t, onClose }) {
 
 function MainPage({ language, setLanguage }) {
   const t = copy[language];
-  const [activePlatform, setActivePlatform] = useState('desktop');
+  const [activePlatform, setActivePlatform] = useState(() => window.location.hash === '#mobile' ? 'mobile' : 'desktop');
   const [openMethod, setOpenMethod] = useState(0);
   const [copied, setCopied] = useState('');
   const [showQr, setShowQr] = useState(false);
@@ -630,7 +650,7 @@ function MainPage({ language, setLanguage }) {
       <header className="site-nav shell">
         <a className="brand" href="#top" aria-label="NikoCat233 Impostor Server home"><BrandMark /><span><strong>NikoCat233</strong><small>IMPOSTOR SERVER</small></span></a>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#install">{t.navInstall}</a><a href="#mobile">{t.navMobile}</a><a href="#rules">{t.navRules}</a><a href="#support">{t.navSupport}</a>
+          <a href="#install">{t.navInstall}</a><a href="#mobile" onClick={() => switchPlatform('mobile')}>{t.navMobile}</a><a href="#rules">{t.navRules}</a><a href="#support">{t.navSupport}</a>
         </nav>
         <div className="nav-actions"><LanguageToggle language={language} onChange={setLanguage} /><a className="nav-discord" href={language === 'zh' ? QQ_URL : DISCORD_URL} target="_blank" rel="noreferrer"><span>{language === 'zh' ? 'QQ 群' : 'Discord'}</span><Icon name="external" size={15} /></a></div>
       </header>
@@ -645,29 +665,26 @@ function MainPage({ language, setLanguage }) {
             <p className="hero-footnote"><span>{t.heroFootnote}</span><span className="footnote-line" /><span>{t.heroOrigin}</span></p>
           </div>
           <div className="hero-visual" aria-hidden="true">
-            <div className="hero-image" />
-            <div className="visual-grid" />
-            <div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" />
-            <div className="signal-card"><span className="signal-card-label">{live.hasLiveData ? t.live : t.checking}</span><strong>{live.hasLiveData ? String(live.totalPlayers).padStart(2, '0') : '—'}</strong><small>{t.online}</small><span className="signal-wave"><i /><i /><i /><i /><i /></span></div>
-            <div className="visual-caption"><span>AU / CUSTOM-REGION</span><span>37° 46′ 30″ N</span></div>
+            <img className="space-art" src="/crew-window.svg" alt="" width="540" height="480" />
+            <div className="visual-caption"><span>NIKO / INDEPENDENT SERVER</span><span>YOUR CREW IS WAITING ↗</span></div>
           </div>
         </section>
 
         <section className="pulse-strip shell" aria-label="Server overview">
           <div className="pulse-stat"><span className="pulse-stat-icon orange"><Icon name="globe" size={18} /></span><span><strong>05</strong><small>{t.regions}</small></span></div>
-          <div className="pulse-stat"><span className="pulse-stat-icon violet"><Icon name="gamepad" size={18} /></span><span><strong>03</strong><small>{t.platforms}</small></span></div>
+          <div className="pulse-stat"><span className="pulse-stat-icon violet"><Icon name="gamepad" size={18} /></span><span><strong>02</strong><small>{t.platforms}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon green"><Icon name="activity" size={18} /></span><span><strong>{live.hasLiveData ? live.totalPlayers : '—'}</strong><small>{t.online}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon blue"><Icon name="home" size={18} /></span><span><strong>{live.hasLiveData ? live.totalGames : '—'}</strong><small>{t.rooms}</small></span></div>
-          <div className="pulse-note"><span className="pulse-dot" /> <span>{live.hasLiveData ? t.live : t.checking} <small>·</small> Niko233</span></div>
+          <div className="pulse-note"><span className="pulse-dot" /> <span>{live.hasLiveData ? t.live : live.loading ? t.checking : t.unavailable} <small>·</small> Niko233</span></div>
         </section>
 
         <section className="workspace shell" id="install">
           <div className="main-column">
             <SectionHeading eyebrow={t.installEyebrow} title={t.installTitle} description={t.installDescription} />
-            <div className="platform-tabs" role="tablist" aria-label="Platform selection">
-              <button type="button" role="tab" aria-selected={activePlatform === 'desktop'} className={activePlatform === 'desktop' ? 'is-active' : ''} onClick={() => switchPlatform('desktop')}><span className="tab-icon"><Icon name="terminal" size={19} /></span><span><strong>{t.desktop}</strong><small>{t.desktopDescription}</small></span>{activePlatform === 'desktop' && <Icon name="arrow" size={16} />}</button>
-              <button type="button" role="tab" aria-selected={activePlatform === 'mobile'} className={activePlatform === 'mobile' ? 'is-active' : ''} onClick={() => switchPlatform('mobile')}><span className="tab-icon"><Icon name="phone" size={19} /></span><span><strong>{t.mobile}</strong><small>{t.mobileDescription}</small></span>{activePlatform === 'mobile' && <Icon name="arrow" size={16} />}</button>
-              <button type="button" role="tab" aria-selected={activePlatform === 'console'} className={activePlatform === 'console' ? 'is-active' : ''} onClick={() => switchPlatform('console')}><span className="tab-icon"><Icon name="gamepad" size={19} /></span><span><strong>{t.console}</strong><small>{t.consoleDescription}</small></span>{activePlatform === 'console' && <Icon name="arrow" size={16} />}</button>
+            <div className="platform-tabs" role="group" aria-label="Platform selection">
+              <button type="button" aria-pressed={activePlatform === 'desktop'} className={activePlatform === 'desktop' ? 'is-active' : ''} onClick={() => switchPlatform('desktop')}><span className="tab-icon"><Icon name="terminal" size={19} /></span><span><strong>{t.desktop}</strong><small>{t.desktopDescription}</small></span>{activePlatform === 'desktop' && <Icon name="arrow" size={16} />}</button>
+              <button type="button" aria-pressed={activePlatform === 'mobile'} className={activePlatform === 'mobile' ? 'is-active' : ''} onClick={() => switchPlatform('mobile')}><span className="tab-icon"><Icon name="phone" size={19} /></span><span><strong>{t.mobile}</strong><small>{t.mobileDescription}</small></span>{activePlatform === 'mobile' && <Icon name="arrow" size={16} />}</button>
+              <button type="button" aria-pressed={activePlatform === 'console'} className={activePlatform === 'console' ? 'is-active' : ''} onClick={() => switchPlatform('console')}><span className="tab-icon"><Icon name="gamepad" size={19} /></span><span><strong>{t.console}</strong><small>{t.consoleDescription}</small></span>{activePlatform === 'console' && <Icon name="arrow" size={16} />}</button>
             </div>
             <div className="install-panel" id="mobile">
               {activePlatform === 'desktop' && <DesktopInstall t={t} language={language} copied={copied} onCopy={copyText} openMethod={openMethod} setOpenMethod={setOpenMethod} />}
@@ -687,35 +704,9 @@ function MainPage({ language, setLanguage }) {
   );
 }
 
-const policyContent = {
-  zh: [
-    ['1. 简介', '本隐私守则阐述了 NikoCat233 运营的多个《Among Us》Impostor 服务器如何收集、使用和保护您的个人信息。为了确保服务安全、保障玩家体验，以及对抗作弊者和攻击者，我们可能需要收集相关数据。'],
-    ['2. 信息收集', '我们收集的信息可能包括但不限于：', ['您连接服务器的 IP 地址', '您的《Among Us》账户信息，包括 productUserId（唯一账户标识）和好友代码', '您的设备信息（由《Among Us》在限制范围内提供给服务器）']],
-    ['3. 信息使用和保护', '', ['上述信息仅运营者（NikoCat233）能够直接访问和审查。', '上述信息会被妥善保管，以确保无法被未授权者访问。', '上述信息在必要情况下（例如对抗作弊者和违反规则者）将被披露。']],
-    ['4. 知情与同意', '我们已经通过服务器的安装网页与进入服务器时展示的公告向您告知了上述隐私条款。继续在私服游玩意味着您充分了解并认可上述规则，同意我们在合理范围内收集上面描述的隐私信息。如果您拒绝此协议，请立刻退出私服，并从 Among Us 中移除此服务器。'],
-    ['5. 变更', '我们可能会不时更新本隐私守则。任何变更将在发布于此页面后立即生效。'],
-    ['6. 联系我们', '如果您对本隐私守则有任何疑问，请通过邮件、Discord 或 QQ 群联系我们。'],
-  ],
-  en: [
-    ['1. Introduction', 'This Privacy Policy outlines how NikoCat233, the operator of multiple Among Us Impostor servers, collects, uses, and protects your personal information. To keep the service secure, maintain a stable gaming experience, and combat cheaters and attackers, we may need to collect relevant data.'],
-    ['2. Information Collection', 'The information we collect may include, but is not limited to:', ['Your IP address when connecting to our servers', 'Your Among Us account information, including your productUserId and friend code', 'Your device information, provided to the servers by Among Us within permitted limits']],
-    ['3. Information Usage and Protection', '', ['The above information can only be directly accessed and reviewed by the operator (NikoCat233).', 'The above information will be securely stored to prevent unauthorized access.', 'The above information will be disclosed when necessary, for example to combat cheaters and rule violators.']],
-    ['4. Informed Consent', "We have informed you of these privacy terms through the installation webpage and the announcement displayed when entering the server. Continuing to play on the private server means that you understand and acknowledge the rules and agree that we collect the described privacy information within a reasonable range. If you refuse this agreement, please exit the server and remove it from Among Us."],
-    ['5. Changes to this Policy', 'We may update this Privacy Policy from time to time. Any changes will be effective immediately upon posting to this page.'],
-    ['6. Contact Us', 'If you have questions about this Privacy Policy, please contact us by email, Discord, or QQ group.'],
-  ],
-};
-
-function PolicyPage({ language, setLanguage }) {
-  const t = copy[language];
-  return (
-    <div className="app-shell policy-shell"><header className="site-nav shell"><a className="brand" href="/"><BrandMark /><span><strong>NikoCat233</strong><small>IMPOSTOR SERVER</small></span></a><div className="nav-actions"><LanguageToggle language={language} onChange={setLanguage} /><a className="nav-discord" href="/">Back home <Icon name="arrow" size={15} /></a></div></header><main className="policy-main shell"><div className="policy-hero"><p className="eyebrow"><Icon name="lock" size={15} /> PRIVACY / TRUST</p><h1>{language === 'zh' ? '隐私守则' : 'Privacy policy'}<em>{language === 'zh' ? ' / Privacy policy' : ' / 隐私守则'}</em></h1><p>{language === 'zh' ? '关于服务器数据如何被收集、使用和保护的说明。' : 'How server data is collected, used, and protected.'}</p></div><article className="policy-card card-surface">{policyContent[language].map(([title, lead, list]) => <section key={title}><h2>{title}</h2>{lead && <p>{lead}</p>}{list && <ul>{list.map((item) => <li key={item}>{item}</li>)}</ul>}</section>)}<div className="policy-note"><Icon name="shield" size={17} /><span>{language === 'zh' ? '继续使用私服即代表你理解并接受上述条款。' : 'By continuing to use the private server, you acknowledge and accept these terms.'}</span></div><div className="policy-contact"><a href="mailto:admin@niko233.top"><img src="/assets/icons/mail.svg" alt="" />{t.email}</a><a href={DISCORD_URL} target="_blank" rel="noreferrer"><img src="/assets/icons/discord.svg" alt="" />Discord</a><a href={QQ_URL} target="_blank" rel="noreferrer"><img src="/assets/icons/qq.svg" alt="" />{t.qq}</a></div></article></main><footer className="site-footer shell"><div className="footer-brand"><BrandMark /><span>{t.footer}</span></div><a href="/">{language === 'zh' ? '返回首页' : 'Back home'} <Icon name="arrow" size={14} /></a></footer></div>
-  );
-}
-
 function App() {
   const [language, setLanguage] = useState(getInitialLanguage);
-  const isPolicyPage = window.location.pathname.toLowerCase().endsWith('policy.html') || new URLSearchParams(window.location.search).get('page') === 'policy';
+  const isPolicyPage = /^\/policy(?:\.html)?\/?$/i.test(window.location.pathname) || new URLSearchParams(window.location.search).get('page') === 'policy';
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -726,7 +717,8 @@ function App() {
     }
   }, [language]);
 
-  return isPolicyPage ? <PolicyPage language={language} setLanguage={setLanguage} /> : <MainPage language={language} setLanguage={setLanguage} />;
+  useEffect(() => { if (isPolicyPage) window.location.replace('/policy.html'); }, [isPolicyPage]);
+  return isPolicyPage ? null : <MainPage language={language} setLanguage={setLanguage} />;
 }
 
 createRoot(document.getElementById('root')).render(<App />);
