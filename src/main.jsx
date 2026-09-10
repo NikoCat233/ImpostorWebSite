@@ -37,22 +37,10 @@ const regionLinks = [
     code: 'CN',
     name: 'NikoCN',
     nameZh: 'Niko 中国',
-    host: 'au-cn.niko233.top',
+    host: 'au-cn.netease.me',
     tone: 'green',
-    api: 'https://au-cn.niko233.top/api/counts',
-    countFallbackApis: ['https://43.248.2.100/api/counts'],
-    url: 'amongus://init?servername=Niko233(CN1)&serverport=443&serverip=https%3A%2F%2Fau-cn.niko233.top&usedtls=false',
-  },
-  {
-    code: 'CN-IP',
-    name: 'NikoCN(IP)',
-    nameZh: 'Niko 中国（IP）',
-    host: '43.248.2.100',
-    tone: 'green',
-    api: 'https://43.248.2.100/api/counts',
-    // This is an alternate address for the CN server, not a separate shard.
-    countSource: 'CN',
-    url: 'amongus://init?servername=NikoCN(IP)&serverport=443&serverip=https%3A%2F%2F43.248.2.100&usedtls=false',
+    api: 'https://au-cn.netease.me/api/counts',
+    url: 'amongus://init?servername=Niko233(CN2)&serverport=443&serverip=https%3A%2F%2Fau-cn.netease.me&usedtls=false',
   },
 ];
 
