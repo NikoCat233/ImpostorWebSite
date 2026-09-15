@@ -61,6 +61,9 @@ const copy = {
     heroTitleAccent: 'Room for friends.',
     heroDescription: 'A custom Among Us region, hosted for friends, modded communities, and anyone who wants a safer corner of the Skeld.',
     heroPrimary: 'Start installation',
+    heroRules: 'Rules',
+    rulesNoticeTitle: 'Read before you play',
+    rulesNotice: 'By playing on this server, you are deemed to have read, understood, and accepted the server rules.',
     heroSecondary: 'Join Discord',
     heroFootnote: 'Hosted since 2023 by NikoCat233 with love',
     heroOrigin: 'custom region',
@@ -155,6 +158,9 @@ const copy = {
     heroTitleAccent: '一起才好玩。',
     heroDescription: '欢迎来到 Niko 的 Among Us 私服。选一个区域，叫上你的朋友，把下一局的故事留给你们。',
     heroPrimary: '开始安装',
+    heroRules: 'Rules · 服务器规则',
+    rulesNoticeTitle: '游玩前请先阅读规则',
+    rulesNotice: '游玩本服务器，即视为你已阅读、理解并接受服务器规则。',
     heroSecondary: '加入 QQ 群',
     heroFootnote: 'NikoCat233 用爱维护 · 自 2023 年起',
     heroOrigin: '自定义私服',
@@ -534,7 +540,7 @@ function RulesCard({ t, language }) {
       <ul className="rules-list">
         {[t.rule1, t.rule2, t.rule3, t.rule4].map((rule) => <li key={rule}><span><Icon name="shield" size={15} /></span>{rule}</li>)}
       </ul>
-      <a className="text-link" href="/policy.html"><Icon name="lock" size={15} /> {t.privacy} <Icon name="arrow" size={14} /></a>
+      <a className="button button-rules" href="/policy.html"><Icon name="shield" size={17} /> {t.privacy} <Icon name="arrow" size={16} /></a>
     </section>
   );
 }
@@ -649,7 +655,15 @@ function MainPage({ language, setLanguage }) {
             <p className="eyebrow hero-eyebrow"><span className="pulse-dot" /> {t.heroEyebrow}</p>
             <h1>{t.heroTitle}<em>{t.heroTitleAccent}</em></h1>
             <p className="hero-description">{t.heroDescription}</p>
-            <div className="hero-actions"><a className="button button-primary" href="#install">{t.heroPrimary}<Icon name="arrow" size={17} /></a><a className="button button-ghost" href={language === 'zh' ? QQ_URL : DISCORD_URL} target="_blank" rel="noreferrer">{t.heroSecondary}<Icon name="external" size={15} /></a></div>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#install">{t.heroPrimary}<Icon name="arrow" size={17} /></a>
+              <a className="button button-rules" href="/policy.html"><Icon name="shield" size={17} />{t.heroRules}<Icon name="arrow" size={17} /></a>
+              <a className="button button-ghost" href={language === 'zh' ? QQ_URL : DISCORD_URL} target="_blank" rel="noreferrer">{t.heroSecondary}<Icon name="external" size={15} /></a>
+            </div>
+            <div className="rules-notice">
+              <Icon name="shield" size={21} />
+              <p><strong>{t.rulesNoticeTitle}</strong><span>{t.rulesNotice}</span></p>
+            </div>
             <p className="hero-footnote"><span>{t.heroFootnote}</span><span className="footnote-line" /><span>{t.heroOrigin}</span></p>
           </div>
           <div className="hero-visual" aria-hidden="true">

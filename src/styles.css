@@ -43,6 +43,13 @@ img{max-width:100%}
 .button-primary{background:var(--red);color:white}
 .button-primary:hover{background:#bd3828;color:white}
 .button-ghost{border:1px solid var(--line)}
+.button-rules{background:#263e32;color:#fff;border:1px solid #263e32;gap:12px;box-shadow:0 3px 0 #18291f}
+.button-rules:hover{background:#355742;color:#fff}
+.rules-notice{display:flex;align-items:flex-start;gap:12px;margin-top:20px;padding:15px 17px;border:1px solid #e5bb72;border-left:4px solid #b66b16;border-radius:5px;background:#fff3da;color:#71400d}
+.rules-notice>svg{flex-shrink:0;margin-top:2px}
+.rules-notice p{margin:0;font-size:13px;line-height:1.7}
+.rules-notice strong{display:block;font-size:14px;margin-bottom:3px}
+.rules-notice span{display:block;font-weight:500}
 .hero-footnote{display:flex;align-items:center;gap:12px;font-size:10px;color:var(--muted);margin:27px 0 0}
 .footnote-line{width:20px;height:1px;background:var(--line)}
 .hero-visual{position:relative;min-width:0}
