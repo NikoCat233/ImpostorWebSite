@@ -25,15 +25,6 @@ const regionLinks = [
     url: 'amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.top&usedtls=false',
   },
   {
-    code: 'EU',
-    name: 'NikoEU',
-    nameZh: 'Niko 欧洲',
-    host: 'au-eu.niko233.top',
-    tone: 'blue',
-    api: 'https://au-eu.niko233.top/api/counts',
-    url: 'amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.top&usedtls=false',
-  },
-  {
     code: 'CN',
     name: 'NikoCN',
     nameZh: 'Niko 中国',
@@ -52,6 +43,8 @@ const moddedLinks = [
 
 const copy = {
   en: {
+    announcementTitle: 'Server announcement',
+    announcement: 'NikoEU has shut down. Please use NikoAS, NikoNA, or NikoCN.',
     navInstall: 'Install',
     navMobile: 'Mobile',
     navRules: 'Rules',
@@ -149,6 +142,8 @@ const copy = {
     modalClose: 'Close',
   },
   zh: {
+    announcementTitle: '服务器公告',
+    announcement: 'NikoEU 已关闭，请使用 NikoAS、NikoNA 或 NikoCN。',
     navInstall: '安装',
     navMobile: '手机端',
     navRules: '规则',
@@ -650,6 +645,10 @@ function MainPage({ language, setLanguage }) {
       </header>
 
       <main>
+        <aside className="server-announcement shell" aria-label={t.announcementTitle}>
+          <strong>{t.announcementTitle}</strong>
+          <p>{t.announcement}</p>
+        </aside>
         <section className="hero shell">
           <div className="hero-copy">
             <p className="eyebrow hero-eyebrow"><span className="pulse-dot" /> {t.heroEyebrow}</p>
@@ -673,7 +672,7 @@ function MainPage({ language, setLanguage }) {
         </section>
 
         <section className="pulse-strip shell" aria-label="Server overview">
-          <div className="pulse-stat"><span className="pulse-stat-icon orange"><Icon name="globe" size={18} /></span><span><strong>05</strong><small>{t.regions}</small></span></div>
+          <div className="pulse-stat"><span className="pulse-stat-icon orange"><Icon name="globe" size={18} /></span><span><strong>{String(regionLinks.length).padStart(2, '0')}</strong><small>{t.regions}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon violet"><Icon name="gamepad" size={18} /></span><span><strong>02</strong><small>{t.platforms}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon green"><Icon name="activity" size={18} /></span><span><strong>{live.hasLiveData ? live.totalPlayers : '—'}</strong><small>{t.online}</small></span></div>
           <div className="pulse-stat"><span className="pulse-stat-icon blue"><Icon name="home" size={18} /></span><span><strong>{live.hasLiveData ? live.totalGames : '—'}</strong><small>{t.rooms}</small></span></div>
@@ -694,7 +693,7 @@ function MainPage({ language, setLanguage }) {
               {activePlatform === 'console' && <ConsoleInstall t={t} />}
             </div>
           </div>
-          <aside className="side-column"><QuickStart t={t} /><div className="side-signal"><span className="eyebrow">{language === 'zh' ? '当前房间' : 'Online games'}</span><div className="mini-radar"><span /><span /><span /></div><div className="mini-signal-copy"><strong>{live.hasLiveData ? `${live.totalGames} active lobbies` : 'Scanning lobbies'}</strong><small>AS · NA · EU · CN1</small></div></div><PlayerPresence t={t} counts={live.counts} totalPlayers={live.totalPlayers} hasLiveData={live.hasLiveData} /></aside>
+          <aside className="side-column"><QuickStart t={t} /><div className="side-signal"><span className="eyebrow">{language === 'zh' ? '当前房间' : 'Online games'}</span><div className="mini-radar"><span /><span /><span /></div><div className="mini-signal-copy"><strong>{live.hasLiveData ? `${live.totalGames} active lobbies` : 'Scanning lobbies'}</strong><small>{regionLinks.map((region) => region.code).join(' · ')}</small></div></div><PlayerPresence t={t} counts={live.counts} totalPlayers={live.totalPlayers} hasLiveData={live.hasLiveData} /></aside>
         </section>
 
         <section className="lower-grid shell"><RulesCard t={t} language={language} /><SupportCard t={t} language={language} onWechat={() => setShowQr(true)} /></section>
