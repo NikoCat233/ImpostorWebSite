@@ -24,15 +24,6 @@ const regionLinks = [
     api: 'https://au-us.niko233.top/api/counts',
     url: 'amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.top&usedtls=false',
   },
-  {
-    code: 'CN',
-    name: 'NikoCN',
-    nameZh: 'Niko 中国',
-    host: 'au-cn.netease.me',
-    tone: 'green',
-    api: 'https://au-cn.netease.me/api/counts',
-    url: 'amongus://init?servername=Niko233(CN2)&serverport=443&serverip=https%3A%2F%2Fau-cn.netease.me&usedtls=false',
-  },
 ];
 
 const moddedLinks = [
@@ -44,7 +35,7 @@ const moddedLinks = [
 const copy = {
   en: {
     announcementTitle: 'Server announcement',
-    announcement: 'NikoEU has shut down. Please use NikoAS, NikoNA, or NikoCN.',
+    announcement: 'NikoEU and NikoCN have shut down. Please use NikoAS or NikoNA.',
     navInstall: 'Install',
     navMobile: 'Mobile',
     navRules: 'Rules',
@@ -143,7 +134,7 @@ const copy = {
   },
   zh: {
     announcementTitle: '服务器公告',
-    announcement: 'NikoEU 已关闭，请使用 NikoAS、NikoNA 或 NikoCN。',
+    announcement: 'NikoEU、NikoCN 已关闭，请使用 NikoAS 或 NikoNA。',
     navInstall: '安装',
     navMobile: '手机端',
     navRules: '规则',
