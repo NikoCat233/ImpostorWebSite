@@ -24,6 +24,15 @@ const regionLinks = [
     api: 'https://au-us.niko233.top/api/counts',
     url: 'amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.top&usedtls=false',
   },
+  {
+    code: 'EU3',
+    name: 'NikoEU3',
+    nameZh: 'NikoEU3',
+    host: 'au-eu.niko233.top',
+    tone: 'blue',
+    api: 'https://au-eu.niko233.top/api/counts',
+    url: 'amongus://init?servername=Niko233(EU3)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.top&usedtls=false',
+  },
 ];
 
 const moddedLinks = [
@@ -35,7 +44,7 @@ const moddedLinks = [
 const copy = {
   en: {
     announcementTitle: 'Server announcement',
-    announcement: 'NikoEU and NikoCN have shut down. Please use NikoAS or NikoNA.',
+    announcement: 'NikoCN has shut down. Please use NikoAS, NikoNA, or NikoEU3.',
     navInstall: 'Install',
     navMobile: 'Mobile',
     navRules: 'Rules',
@@ -134,7 +143,7 @@ const copy = {
   },
   zh: {
     announcementTitle: '服务器公告',
-    announcement: 'NikoEU、NikoCN 已关闭，请使用 NikoAS 或 NikoNA。',
+    announcement: 'NikoCN 已关闭，请使用 NikoAS、NikoNA 或 NikoEU3。',
     navInstall: '安装',
     navMobile: '手机端',
     navRules: '规则',
