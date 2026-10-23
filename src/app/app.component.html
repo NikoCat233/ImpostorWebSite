@@ -199,10 +199,18 @@
       </p>
       <p class="platform-prompt">{{ t().platformPrompt }}</p>
       <div class="platform-actions">
-        <a class="button primary" href="#pc" (click)="navigate($event, 'pc')"
+        <a
+          class="button"
+          [class.primary]="installPlatform === 'pc'"
+          href="#pc"
+          (click)="navigate($event, 'pc')"
           ><niko-icon name="pc" />{{ t().installPC }}<niko-icon name="arrow"
         /></a>
-        <a class="button" href="#phone" (click)="navigate($event, 'phone')"
+        <a
+          class="button"
+          [class.primary]="installPlatform === 'phone'"
+          href="#phone"
+          (click)="navigate($event, 'phone')"
           ><niko-icon name="phone" />{{ t().installPhone
           }}<niko-icon name="arrow"
         /></a>
@@ -212,7 +220,11 @@
         /></a>
       </div>
       <div class="announcement">
-        <niko-icon name="info" /><div><p>{{ t().announcement }}</p><p>{{ t().supportLead }}</p></div>
+        <niko-icon name="info" />
+        <div>
+          <p>{{ t().announcement }}</p>
+          <p>{{ t().supportLead }}</p>
+        </div>
       </div>
       <div class="status-panel">
         <div class="status-heading">

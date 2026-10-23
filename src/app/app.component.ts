@@ -12,6 +12,7 @@ import { PolicyComponent } from "./policy.component";
 import { moddedRegions, regions, regionUrl } from "./regions";
 import { StatusService } from "./status.service";
 import { ThemeService } from "./theme.service";
+import { detectInstallPlatform } from "./preferences";
 
 @Component({
   selector: "niko-app",
@@ -24,6 +25,7 @@ export class AppComponent implements AfterViewInit {
   readonly theme = inject(ThemeService);
   private readonly destroyRef = inject(DestroyRef);
   readonly t = this.i18n.text;
+  readonly installPlatform = detectInstallPlatform(navigator);
   readonly regions = regions;
   readonly moddedRegions = moddedRegions;
   readonly regionUrl = regionUrl;

@@ -2,7 +2,11 @@ import assert from "node:assert/strict";
 import { after, before, test } from "node:test";
 import { readFile, readdir } from "node:fs/promises";
 import { server } from "../scripts/preview.mjs";
-import { detectLanguage, detectTheme } from "../src/app/preferences.ts";
+import {
+  detectLanguage,
+  detectTheme,
+  detectInstallPlatform,
+} from "../src/app/preferences.ts";
 import { regions, regionUrl, parseCounts } from "../src/app/regions.ts";
 import { copy } from "../src/app/translations.ts";
 
@@ -56,6 +60,50 @@ test("theme follows the system until the visitor chooses a palette", () => {
     ),
     "light",
   );
+});
+
+test("installation highlights follow the browser platform, including desktop-mode iPads", () => {
+  for (const browser of [
+    {
+      userAgent:
+        "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/130.0.0.0 Mobile Safari/537.36",
+    },
+    {
+      userAgent:
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1",
+    },
+    {
+      userAgent:
+        "Mozilla/5.0 (iPad; CPU OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1",
+    },
+    {
+      userAgent:
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 Safari/605.1.15",
+      platform: "MacIntel",
+      maxTouchPoints: 5,
+    },
+  ])
+    assert.equal(detectInstallPlatform(browser), "phone");
+  for (const browser of [
+    {
+      userAgent:
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36",
+      platform: "Win32",
+      maxTouchPoints: 10,
+    },
+    {
+      userAgent:
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 Safari/605.1.15",
+      platform: "MacIntel",
+      maxTouchPoints: 0,
+    },
+    {
+      userAgent:
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36",
+    },
+    {},
+  ])
+    assert.equal(detectInstallPlatform(browser), "pc");
 });
 
 test("all active region links match the downloadable configurations", async () => {
