@@ -34,6 +34,7 @@ export class AppComponent implements AfterViewInit {
   readonly mobileMenu = signal(false);
   readonly copied = signal("");
   readonly toast = signal("");
+  readonly videoRequested = signal(false);
   readonly gamePath = "%userprofile%\\AppData\\LocalLow\\Innersloth\\Among Us";
   readonly storePath =
     "%userprofile%\\AppData\\Local\\Packages\\Innersloth.AmongUs_fw5x688tam7rm\\SystemAppData\\wgs";
@@ -134,6 +135,17 @@ export class AppComponent implements AfterViewInit {
       this.toast.set("");
       this.copied.set("");
     }, 3500);
+  }
+
+  playVideo(video: HTMLVideoElement) {
+    if (this.videoRequested()) return;
+    // Keep the media URL off the video element until an explicit play gesture.
+    video.src = "/mobile_guide.webm";
+    video.hidden = false;
+    this.videoRequested.set(true);
+    void video.play().catch(() => {
+      // Native controls remain available if the browser refuses playback.
+    });
   }
 
   primaryCommunity() {

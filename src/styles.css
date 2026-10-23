@@ -1133,6 +1133,45 @@ details[open] > summary > .detail-plus {
   border-radius: 4px;
   margin-bottom: 14px;
 }
+.video-guide video[hidden] {
+  display: none;
+}
+.video-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 190px;
+  margin-bottom: 14px;
+  padding: 26px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--text);
+}
+.video-start:hover {
+  border-color: var(--accent);
+}
+.video-start strong {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.video-start > span:last-child {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.video-play-mark {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  margin-bottom: 3px;
+}
 .console-panel {
   padding: 24px;
   border: 1px solid var(--line);

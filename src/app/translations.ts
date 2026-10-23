@@ -101,6 +101,8 @@ const en = {
   virtualLead:
     "Import a browser into the same environment as the game. Start Among Us there, then open this page in that browser and tap the region again.",
   videoTitle: "Mobile installation walkthrough",
+  playVideo: "Play installation video",
+  videoLoadHint: "The video loads only when you press play.",
   videoFallback: "Open or download the video",
   consoleSubtitle: "PlayStation · Xbox · Nintendo Switch",
   unsupported: "No supported setup available",
@@ -233,6 +235,8 @@ const zh: Record<keyof typeof en, string> = {
   virtualLead:
     "将浏览器导入与游戏相同的环境。先在该环境中启动 Among Us，再通过其中的浏览器打开本页，重新点击区域。",
   videoTitle: "手机端安装演示",
+  playVideo: "播放安装演示",
+  videoLoadHint: "点击播放后才会加载视频。",
   videoFallback: "打开或下载视频",
   consoleSubtitle: "PlayStation · Xbox · Nintendo Switch",
   unsupported: "暂无支持的安装方式",
