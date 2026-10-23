@@ -1,0 +1,611 @@
+<a class="skip-link" href="#overview">{{ t().skip }}</a>
+<header class="topbar">
+  <div class="brand-area">
+    <button
+      type="button"
+      class="icon-button menu-button"
+      (click)="mobileMenu.set(!mobileMenu())"
+      [attr.aria-label]="t().menu"
+      [attr.aria-expanded]="mobileMenu()"
+      aria-controls="sidebar"
+    >
+      <niko-icon [name]="mobileMenu() ? 'close' : 'menu'" />
+    </button>
+    <a class="brand" href="#overview" (click)="navigate($event, 'overview')"
+      ><img class="brand-logo" src="/logo.png" alt="" width="44" height="44" />
+      <span
+        ><strong>Niko</strong>'s
+        <span class="brand-sub">Impostor Server</span></span
+      ></a
+    >
+  </div>
+  <span class="topbar-label">{{ t().installationGuide }}</span>
+  <div class="topbar-actions">
+    <button
+      type="button"
+      class="icon-button theme-toggle"
+      (click)="theme.toggle()"
+      [attr.aria-label]="
+        theme.theme() === 'dark' ? t().lightTheme : t().darkTheme
+      "
+      [title]="theme.theme() === 'dark' ? t().lightTheme : t().darkTheme"
+    >
+      <niko-icon [name]="theme.theme() === 'dark' ? 'sun' : 'moon'" />
+    </button>
+    <div class="language-switch" role="group" [attr.aria-label]="t().language">
+      <button
+        type="button"
+        [class.selected]="i18n.language() === 'en'"
+        [attr.aria-pressed]="i18n.language() === 'en'"
+        (click)="i18n.set('en')"
+        lang="en"
+      >
+        EN
+      </button>
+      <button
+        type="button"
+        [class.selected]="i18n.language() === 'zh'"
+        [attr.aria-pressed]="i18n.language() === 'zh'"
+        (click)="i18n.set('zh')"
+        lang="zh"
+      >
+        中文
+      </button>
+    </div>
+    <a
+      class="header-community"
+      [href]="primaryCommunity()"
+      target="_blank"
+      rel="noopener noreferrer"
+      >{{ i18n.language() === "zh" ? t().joinQQ : t().joinDiscord
+      }}<niko-icon name="external"
+    /></a>
+  </div>
+</header>
+
+@if (mobileMenu()) {
+  <button
+    type="button"
+    class="nav-backdrop"
+    [attr.aria-label]="t().close"
+    (click)="mobileMenu.set(false)"
+  ></button>
+}
+<aside
+  class="sidebar"
+  id="sidebar"
+  [class.mobile-open]="mobileMenu()"
+  [attr.aria-label]="t().navigation"
+>
+  <nav>
+    <a
+      class="nav-item"
+      [class.active]="active() === 'overview'"
+      [attr.aria-current]="active() === 'overview' ? 'location' : null"
+      href="#overview"
+      (click)="navigate($event, 'overview')"
+      ><niko-icon name="home" />{{ t().overview }}</a
+    >
+    <p class="nav-label">{{ t().guide }}</p>
+    <div class="nav-group" [class.group-active]="active() === 'pc'">
+      <div class="nav-group-heading">
+        <a
+          class="nav-item"
+          href="#pc"
+          (click)="navigate($event, 'pc')"
+          [attr.aria-current]="active() === 'pc' ? 'location' : null"
+          ><niko-icon name="pc" />{{ t().pc }}</a
+        ><button
+          class="expand-button"
+          type="button"
+          (click)="toggleGroup('pc')"
+          [attr.aria-label]="t().pc"
+          [attr.aria-expanded]="expanded().has('pc')"
+          aria-controls="pc-nav"
+        >
+          <niko-icon name="chevron" />
+        </button>
+      </div>
+      @if (expanded().has("pc")) {
+        <div class="nav-steps" id="pc-nav">
+          <a href="#pc-1" (click)="navigate($event, 'pc-1')"
+            ><span>1</span>{{ t().pc1 }}</a
+          ><a href="#pc-2" (click)="navigate($event, 'pc-2')"
+            ><span>2</span>{{ t().pc2 }}</a
+          ><a href="#pc-3" (click)="navigate($event, 'pc-3')"
+            ><span>3</span>{{ t().pc3 }}</a
+          >
+        </div>
+      }
+    </div>
+    <div class="nav-group" [class.group-active]="active() === 'phone'">
+      <div class="nav-group-heading">
+        <a
+          class="nav-item"
+          href="#phone"
+          (click)="navigate($event, 'phone')"
+          [attr.aria-current]="active() === 'phone' ? 'location' : null"
+          ><niko-icon name="phone" />{{ t().phone }}</a
+        ><button
+          class="expand-button"
+          type="button"
+          (click)="toggleGroup('phone')"
+          [attr.aria-label]="t().phone"
+          [attr.aria-expanded]="expanded().has('phone')"
+          aria-controls="phone-nav"
+        >
+          <niko-icon name="chevron" />
+        </button>
+      </div>
+      @if (expanded().has("phone")) {
+        <div class="nav-steps" id="phone-nav">
+          <a href="#phone-1" (click)="navigate($event, 'phone-1')"
+            ><span>1</span>{{ t().phone1 }}</a
+          ><a href="#phone-2" (click)="navigate($event, 'phone-2')"
+            ><span>2</span>{{ t().phone2 }}</a
+          >
+        </div>
+      }
+    </div>
+    <a
+      class="nav-item"
+      [class.active]="active() === 'console'"
+      [attr.aria-current]="active() === 'console' ? 'location' : null"
+      href="#console"
+      (click)="navigate($event, 'console')"
+      ><niko-icon name="console" />{{ t().console }}</a
+    >
+    <p class="nav-label">{{ t().community }}</p>
+    <a
+      class="nav-item"
+      [class.active]="active() === 'policy'"
+      [attr.aria-current]="active() === 'policy' ? 'location' : null"
+      href="#policy"
+      (click)="navigate($event, 'policy')"
+      ><niko-icon name="rules" />{{ t().policy }}</a
+    >
+    <a
+      class="nav-item"
+      [class.active]="active() === 'contact'"
+      [attr.aria-current]="active() === 'contact' ? 'location' : null"
+      href="#contact"
+      (click)="navigate($event, 'contact')"
+      ><niko-icon name="chat" />{{ t().contact }}</a
+    >
+  </nav>
+  <div class="sidebar-footer">
+    <span class="sidebar-dot" aria-hidden="true"></span
+    ><span>{{ t().since }}</span
+    ><a
+      href="https://github.com/Niko-s-Impostor-Server"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Powered by Nmpostor <span aria-hidden="true">↗</span></a
+    >
+  </div>
+</aside>
+
+<main>
+  <div class="content">
+    <section class="overview" id="overview" data-section tabindex="-1">
+      <div class="breadcrumb">
+        {{ t().installationGuide }}<span>/</span>{{ t().overview }}
+      </div>
+      <p class="eyebrow">{{ t().homeLabel }}</p>
+      <h1><strong>Niko</strong>'s Impostor Server</h1>
+      <p class="intro">{{ t().intro }}</p>
+      <p class="host-notice">
+        <span class="notice-line" aria-hidden="true"></span>{{ t().hostNotice }}
+      </p>
+      <p class="platform-prompt">{{ t().platformPrompt }}</p>
+      <div class="platform-actions">
+        <a class="button primary" href="#pc" (click)="navigate($event, 'pc')"
+          ><niko-icon name="pc" />{{ t().installPC }}<niko-icon name="arrow"
+        /></a>
+        <a class="button" href="#phone" (click)="navigate($event, 'phone')"
+          ><niko-icon name="phone" />{{ t().installPhone
+          }}<niko-icon name="arrow"
+        /></a>
+        <a class="button" href="#console" (click)="navigate($event, 'console')"
+          ><niko-icon name="console" />{{ t().installConsole
+          }}<niko-icon name="arrow"
+        /></a>
+      </div>
+      <div class="announcement">
+        <niko-icon name="info" /><div><p>{{ t().announcement }}</p><p>{{ t().supportLead }}</p></div>
+      </div>
+      <div class="status-panel">
+        <div class="status-heading">
+          <h2>{{ t().network }}</h2>
+          <div class="status-caption">
+            <span>{{ t().statusHint }}</span
+            ><button
+              type="button"
+              class="icon-button"
+              (click)="status.refresh()"
+              [disabled]="status.loading()"
+              [attr.aria-label]="t().refresh"
+            >
+              <niko-icon name="refresh" />
+            </button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">{{ t().region }}</th>
+              <th scope="col">{{ t().players }}</th>
+              <th scope="col">{{ t().rooms }}</th>
+              <th scope="col">
+                <span class="sr-only">{{ t().network }}</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (region of regions; track region.code) {
+              <tr>
+                <th scope="row">
+                  <span class="region-tag">{{ region.code }}</span
+                  ><span
+                    >{{ region.name
+                    }}<small>{{ t()[region.area] }}</small></span
+                  >
+                </th>
+                <td>{{ status.counts()[region.code]?.players ?? "—" }}</td>
+                <td>{{ status.counts()[region.code]?.games ?? "—" }}</td>
+                <td>
+                  <span
+                    class="status-indicator"
+                    [class.is-live]="!!status.counts()[region.code]"
+                    ><i aria-hidden="true"></i
+                    ><span class="status-label">{{
+                      status.counts()[region.code]
+                        ? t().live
+                        : status.loading()
+                          ? t().checking
+                          : t().unavailable
+                    }}</span></span
+                  >
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+        <p class="status-note">{{ t().statusNote }}</p>
+      </div>
+    </section>
+
+    <section class="guide-section" id="pc" data-section tabindex="-1">
+      <div class="section-heading">
+        <span class="section-index">01</span>
+        <div>
+          <h2>{{ t().pc }}</h2>
+          <p>{{ t().pcSubtitle }}</p>
+        </div>
+        <niko-icon name="pc" />
+      </div>
+      <p class="section-lead">{{ t().pcLead }}</p>
+      <div class="methods">
+        <details id="pc-1" class="method" tabindex="-1" open>
+          <summary>
+            <span class="method-number">1</span>
+            <h3>{{ t().pc1 }}</h3>
+            <span class="badge">{{ t().recommended }}</span
+            ><span class="detail-plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="method-body">
+            <p>{{ t().scriptLead }}</p>
+            <a
+              class="button primary download-button"
+              href="/Setup_Custom_Server.bat"
+              download
+              ><niko-icon name="download" />{{ t().downloadScript
+              }}<span class="file-ext">.bat</span></a
+            >
+            <p class="muted">{{ t().scriptNote }}</p>
+            <div class="inline-note">
+              <niko-icon name="check" />
+              <p>{{ t().afterInstall }}</p>
+            </div>
+          </div>
+        </details>
+        <details id="pc-2" class="method" tabindex="-1">
+          <summary>
+            <span class="method-number">2</span>
+            <h3>{{ t().pc2 }}</h3>
+            <span class="method-meta">regioninfo.json</span
+            ><span class="detail-plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="method-body">
+            <ol class="instructions">
+              <li>
+                <p>{{ t().manual1 }}</p>
+                <a class="text-link" href="/regioninfo.json" download
+                  ><niko-icon name="download" />{{ t().downloadFile }}</a
+                >
+              </li>
+              <li>
+                <p>{{ t().manual2 }}</p>
+                <div class="code-row">
+                  <code>{{ gamePath }}</code
+                  ><button
+                    type="button"
+                    class="icon-button"
+                    (click)="copyPath(gamePath)"
+                    [attr.aria-label]="t().copy"
+                  >
+                    <niko-icon
+                      [name]="copied() === gamePath ? 'check' : 'copy'"
+                    />
+                  </button>
+                </div>
+              </li>
+              <li>{{ t().manual3 }}</li>
+            </ol>
+            <details class="reference">
+              <summary>
+                <niko-icon name="image" /><span>{{ t().screenshots }}</span
+                ><niko-icon class="reference-chevron" name="chevron" />
+              </summary>
+              <div class="screenshots">
+                <img src="/win-run.png" loading="lazy" [alt]="t().runAlt" /><img
+                  src="/replace.png"
+                  loading="lazy"
+                  [alt]="t().replaceAlt"
+                />
+              </div>
+            </details>
+          </div>
+        </details>
+        <details id="pc-3" class="method" tabindex="-1">
+          <summary>
+            <span class="method-number">3</span>
+            <h3>{{ t().pc3 }}</h3>
+            <span class="method-meta">Xbox app</span
+            ><span class="detail-plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="method-body">
+            <p>{{ t().storeLead }}</p>
+            <ol class="instructions">
+              <li>
+                <p>{{ t().store1 }}</p>
+                <a class="text-link" href="/regioninfo.json" download
+                  ><niko-icon name="download" />{{ t().downloadFile }}</a
+                >
+              </li>
+              <li>
+                <p>{{ t().store2 }}</p>
+                <div class="code-row">
+                  <code>{{ storePath }}</code
+                  ><button
+                    type="button"
+                    class="icon-button"
+                    (click)="copyPath(storePath)"
+                    [attr.aria-label]="t().copy"
+                  >
+                    <niko-icon
+                      [name]="copied() === storePath ? 'check' : 'copy'"
+                    />
+                  </button>
+                </div>
+              </li>
+              <li>{{ t().store3 }}</li>
+              <li>{{ t().store4 }}</li>
+            </ol>
+            <details class="reference">
+              <summary>
+                <niko-icon name="image" /><span>{{ t().screenshots }}</span
+                ><niko-icon class="reference-chevron" name="chevron" />
+              </summary>
+              <div class="screenshots store-screenshots">
+                @for (image of storeImages; track image) {
+                  <img
+                    [src]="'/' + image"
+                    loading="lazy"
+                    [alt]="t().storeAlt"
+                  />
+                }
+              </div>
+            </details>
+          </div>
+        </details>
+      </div>
+      <details class="mini-install">
+        <summary>{{ t().miniTitle }}<niko-icon name="chevron" /></summary>
+        <div>
+          <p>
+            {{ t().miniLead }} <code>{{ pluginPath }}</code>
+          </p>
+          <a class="text-link" href="/at.duikbo.regioninstall.cfg" download
+            ><niko-icon name="download" />{{ t().miniDownload }}</a
+          >
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section" id="phone" data-section tabindex="-1">
+      <div class="section-heading">
+        <span class="section-index">02</span>
+        <div>
+          <h2>{{ t().phone }}</h2>
+          <p>{{ t().phoneSubtitle }}</p>
+        </div>
+        <niko-icon name="phone" />
+      </div>
+      <div id="phone-1" class="phone-step" tabindex="-1">
+        <h3 class="step-heading"><span>1</span>{{ t().phone1 }}</h3>
+        <p>{{ t().phoneLead }}</p>
+        <div class="region-links">
+          @for (region of regions; track region.code) {
+            <a [href]="regionUrl(region)" class="region-link"
+              ><span class="region-link-top"
+                ><span class="region-tag">{{ region.code }}</span
+                ><niko-icon name="external" /></span
+              ><strong>{{ region.name }}</strong
+              ><span>{{ t()[region.area] }}</span
+              ><small>{{ region.host }}</small
+              ><span class="region-action"
+                >{{ t().tapRegion }}<niko-icon name="arrow" /></span
+            ></a>
+          }
+        </div>
+        <p class="muted">{{ t().phoneAfter }}</p>
+        <div class="partner-block">
+          <div>
+            <h4>{{ t().partnerRegions }}</h4>
+            <small>{{ t().partnerNote }}</small>
+          </div>
+          <div class="partner-links">
+            @for (region of moddedRegions; track region.code) {
+              <a [href]="regionUrl(region)"
+                >{{ region.name }}<span aria-hidden="true">↗</span></a
+              >
+            }
+          </div>
+        </div>
+      </div>
+      <div id="phone-2" class="phone-step" tabindex="-1">
+        <h3 class="step-heading"><span>2</span>{{ t().phone2 }}</h3>
+        <h4>{{ t().troubleTitle }}</h4>
+        <p>{{ t().troubleLead }}</p>
+        <div class="callout">
+          <niko-icon name="info" />
+          <div>
+            <h4>{{ t().virtualTitle }}</h4>
+            <p>{{ t().virtualLead }}</p>
+          </div>
+        </div>
+        <details class="video-guide">
+          <summary>
+            {{ t().videoTitle }}<span class="method-meta">WEBM</span
+            ><span class="detail-plus" aria-hidden="true">+</span>
+          </summary>
+          <div>
+            <video
+              controls
+              preload="none"
+              playsinline
+              [attr.aria-label]="t().videoTitle"
+            >
+              <source src="/mobile_guide.webm" type="video/webm" /></video
+            ><a
+              class="text-link"
+              href="/mobile_guide.webm"
+              target="_blank"
+              rel="noopener"
+              >{{ t().videoFallback }} ↗</a
+            >
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="guide-section" id="console" data-section tabindex="-1">
+      <div class="section-heading">
+        <span class="section-index">03</span>
+        <div>
+          <h2>{{ t().console }}</h2>
+          <p>{{ t().consoleSubtitle }}</p>
+        </div>
+        <niko-icon name="console" />
+      </div>
+      <div class="console-panel">
+        <span class="neutral-badge">{{ t().unsupported }}</span>
+        <p>{{ t().consoleLead }}</p>
+        <p class="muted">{{ t().consoleHelp }}</p>
+        <a
+          class="text-link"
+          [href]="primaryCommunity()"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ t().askCommunity }}<niko-icon name="external"
+        /></a>
+      </div>
+    </section>
+
+    <section class="guide-section" id="policy" data-section tabindex="-1">
+      <div class="section-heading">
+        <span class="section-index">04</span>
+        <div>
+          <h2>{{ t().policy }}</h2>
+          <p>{{ t().fullPolicy }}</p>
+        </div>
+        <niko-icon name="rules" />
+      </div>
+      <div class="appeal-notice">
+        <niko-icon name="info" />
+        <div>
+          <h3>{{ t().appealTitle }}</h3>
+          <p>{{ t().appealNotice }}</p>
+          <a
+            class="text-link"
+            href="#contact"
+            (click)="navigate($event, 'contact')"
+            >{{ t().appealContact }}<niko-icon name="arrow"
+          /></a>
+        </div>
+      </div>
+      <p class="section-lead">{{ t().rulesLead }}</p>
+      <ul class="rules-summary">
+        <li><niko-icon name="check" />{{ t().rule1 }}</li>
+        <li><niko-icon name="check" />{{ t().rule2 }}</li>
+        <li><niko-icon name="check" />{{ t().rule3 }}</li>
+      </ul>
+      <p class="muted">{{ t().rulesDetail }}</p>
+      <niko-policy />
+    </section>
+
+    <section class="guide-section" id="contact" data-section tabindex="-1">
+      <div class="section-heading">
+        <span class="section-index">05</span>
+        <div>
+          <h2>{{ t().contact }}</h2>
+          <p>NikoCat233</p>
+        </div>
+        <niko-icon name="chat" />
+      </div>
+      <p class="section-lead">{{ t().contactLead }}</p>
+      <div class="contact-links">
+        @for (link of communityLinks(); track link.url; let first = $first) {
+          <a
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [class.contact-primary]="first"
+            ><img [src]="link.icon" alt="" /><span
+              ><strong>{{ link.name }}</strong
+              ><small>{{ link.detail }}</small></span
+            ><niko-icon name="external"
+          /></a>
+        }
+        <a href="mailto:admin@niko233.top"
+          ><niko-icon name="mail" /><span
+            ><strong>{{ t().email }}</strong
+            ><small>{{ t().emailAddress }}</small></span
+          ><niko-icon name="arrow"
+        /></a>
+      </div>
+      <p class="contact-notice">{{ t().contactNotice }}</p>
+      <div class="support-row">
+        <div>
+          <h3>{{ t().support }}</h3>
+          <p>{{ t().supportLead }}</p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div>
+        <div class="site-name"><strong>Niko</strong>'s Impostor Server</div>
+        <p [attr.lang]="i18n.language() === 'zh' ? 'zh-CN' : 'en'">
+          {{ t().footer }}
+        </p>
+      </div>
+      <a href="#overview" (click)="navigate($event, 'overview')"
+        >{{ t().backTop }} ↑</a
+      >
+    </footer>
+  </div>
+</main>
+<div class="toast" role="status" aria-live="polite" [class.visible]="toast()">
+  {{ toast() }}
+</div>

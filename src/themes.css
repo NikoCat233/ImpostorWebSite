@@ -1,0 +1,386 @@
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f7f7fa;
+  --sidebar: #f0f0f5;
+  --surface: #ffffff;
+  --line: #dddce5;
+  --muted: #696775;
+  --text: #282532;
+  --accent: #7551a5;
+  --accent-strong: #8055bd;
+  --accent-wash: #e6ddf1;
+}
+.theme-toggle {
+  border: 1px solid var(--line);
+}
+
+/* Surface and text pairs stay explicit so both palettes retain their contrast. */
+:root[data-theme="light"] .topbar {
+  background: #ffffffed;
+}
+:root[data-theme="light"] .topbar-label {
+  color: #6c6678;
+}
+:root[data-theme="light"] .language-switch {
+  background: #eeedf3;
+}
+:root[data-theme="light"] .language-switch button.selected {
+  background: #fff;
+  box-shadow: 0 1px 3px #29203512;
+}
+:root[data-theme="light"] .header-community {
+  color: #645771;
+}
+:root[data-theme="light"] .brand-symbol {
+  color: #59406f;
+  border-color: #b5a1cc;
+}
+:root[data-theme="light"] .nav-item {
+  color: #666171;
+}
+:root[data-theme="light"] .nav-item niko-icon {
+  color: #81768e;
+}
+:root[data-theme="light"] .nav-item:hover,
+:root[data-theme="light"] .nav-group-heading:hover {
+  background: #e6e4ed;
+  color: #3c304a;
+}
+:root[data-theme="light"] .nav-item.active,
+:root[data-theme="light"] .group-active .nav-group-heading {
+  color: #67428f;
+  background: var(--accent-wash);
+}
+:root[data-theme="light"] .nav-label,
+:root[data-theme="light"] .expand-button {
+  color: #81768d;
+}
+:root[data-theme="light"] .nav-steps {
+  border-color: #c8bbd6;
+}
+:root[data-theme="light"] .nav-steps a {
+  color: #74657f;
+}
+:root[data-theme="light"] .nav-steps a:hover {
+  background: #e7e0ef;
+  color: #69458c;
+}
+:root[data-theme="light"] .nav-steps a span {
+  color: #85728f;
+}
+:root[data-theme="light"] .sidebar-footer,
+:root[data-theme="light"] .sidebar-footer a {
+  color: #746a7e;
+}
+:root[data-theme="light"] .breadcrumb,
+:root[data-theme="light"] .breadcrumb span {
+  color: #89818f;
+}
+:root[data-theme="light"] .intro,
+:root[data-theme="light"] .section-lead {
+  color: #6b6476;
+}
+:root[data-theme="light"] .host-notice {
+  color: #62506e;
+}
+:root[data-theme="light"] .platform-prompt,
+:root[data-theme="light"] .announcement {
+  color: #82768c;
+}
+:root[data-theme="light"] .button {
+  background: #fff;
+  border-color: #cfc6da;
+  color: #51435f;
+}
+:root[data-theme="light"] .button:hover {
+  background: #f0eaf7;
+  border-color: #a38cb9;
+}
+:root[data-theme="light"] .button.primary {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: #fff;
+}
+:root[data-theme="light"] .button.primary:hover {
+  background: #7046ac;
+  border-color: #7046ac;
+}
+:root[data-theme="light"] .file-ext {
+  color: #e2ccff;
+  border-color: #aa84d4;
+}
+:root[data-theme="light"] .status-panel {
+  background: #fff;
+}
+:root[data-theme="light"] thead {
+  background: #f1eff6;
+}
+:root[data-theme="light"] thead th,
+:root[data-theme="light"] .status-caption {
+  color: #776b82;
+}
+:root[data-theme="light"] tbody tr + tr {
+  border-color: #e7e1ed;
+}
+:root[data-theme="light"] tbody td {
+  color: #62526f;
+}
+:root[data-theme="light"] tbody th small {
+  color: #92849c;
+}
+:root[data-theme="light"] .region-tag {
+  background: #eee8f5;
+  border-color: #d9cce5;
+  color: #826494;
+}
+:root[data-theme="light"] .status-indicator {
+  color: #8c7e97;
+}
+:root[data-theme="light"] .status-indicator i {
+  background: #aaa0b2;
+}
+:root[data-theme="light"] .status-indicator.is-live {
+  color: #4e7b5f;
+}
+:root[data-theme="light"] .status-indicator.is-live i {
+  background: #638e72;
+}
+:root[data-theme="light"] .status-note {
+  color: #92869b;
+}
+:root[data-theme="light"] .icon-button {
+  color: #857190;
+}
+:root[data-theme="light"] .icon-button:hover {
+  background: #eae2f2;
+  color: #66437e;
+}
+:root[data-theme="light"] .section-heading p {
+  color: #85768f;
+}
+:root[data-theme="light"] .section-heading > niko-icon,
+:root[data-theme="light"] .section-index {
+  color: #a28bac;
+}
+:root[data-theme="light"] .method > summary {
+  background: #f2eef7;
+}
+:root[data-theme="light"] .method > summary:hover,
+:root[data-theme="light"] .method[open] > summary {
+  background: #eae2f3;
+}
+:root[data-theme="light"] .method-number {
+  border-color: #c7b6d8;
+  color: #8c69a0;
+}
+:root[data-theme="light"] .badge {
+  background: #f6efff;
+  border-color: #cdb5e5;
+  color: #8a55af;
+}
+:root[data-theme="light"] .method-meta {
+  color: #95819f;
+}
+:root[data-theme="light"] .method-body {
+  background: #fff;
+  color: #786783;
+}
+:root[data-theme="light"] .muted {
+  color: #766c7d;
+}
+:root[data-theme="light"] .inline-note {
+  border-color: #e6ddec;
+  color: #8a7196;
+}
+:root[data-theme="light"] .code-row {
+  background: #f6f2fa;
+  border-color: #ddd0e7;
+  color: #71577f;
+}
+:root[data-theme="light"] .text-link {
+  color: #8758a6;
+}
+:root[data-theme="light"] .text-link:hover {
+  color: #633781;
+}
+:root[data-theme="light"] .reference,
+:root[data-theme="light"] .mini-install {
+  border-color: #dfd3e8;
+  color: #8c6f9a;
+}
+:root[data-theme="light"] .reference > summary {
+  color: #52316f;
+  background: #e8daf6;
+  border-color: #ab87c9;
+}
+:root[data-theme="light"] .reference > summary:hover {
+  background: #ddc5ef;
+  border-color: #8c5db0;
+}
+:root[data-theme="light"] .step-heading > span {
+  color: #9771ac;
+  border-color: #cfb8de;
+}
+:root[data-theme="light"] .phone-step > p,
+:root[data-theme="light"] .phone-step > h4 {
+  color: #7a6387;
+}
+:root[data-theme="light"] .region-link {
+  background: #fff;
+  border-color: #d8c9e2;
+}
+:root[data-theme="light"] .region-link:hover {
+  background: #f2eaf9;
+  border-color: #b397c4;
+}
+:root[data-theme="light"] .region-link strong {
+  color: #754e8c;
+}
+:root[data-theme="light"]
+  .region-link
+  > span:not(.region-link-top):not(.region-action) {
+  color: #90729f;
+}
+:root[data-theme="light"] .region-link small {
+  color: #87728f;
+}
+:root[data-theme="light"] .region-action {
+  border-color: #e7daef;
+  color: #9b65ba;
+}
+:root[data-theme="light"] .partner-block {
+  border-color: #e0d5e8;
+}
+:root[data-theme="light"] .partner-block h4,
+:root[data-theme="light"] .partner-links a {
+  color: #8b6d9b;
+}
+:root[data-theme="light"] .partner-block small {
+  color: #85728f;
+}
+:root[data-theme="light"] .callout {
+  background: #eee6f5;
+  border-color: #b491c9;
+  color: #91749f;
+}
+:root[data-theme="light"] .callout h4 {
+  color: #865e9d;
+}
+:root[data-theme="light"] .video-guide summary {
+  background: #f0e9f6;
+  color: #8c6a9d;
+}
+:root[data-theme="light"] .console-panel {
+  background: #fff;
+}
+:root[data-theme="light"] .console-panel p {
+  color: #8a7196;
+}
+:root[data-theme="light"] .console-panel p.muted {
+  color: #83708d;
+}
+:root[data-theme="light"] .neutral-badge {
+  border-color: #d6c6de;
+  color: #9b80a7;
+}
+:root[data-theme="light"] .appeal-notice {
+  background: #faf2e6;
+  border-color: #dfc6a2;
+  border-left-color: #b48c52;
+}
+:root[data-theme="light"] .appeal-notice h3 {
+  color: #8b6534;
+}
+:root[data-theme="light"] .appeal-notice p {
+  color: #82623c;
+}
+:root[data-theme="light"] .appeal-notice .text-link {
+  color: #9c7136;
+}
+:root[data-theme="light"] .rules-summary {
+  color: #80608f;
+}
+:root[data-theme="light"] .policy-toolbar {
+  color: #85728f;
+}
+:root[data-theme="light"] .text-button {
+  color: #966eaa;
+}
+:root[data-theme="light"] .policy-list details + details {
+  border-color: #dfd2e7;
+}
+:root[data-theme="light"] .policy-list summary {
+  background: #f7f2fa;
+  color: #705f7c;
+}
+:root[data-theme="light"] .policy-list summary:hover {
+  background: #ede2f4;
+  color: #7d5592;
+}
+:root[data-theme="light"] .policy-list details[open] summary {
+  color: #825494;
+}
+:root[data-theme="light"] .policy-body {
+  background: #fff;
+  color: #6e5e79;
+}
+:root[data-theme="light"] .policy-body a {
+  color: #9763b2;
+}
+:root[data-theme="light"] .contact-links > a {
+  background: #fff;
+  border-color: #dacde2;
+}
+:root[data-theme="light"] .contact-links > a.contact-primary {
+  background: #eee4f6;
+  border-color: #c6aed8;
+}
+:root[data-theme="light"] .contact-links strong {
+  color: #866292;
+}
+:root[data-theme="light"] .contact-links small {
+  color: #85738d;
+}
+:root[data-theme="light"] .contact-links img {
+  filter: none;
+}
+:root[data-theme="light"] .contact-notice {
+  color: #817087;
+}
+:root[data-theme="light"] .support-row,
+:root[data-theme="light"] .footer {
+  border-color: #dfd3e7;
+}
+:root[data-theme="light"] .support-row h3 {
+  color: #8c669b;
+}
+:root[data-theme="light"] .support-row p,
+:root[data-theme="light"] .sponsors {
+  color: #82708c;
+}
+:root[data-theme="light"] .button.small {
+  background: #f7f0fb;
+  border-color: #d9c5e4;
+  color: #9567ab;
+}
+:root[data-theme="light"] .footer strong {
+  color: #a387ad;
+}
+:root[data-theme="light"] .footer strong span,
+:root[data-theme="light"] .footer p,
+:root[data-theme="light"] .footer > a {
+  color: #7a6d81;
+}
+:root[data-theme="light"] .toast {
+  background: #f0e6f7;
+  border-color: #c7abda;
+  color: #8f64a4;
+}
+:root[data-theme="light"] .donation-dialog {
+  background: #fbf7fd;
+  border-color: #c7a8d8;
+  color: #8f669e;
+}
+:root[data-theme="light"] .donation-dialog > p {
+  color: #82708c;
+}

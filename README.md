@@ -1,85 +1,42 @@
-# ImpostorWebSite
+# Niko's Impostor Server
 
-React + Vite website for NikoCat233's Impostor server.
+Bilingual single-page Angular 21 site for Niko's Impostor Server. It contains desktop, mobile, and console installation guidance, server status, player rules, and community contacts.
 
-## Introduction
+## Access and language
 
-This repository contains the bilingual installation guide for NikoCat233's Among Us custom region.
-
-## Access
-
-Open [au.niko233.top](https://au.niko233.top/). The page automatically chooses Chinese for Chinese-language browsers, and visitors can switch languages at any time.
-
-## Donation
-
-We need to cover the fees for our servers. Support us at our ko-fi!
-[ko-fi](https://ko-fi.com/nikocat233)
-
-## Sponsors
-
-I promise the money here will be all put into running the server & buying the domains.
-
-SpicyPoops (50 usd)
-瑞 (1 usd)
-
-## Author
-
-- Name: NikoCat233
+Visit [au.niko233.top](https://au.niko233.top/). The site selects Chinese when the browser's preferred language is Chinese, otherwise English. Visitors can switch languages; the choice is saved in browser storage. Chinese prioritizes QQ and English prioritizes Discord. Light/dark appearance initially follows the system preference; the header toggle saves an explicit choice. The initial palette is applied before Angular starts to avoid a theme flash.
 
 ## Development
 
-This site is built with React and Vite.
-
-```bash
-npm install
-npm run dev
-```
-
-For a production build, run:
+Use Node.js `>=24.0.0 <25` and npm. Install dependencies and start the Angular development server:
 
 ```bash
 npm ci
+npm run dev
+```
+
+Create a production build with:
+
+```bash
 npm run build
 ```
 
-The build output is written to `dist/`. Vite also copies the files in `public/`, including `policy.html` and `_redirects`, into that directory.
+This is a static client-rendered Angular application with no server-side rendering. The build writes directly to `dist/`, including the files copied from `public/`. `npm run preview` serves the production build locally and applies the site's redirect rules through `scripts/preview.mjs`.
+
+Run `npm test` after building to verify language detection, installation payloads, policy sections, redirects, and the actual built static assets. The preview defaults to `http://127.0.0.1:4173` and supports video range requests.
+
+The standalone components are in `src/app/`: the page shell and installation guide, the policy reader, and reusable icons. Translations, language preferences, region data, and live status fetching are separate modules. Full English and Chinese policy text lives in `src/app/policy-data.json`; policy and contact are sections of the homepage.
 
 ## Deployment
 
-The repository contains configuration for both Netlify and Vercel. Both platforms use `npm run build` and publish `dist/`.
+Netlify and Vercel both run `npm run build` and publish `dist/`. The Node engine range in `package.json` selects Node 24; Netlify pins Node `24.14.1` in `netlify.toml`. Netlify routing is defined in `public/_redirects`, which is copied into `dist/` for both Git deployments and manual static uploads. `vercel.json` mirrors the redirects and configures a static output with framework detection disabled.
 
-### Netlify
-
-Create a Netlify site from this GitHub repository. Netlify reads the checked-in `netlify.toml` automatically:
-
-- Build command: `npm run build`
-- Publish directory: `dist`
-- Node version: `20`
-
-After the repository is connected, every push to the configured production branch triggers a fresh build and deploy.
-
-### Vercel
-
-Import this repository as a Vercel project. The checked-in `vercel.json` declares the build command and output directory, so no additional build settings are required.
-
-The routing rules keep these existing entry points available:
-
-| Path | Behavior |
+| Request path | Behavior |
 | --- | --- |
 | `/discord` | Permanent redirect to the Discord invite |
 | `/qq` | Permanent redirect to the QQ group |
-| `/policy` | Internal rewrite to `policy.html` |
-| Any other path | Internal rewrite to `index.html` for the React SPA |
+| `/policy`, `/policy/`, `/policy.html`, `/policy.html/` | Permanent redirect to `/#policy` |
+| `/contact`, `/contact/`, `/contact.html`, `/contact.html/` | Permanent redirect to `/#contact` |
+| Other paths | Serve the Angular SPA entry point; existing static files keep their content |
 
-The Netlify and Vercel rules preserve the browser-visible path for the two internal rewrites. The external destinations are kept in the deployment files so they work on direct requests as well as links from the site.
-
-After deploying, verify `/`, `/policy`, `/discord`, `/qq`, and a client-side route directly from a fresh browser request. The two external routes should redirect, `/policy` should render without changing its URL, and an unknown SPA route should render the React entry page.
-
-See the platform documentation for [Netlify redirects and rewrites](https://docs.netlify.com/manage/routing/redirects/overview/) and [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) for the underlying routing behavior.
-### Local preview and routing checks
-
-`npm run dev` and `npm run preview` serve the frontend; they do not emulate Netlify or Vercel external redirects. Validate `/discord` and `/qq` on a platform preview deployment. Keep their destinations synchronized in `netlify.toml`, `public/_redirects`, and `vercel.json`.
-
-Existing static files take precedence over the SPA fallback. Check `/policy.html`, `/regioninfo.json`, `/Setup_Custom_Server.bat`, `/mobile_guide.webm`, and the generated `/assets/` files after deployment: each must return its original content, not the homepage HTML.
-
-The homepage uses local fonts and an original SVG illustration (`public/crew-window.svg`). Installation instructions, language switching, mobile deep links, and community contacts work without an additional UI library. Server counts show an unavailable state if no server responds within eight seconds.
+Installation files and media such as `/regioninfo.json`, `/Setup_Custom_Server.bat`, `/at.duikbo.regioninstall.cfg`, `/mobile_guide.webm`, and `/assets/` are served from `public/` and copied into the build output. After deployment, confirm the routes above and these static files from a fresh request.

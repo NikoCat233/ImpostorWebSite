@@ -3,14 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f6f5ef" />
-    <meta name="description" content="Install guide for Niko233's Among Us custom regions." />
-    <meta name="keywords" content="Niko233, NikoCat233, Among Us, custom regions, custom server, modded among us" />
-    <link rel="icon" href="/favicon.ico" />
-    <title>Niko233's Impostor Server</title>
+    <base href="/" />
+    <meta name="theme-color" content="#101114" />
+    <script>
+      (() => {
+        let saved;
+        try {
+          saved = localStorage.getItem("impostor-theme");
+        } catch {}
+        const theme =
+          saved === "light" || saved === "dark"
+            ? saved
+            : matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').content =
+          theme === "dark" ? "#101114" : "#f7f7fa";
+      })();
+    </script>
+    <meta
+      name="description"
+      content="Niko's Impostor Server: Among Us private servers in Asia, North America and Europe. 亚洲、北美和欧洲的 Among Us 私服，支持原版游戏与兼容模组，提供中英文安装指南。"
+    />
+    <meta
+      name="keywords"
+      content="Niko233, NikoCat233, Among Us, custom regions, custom server, modded among us"
+    />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <title>Niko's Impostor Server</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <niko-app></niko-app>
+    <noscript
+      >Please enable JavaScript to view the installation guide. 请启用
+      JavaScript 查看安装指南。</noscript
+    >
   </body>
 </html>
