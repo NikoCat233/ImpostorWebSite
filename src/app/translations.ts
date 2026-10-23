@@ -43,6 +43,8 @@ const en = {
   live: "Available",
   partial: "Some regions unavailable",
   refresh: "Refresh status",
+  refreshAction: "Refresh",
+  refreshing: "Refreshing…",
   statusNote:
     "A failed status request does not necessarily mean the server is offline.",
   pcSubtitle: "Steam, Epic Games, itch.io & Microsoft Store",
@@ -164,8 +166,7 @@ const zh: Record<keyof typeof en, string> = {
   language: "语言",
   homeLabel: "AMONG US / 自定义区域",
   title: "Niko's Impostor Server",
-  intro:
-    "我们在亚洲、北美和欧洲运营 Among Us 私服，支持原版游戏和兼容模组。",
+  intro: "我们在亚洲、北美和欧洲运营 Among Us 私服，支持原版游戏和兼容模组。",
   hostNotice: "如果房主使用了私服，你也需要添加同一个私服，才能加入房间。",
   installPC: "电脑端安装",
   installPhone: "手机端安装",
@@ -183,6 +184,8 @@ const zh: Record<keyof typeof en, string> = {
   live: "可用",
   partial: "部分区域状态不可用",
   refresh: "刷新状态",
+  refreshAction: "刷新",
+  refreshing: "刷新中…",
   statusNote: "状态请求失败不一定代表服务器离线。",
   pcSubtitle: "Steam、Epic Games、itch.io 和微软商店",
   pcLead: "优先使用自动安装。需要手动操作时，可展开下面的对应方式。",

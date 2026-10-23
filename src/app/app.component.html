@@ -230,15 +230,19 @@
         <div class="status-heading">
           <h2>{{ t().network }}</h2>
           <div class="status-caption">
-            <span>{{ t().statusHint }}</span
+            <span class="status-hint">{{ t().statusHint }}</span
             ><button
               type="button"
-              class="icon-button"
+              class="status-refresh"
               (click)="status.refresh()"
               [disabled]="status.loading()"
               [attr.aria-label]="t().refresh"
+              [attr.aria-busy]="status.loading()"
             >
               <niko-icon name="refresh" />
+              <span>{{
+                status.loading() ? t().refreshing : t().refreshAction
+              }}</span>
             </button>
           </div>
         </div>

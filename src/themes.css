@@ -155,6 +155,15 @@
   background: #eae2f2;
   color: #66437e;
 }
+:root[data-theme="light"] .status-refresh {
+  background: #eee5f7;
+  border-color: #b99bce;
+  color: #62417b;
+}
+:root[data-theme="light"] .status-refresh:hover:not(:disabled) {
+  background: #e1d0ee;
+  border-color: #9566b4;
+}
 :root[data-theme="light"] .section-heading p {
   color: #85768f;
 }

@@ -527,6 +527,41 @@ html[lang="zh-CN"] h1 {
   color: #777986;
   font-size: 0.875rem;
 }
+.status-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 108px;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid #655176;
+  border-radius: 5px;
+  background: #292232;
+  color: #e0c9f5;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.status-refresh:hover:not(:disabled) {
+  background: #3a2d48;
+  border-color: #a481c4;
+}
+.status-refresh:disabled {
+  opacity: 0.75;
+}
+.status-refresh niko-icon {
+  width: 16px;
+  height: 16px;
+}
+.status-refresh[aria-busy="true"] niko-icon {
+  animation: status-spin 1.2s linear infinite;
+}
+@keyframes status-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .icon-button {
   width: 32px;
   height: 32px;
@@ -1594,6 +1629,9 @@ niko-policy {
   }
 }
 @media (max-width: 600px) {
+  .status-hint {
+    display: none;
+  }
   .brand-sub {
     display: none;
   }
